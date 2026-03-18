@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 8f;
+    public SpriteRenderer background;
 
     private PlayerManager player;
 
@@ -14,16 +15,26 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+
+        CheckBounds();
     }
 
-    private void OnBecameInvisible()
+    void CheckBounds()
     {
-        if (player != null)
-        {
-            player.ClearBullet();
-        }
+        if (background == null) return;
 
-        Destroy(gameObject);
+        Bounds bounds = background.bounds;
+
+        // If bullet goes above the background
+        if (transform.position.y > bounds.max.y)
+        {
+            if (player != null)
+            {
+                player.ClearBullet();
+            }
+
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
