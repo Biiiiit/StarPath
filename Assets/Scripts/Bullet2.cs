@@ -1,19 +1,20 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet2 : MonoBehaviour
 {
     public float speed = 8f;
+    public Vector2 direction = Vector2.right;
 
-    private PlayerManager player;
+    private PlayerManager2 player;
 
     void Start()
     {
-        player = FindFirstObjectByType<PlayerManager>();
+        player = FindFirstObjectByType<PlayerManager2>();
     }
 
     void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void OnBecameInvisible()

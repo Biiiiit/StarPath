@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class Alien : MonoBehaviour
 {
-    private AlienManager manager;
+    private AlienManager2 manager;
 
     void Start()
     {
-        manager = GetComponentInParent<AlienManager>();
+        manager = GetComponentInParent<AlienManager2>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))
         {
-            manager.AlienKilled();
+            if (manager != null)
+            {
+                manager.AlienKilled();
+            }
+
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
