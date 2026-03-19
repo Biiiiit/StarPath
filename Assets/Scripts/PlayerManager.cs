@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public SpriteRenderer background;
     public GameObject bulletPrefab;
     public Transform shootPoint;
+    public AudioClip shootSound;
 
     private GameObject currentBullet;
 
@@ -25,6 +26,11 @@ public class PlayerManager : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame && currentBullet == null)
         {
             currentBullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+
+            if (shootSound != null)
+            {
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+            }
         }
 
         ClampToBackground();

@@ -3,6 +3,10 @@ using UnityEngine;
 public class Alien : MonoBehaviour
 {
     private AlienManager manager;
+    public Animator animator;
+    public AudioClip deathSound;
+
+    private bool isDying = false;
 
     void Start()
     {
@@ -13,9 +17,30 @@ public class Alien : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            manager.AlienKilled();
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            OnHit();
         }
+    }
+
+    public void OnHit()
+    {
+        if (isDying) return;
+
+        isDying = true;
+
+        manager.AlienKilled();
+
+        GetComponent<Collider2D>().enabled = false;
+
+        animator.SetTrigger("Die");
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
+
+    public void PlayDeathSound()
+    {
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
     }
 }

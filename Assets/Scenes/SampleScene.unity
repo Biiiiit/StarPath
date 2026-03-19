@@ -236,6 +236,7 @@ MonoBehaviour:
   background: {fileID: 1556687202}
   bulletPrefab: {fileID: 7604338299627734449, guid: 9aa5d9ffea9065c4fa4425fd09a4fc75, type: 3}
   shootPoint: {fileID: 74351126}
+  shootSound: {fileID: 8300000, guid: dabd8db76d888fe4dbfc3b5382a6586b, type: 3}
 --- !u!212 &292563896
 SpriteRenderer:
   serializedVersion: 2
