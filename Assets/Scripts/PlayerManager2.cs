@@ -7,6 +7,7 @@ public class PlayerManager2 : MonoBehaviour
     public SpriteRenderer background;
     public GameObject bulletPrefab;
     public Transform shootPoint;
+    public AudioClip shootSound;
 
     private GameObject currentBullet;
 

@@ -1,23 +1,72 @@
-﻿using UnityEngine;
+using UnityEngine;
+using System.Collections.Generic;
 
 public class Bullet2 : MonoBehaviour
 {
     public float speed = 8f;
-    public Vector2 direction = Vector2.right;
+    public SpriteRenderer background;
+
+    public int maxHits = 1;
+    private int hitsRemaining;
 
     private PlayerManager2 player;
 
+    // Track aliens already hit (prevents duplicate hits)
+    private HashSet<Alien> hitAliens = new HashSet<Alien>();
+
     void Start()
     {
-        player = FindFirstObjectByType<PlayerManager2>();
+        player = FindFirstObjectByType<PlayerManager>();
+        hitsRemaining = maxHits;
     }
 
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        float moveStep = speed * Time.deltaTime;
+
+        // Raycast forward BEFORE moving
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, moveStep);
+
+        if (hit.collider != null && hit.collider.CompareTag("Alien"))
+        {
+            Alien alien = hit.collider.GetComponent<Alien>();
+
+            if (alien != null && !hitAliens.Contains(alien))
+            {
+                hitAliens.Add(alien);
+
+                alien.OnHit();
+
+                hitsRemaining--;
+
+                if (hitsRemaining <= 0)
+                {
+                    ClearAndDestroy();
+                    return;
+                }
+            }
+        }
+
+        // Move bullet
+        transform.Translate(Vector2.up * moveStep);
+
+        CheckBounds();
+
+        // Debug (optional)
+        Debug.DrawRay(transform.position, Vector2.up * moveStep, Color.red);
     }
 
-    private void OnBecameInvisible()
+    void CheckBounds()
+    {
+        if (background == null) return;
+
+        if (transform.position.y > background.bounds.max.y)
+        {
+            ClearAndDestroy();
+        }
+    }
+
+    void ClearAndDestroy()
     {
         if (player != null)
         {
@@ -25,18 +74,5 @@ public class Bullet2 : MonoBehaviour
         }
 
         Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Alien"))
-        {
-            if (player != null)
-            {
-                player.ClearBullet();
-            }
-
-            Destroy(gameObject);
-        }
     }
 }
