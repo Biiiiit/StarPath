@@ -10,7 +10,7 @@ public class Alien : MonoBehaviour
 
     void Start()
     {
-        manager = GetComponentInParent<AlienManager2>();
+        manager = GetComponentInParent<AlienManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
