@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Bullet2 : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float speed = 8f;
     public SpriteRenderer background;
@@ -9,7 +9,7 @@ public class Bullet2 : MonoBehaviour
     public int maxHits = 1;
     private int hitsRemaining;
 
-    private PlayerManager2 player;
+    private PlayerManager player;
 
     // Track aliens already hit (prevents duplicate hits)
     private HashSet<Alien> hitAliens = new HashSet<Alien>();
