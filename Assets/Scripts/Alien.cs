@@ -24,13 +24,9 @@ public class Alien : MonoBehaviour
     public void OnHit()
     {
         if (isDying) return;
-
         isDying = true;
-
         manager.AlienKilled();
-
         GetComponent<Collider2D>().enabled = false;
-
         animator.SetTrigger("Die");
     }
 
