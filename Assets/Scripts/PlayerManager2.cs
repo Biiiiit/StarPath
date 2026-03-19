@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager2 : MonoBehaviour
 {
     public float speed = 5f;
     public SpriteRenderer background;
@@ -13,23 +13,33 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        float move = 0f;
+        Vector2 move = Vector2.zero;
 
+        // Horizontaal
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
-            move = -1f;
+            move.x = -1f;
 
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
-            move = 1f;
+            move.x = 1f;
 
-        transform.Translate(Vector2.right * move * speed * Time.deltaTime);
+        // Verticaal
+        if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
+            move.y = 1f;
 
+        if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed)
+            move.y = -1f;
+
+        transform.Translate(move.normalized * speed * Time.deltaTime);
+
+        // Schieten
         if (Keyboard.current.spaceKey.wasPressedThisFrame && currentBullet == null)
         {
             currentBullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
 
-            if (shootSound != null)
+            Bullet2 bulletScript = currentBullet.GetComponent<Bullet2>();
+            if (bulletScript != null)
             {
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                bulletScript.direction = Vector2.right;
             }
         }
 
@@ -46,6 +56,7 @@ public class PlayerManager : MonoBehaviour
         Bounds bounds = background.bounds;
 
         float halfWidth = GetComponent<SpriteRenderer>().bounds.extents.x;
+        float halfHeight = GetComponent<SpriteRenderer>().bounds.extents.y;
 
         float clampedX = Mathf.Clamp(
             transform.position.x,
@@ -53,9 +64,15 @@ public class PlayerManager : MonoBehaviour
             bounds.max.x - halfWidth
         );
 
+        float clampedY = Mathf.Clamp(
+            transform.position.y,
+            bounds.min.y + halfHeight,
+            bounds.max.y - halfHeight
+        );
+
         transform.position = new Vector3(
             clampedX,
-            transform.position.y,
+            clampedY,
             transform.position.z
         );
     }
