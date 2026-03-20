@@ -5,21 +5,28 @@ public class GridSpawner : MonoBehaviour
     public float spacing = 1.5f;
     public SpriteRenderer background;
 
-    public WaveFormation previewFormation; // for editor preview
+    public WaveFormation previewFormation; // editor preview
+    public Transform alienParent; // assign the parent with AlienManager in inspector
 
 #if UNITY_EDITOR
     void OnValidate()
     {
         if (!Application.isPlaying && previewFormation != null)
         {
-            // spawn editor preview ONLY
+            // Clear previous preview children safely
+            ClearChildren(true);
             SpawnFormation(previewFormation);
         }
     }
 #endif
+
     public void SpawnFormation(WaveFormation formation)
     {
-        if (formation == null || background == null) return;
+        if (formation == null || background == null || alienParent == null) return;
+
+        // Clear previous runtime aliens
+        if (Application.isPlaying)
+            ClearChildren(false);
 
         Bounds bounds = background.bounds;
 
@@ -29,12 +36,8 @@ public class GridSpawner : MonoBehaviour
         float totalWidth = (cols - 1) * spacing;
         float totalHeight = (rows - 1) * spacing;
 
-        // CENTER horizontally
         float startX = -totalWidth / 2f;
-
-        // START FROM TOP of background
-        float topY = bounds.max.y - 1f;
-        float startY = topY - totalHeight;
+        float startY = bounds.max.y - 1f; // start at top
 
         for (int y = 0; y < rows; y++)
         {
@@ -51,10 +54,36 @@ public class GridSpawner : MonoBehaviour
                     0
                 );
 
-                Instantiate(alienPrefab, transform);
-                transform.GetChild(transform.childCount - 1).localPosition = localPos;
+                GameObject alien = Instantiate(alienPrefab, alienParent);
+                alien.transform.localPosition = localPos;
+            }
+        }
+
+        // Update AlienManager counts if runtime
+        if (Application.isPlaying)
+        {
+            AlienManager manager = alienParent.GetComponent<AlienManager>();
+            if (manager != null)
+            {
+                manager.totalAliens = alienParent.childCount;
+                manager.aliveAliens = manager.totalAliens;
             }
         }
     }
 
+    private void ClearChildren(bool editorMode)
+    {
+        if (alienParent == null) return;
+
+        // iterate backwards to safely remove all children
+        for (int i = alienParent.childCount - 1; i >= 0; i--)
+        {
+            Transform child = alienParent.GetChild(i);
+
+            if (editorMode)
+                DestroyImmediate(child.gameObject); // preview removal in editor
+            else if (Application.isPlaying)
+                Destroy(child.gameObject); // runtime removal
+        }
+    }
 }
