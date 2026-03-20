@@ -65,8 +65,7 @@ public class GridSpawner : MonoBehaviour
             AlienManager manager = alienParent.GetComponent<AlienManager>();
             if (manager != null)
             {
-                manager.totalAliens = alienParent.childCount;
-                manager.aliveAliens = manager.totalAliens;
+                manager.ResetAliens();
             }
         }
     }

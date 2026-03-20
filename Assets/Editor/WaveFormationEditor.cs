@@ -12,7 +12,12 @@ public class WaveFormationEditor : Editor
     {
         WaveFormation formation = (WaveFormation)target;
 
+        if (formation.rows <= 0)
+            formation.rows = 4; // default rows
         formation.rows = EditorGUILayout.IntField("Rows", formation.rows);
+        if (formation.cols <= 0)
+            formation.cols = 11;
+
         formation.cols = EditorGUILayout.IntField("Cols", formation.cols);
 
         int size = formation.rows * formation.cols;
@@ -65,7 +70,18 @@ public class WaveFormationEditor : Editor
 
         Rect rect = GUILayoutUtility.GetRect(cellSize, cellSize);
 
-        GUI.DrawTexture(rect, preview);
+        // Draw the cell background
+        EditorGUI.DrawRect(rect, Color.gray * 0.3f); // light gray background
+
+        // Draw the prefab texture
+        if (preview != null)
+        {
+            GUI.DrawTexture(rect, preview, ScaleMode.ScaleToFit);
+        }
+
+        // Draw the cell border (grid lines)
+        Color lineColor = Color.black;
+        Handles.DrawSolidRectangleWithOutline(rect, Color.clear, lineColor);
 
         // Mouse interactions
         if (rect.Contains(e.mousePosition))
