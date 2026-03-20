@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class AlienManager : MonoBehaviour
 {
-    public GameObject alienPrefab;
-    public int rows = 3;
-    public int cols = 6;
+    public WaveFormation formation;
     public float spacing = 1.5f;
 
     public float baseSpeed = 1f;
     public float maxSpeed = 3f;
-    private float speed; // CURRENT speed
+    private float speed;
     private Vector3 direction = Vector3.right;
 
     public SpriteRenderer background;
@@ -22,8 +20,6 @@ public class AlienManager : MonoBehaviour
 
     void Start()
     {
-        totalAliens = rows * cols;
-        aliveAliens = totalAliens;
         speed = baseSpeed;
 
         Bounds bounds = background.bounds;
@@ -42,65 +38,98 @@ public class AlienManager : MonoBehaviour
     {
         aliveAliens--;
 
-        // Smooth speed increase
         float progress = 1f - (float)aliveAliens / totalAliens;
-        float curved = progress * progress; // slow start, faster at the end
+        float curved = progress * progress;
+
         speed = Mathf.Lerp(baseSpeed, maxSpeed, curved);
     }
 
     void SpawnFormation(Bounds bounds)
     {
+        if (formation == null)
+        {
+            Debug.LogWarning("No formation assigned!");
+            return;
+        }
+
+        int rows = formation.rows;
+        int cols = formation.cols;
+
         float totalWidth = (cols - 1) * spacing;
         float totalHeight = (rows - 1) * spacing;
 
         float startX = -totalWidth / 2f;
-        float topY = bounds.max.y - 1f; // small margin from top
-        float startY = topY - totalHeight;
+        float alienHeight = 0f;
+        for (int i = 0; i < formation.grid.Length; i++)
+        {
+            if (formation.grid[i] != null)
+            {
+                SpriteRenderer sr = formation.grid[i].GetComponent<SpriteRenderer>();
+                if (sr != null) alienHeight = sr.bounds.extents.y;
+                break;
+            }
+        }
+
+        float startY = bounds.max.y - alienHeight; // top row aligns with top of background
+
+        totalAliens = 0;
 
         for (int y = 0; y < rows; y++)
         {
             for (int x = 0; x < cols; x++)
             {
+                int index = x + y * cols;
+
+                GameObject prefab = formation.grid[index];
+                if (prefab == null) continue;
+
                 Vector3 localPos = new Vector3(
                     startX + x * spacing,
-                    startY + y * spacing,
+                    startY - y * spacing,
                     0
                 );
 
-                GameObject alien = Instantiate(alienPrefab, transform);
+                GameObject alien = Instantiate(prefab, transform);
                 alien.transform.localPosition = localPos;
+
+                totalAliens++;
             }
         }
+
+        aliveAliens = totalAliens;
     }
 
     void MoveFormation()
     {
+        if (aliveAliens <= 0) return;
+
         float moveStep = speed * Time.deltaTime;
 
-        // Predict next edge positions in world space
         float nextLeft = float.MaxValue;
         float nextRight = float.MinValue;
 
         foreach (Transform alien in transform)
         {
-            float halfWidth = alien.GetComponent<SpriteRenderer>().bounds.extents.x;
+            if (alien == null) continue;
 
-            Vector3 worldPos = alien.position;
-            float nextX = worldPos.x + direction.x * moveStep;
+            SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
+            if (sr == null) continue;
+
+            float halfWidth = sr.bounds.extents.x;
+
+            float nextX = alien.position.x + direction.x * moveStep;
 
             nextLeft = Mathf.Min(nextLeft, nextX - halfWidth);
             nextRight = Mathf.Max(nextRight, nextX + halfWidth);
         }
 
-        // Reverse direction if we hit the background bounds
         if (nextRight > rightBound || nextLeft < leftBound)
         {
             direction *= -1;
-            transform.position += Vector3.down * 0.5f; // move down
-            return; // skip movement this frame to prevent overshoot
+            transform.position += Vector3.down * 0.5f;
+            return;
         }
 
-        // Move formation
         transform.Translate(direction * moveStep);
     }
 }
