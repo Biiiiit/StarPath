@@ -2,35 +2,37 @@ using UnityEngine;
 
 public class AlienManager : MonoBehaviour
 {
-    public GameObject alienPrefab;
-    public int rows = 3;
-    public int cols = 6;
-    public float spacing = 1.5f;
-
+    [Header("Movement Settings")]
     public float baseSpeed = 1f;
     public float maxSpeed = 3f;
-    private float speed; // CURRENT speed
+    [Tooltip("Exponent for speed curve: >1 = slow start, <1 = fast start")]
+    public float speedExponent = 2f;
+
+    private float speed;
     private Vector3 direction = Vector3.right;
 
+    [Header("References")]
     public SpriteRenderer background;
 
     private float leftBound;
     private float rightBound;
 
-    private int totalAliens;
-    private int aliveAliens;
+    [Header("Internal Counts")]
+    [HideInInspector] public int totalAliens;
+    [HideInInspector] public int aliveAliens;
 
     void Start()
     {
-        totalAliens = rows * cols;
-        aliveAliens = totalAliens;
         speed = baseSpeed;
 
-        Bounds bounds = background.bounds;
-        leftBound = bounds.min.x;
-        rightBound = bounds.max.x;
+        if (background != null)
+        {
+            Bounds bounds = background.bounds;
+            leftBound = bounds.min.x;
+            rightBound = bounds.max.x;
+        }
 
-        SpawnFormation(bounds);
+        ResetAliens(); // initialize counts & speed
     }
 
     void Update()
@@ -38,69 +40,56 @@ public class AlienManager : MonoBehaviour
         MoveFormation();
     }
 
-    public void AlienKilled()
+    public void ResetAliens()
     {
-        aliveAliens--;
-
-        // Smooth speed increase
-        float progress = 1f - (float)aliveAliens / totalAliens;
-        float curved = progress * progress; // slow start, faster at the end
-        speed = Mathf.Lerp(baseSpeed, maxSpeed, curved);
+        totalAliens = transform.childCount;
+        aliveAliens = totalAliens;
+        speed = baseSpeed;
     }
 
-    void SpawnFormation(Bounds bounds)
+    public void AlienKilled()
     {
-        float totalWidth = (cols - 1) * spacing;
-        float totalHeight = (rows - 1) * spacing;
+        if (totalAliens <= 0) return;
 
-        float startX = -totalWidth / 2f;
-        float topY = bounds.max.y - 1f; // small margin from top
-        float startY = topY - totalHeight;
+        aliveAliens = Mathf.Max(aliveAliens - 1, 0);
 
-        for (int y = 0; y < rows; y++)
-        {
-            for (int x = 0; x < cols; x++)
-            {
-                Vector3 localPos = new Vector3(
-                    startX + x * spacing,
-                    startY + y * spacing,
-                    0
-                );
+        // Exponential curve: slow start, fast near the end
+        float progress = 1f - ((float)aliveAliens / (float)totalAliens);
+        float curved = Mathf.Pow(progress, speedExponent);
 
-                GameObject alien = Instantiate(alienPrefab, transform);
-                alien.transform.localPosition = localPos;
-            }
-        }
+        speed = Mathf.Lerp(baseSpeed, maxSpeed, curved);
     }
 
     void MoveFormation()
     {
+        if (aliveAliens <= 0) return;
+
         float moveStep = speed * Time.deltaTime;
 
-        // Predict next edge positions in world space
         float nextLeft = float.MaxValue;
         float nextRight = float.MinValue;
 
         foreach (Transform alien in transform)
         {
-            float halfWidth = alien.GetComponent<SpriteRenderer>().bounds.extents.x;
+            if (alien == null) continue;
 
-            Vector3 worldPos = alien.position;
-            float nextX = worldPos.x + direction.x * moveStep;
+            SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
+            if (sr == null) continue;
+
+            float halfWidth = sr.bounds.extents.x;
+            float nextX = alien.position.x + direction.x * moveStep;
 
             nextLeft = Mathf.Min(nextLeft, nextX - halfWidth);
             nextRight = Mathf.Max(nextRight, nextX + halfWidth);
         }
 
-        // Reverse direction if we hit the background bounds
         if (nextRight > rightBound || nextLeft < leftBound)
         {
             direction *= -1;
-            transform.position += Vector3.down * 0.5f; // move down
-            return; // skip movement this frame to prevent overshoot
+            transform.position += Vector3.down * 0.5f;
+            return;
         }
 
-        // Move formation
         transform.Translate(direction * moveStep);
     }
 }

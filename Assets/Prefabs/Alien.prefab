@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e66ff4c40245ef4b9d29506d24baa47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  manager: {fileID: 2134730125247991504, guid: 0c74e1c6359e7bb4189efb64e2cfea46, type: 3}
   animator: {fileID: 8641408758353455684}
   deathSound: {fileID: 8300000, guid: 093207b306917484195a1dfbcd5efa51, type: 3}
 --- !u!61 &1644616585198599508
