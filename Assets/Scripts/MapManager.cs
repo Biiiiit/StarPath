@@ -4,70 +4,84 @@ public class MapManager : MonoBehaviour
 {
     public static MapManager Instance;
 
-    public MapNode currentNode;
     public MapNode startNode;
+    public MapNode currentNode;
 
     private void Awake()
     {
-        // Singleton (zorgt dat er maar 1 is)
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     void Start()
     {
-        // Start node unlocken
         if (startNode != null)
         {
-            startNode.isUnlocked = true;
             currentNode = startNode;
+            startNode.isCompleted = true;
+            UnlockNextNodes(startNode);
+        }
+    }
 
-            Debug.Log("Start node unlocked");
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                MapNode node = hit.collider.GetComponent<MapNode>();
+                if (node != null && node.isUnlocked)
+                {
+                    SelectNode(node);
+                }
+            }
+        }
+    }
+
+    void UnlockNextNodes(MapNode node)
+    {
+        // zet alle mogelijke lijnen knipperend
+        foreach (MapNode next in node.connectedNodes)
+        {
+            next.isUnlocked = true;
+            MapConnection conn = FindConnection(node, next);
+            if (conn != null)
+                conn.SetBlinking(true);
         }
     }
 
     public void SelectNode(MapNode node)
     {
-        if (!node.isUnlocked)
+        // zet alle lijnen van huidige node terug op grijs
+        foreach (MapNode next in currentNode.connectedNodes)
         {
-            Debug.Log("Node is locked!");
-            return;
+            MapConnection conn = FindConnection(currentNode, next);
+            if (conn != null)
+                conn.SetActive(false);
         }
+
+        // zet de gekozen lijn wit en constant
+        MapConnection chosenConn = FindConnection(currentNode, node);
+        if (chosenConn != null)
+            chosenConn.SetActive(true);
 
         currentNode = node;
-
-        Debug.Log("Selected node: " + node.name);
-
-        // 👉 HIER zou je later scenes laden
-        // Voor nu testen we alleen
-        SimulateLevel(node);
-    }
-
-    void SimulateLevel(MapNode node)
-    {
-        Debug.Log("Starting level: " + node.nodeType);
-
-        // Simuleer dat je level klaar is
-        CompleteNode(node);
-    }
-
-    void CompleteNode(MapNode node)
-    {
         node.isCompleted = true;
 
-        Debug.Log("Completed node: " + node.name);
+        // unlock volgende nodes
+        UnlockNextNodes(node);
+    }
 
-        // Unlock volgende nodes
-        foreach (MapNode next in node.connectedNodes)
+    MapConnection FindConnection(MapNode from, MapNode to)
+    {
+        MapConnection[] connections = FindObjectsOfType<MapConnection>();
+        foreach (MapConnection conn in connections)
         {
-            next.isUnlocked = true;
-            Debug.Log("Unlocked: " + next.name);
+            if (conn.fromNode == from && conn.toNode == to)
+                return conn;
         }
+        return null;
     }
 }
