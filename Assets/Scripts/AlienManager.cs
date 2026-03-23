@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class AlienManager : MonoBehaviour
@@ -6,7 +8,7 @@ public class AlienManager : MonoBehaviour
     public float baseSpeed = 1f;
     public float maxSpeed = 3f;
     [Tooltip("Exponent for speed curve: >1 = slow start, <1 = fast start")]
-    public float speedExponent = 2f;
+    public float speedExponent = 1f;
 
     private float speed;
     private Vector3 direction = Vector3.right;
@@ -20,6 +22,10 @@ public class AlienManager : MonoBehaviour
     [Header("Internal Counts")]
     [HideInInspector] public int totalAliens;
     [HideInInspector] public int aliveAliens;
+
+    [Header("Player Collision")]
+    public PlayerManager player;
+    private bool isResetting = false;
 
     void Start()
     {
@@ -37,7 +43,81 @@ public class AlienManager : MonoBehaviour
 
     void Update()
     {
+        if (isResetting) return;
+
         MoveFormation();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (isResetting) return;
+
+        if (other.CompareTag("Death"))
+        {
+            Debug.Log("player hit");
+            OnAliensReachedPlayer();
+        }
+    }
+
+    public void OnAliensReachedPlayer()
+    {
+        if (isResetting) return;
+
+        isResetting = true;
+
+        player.TakeDamage();
+        StartCoroutine(ResetAfterHit());
+    }
+
+    IEnumerator ResetAfterHit()
+    {
+        // Disable movement
+        enabled = false;
+
+        // Move aliens UP 5 steps (adjust with grid spacing)
+        transform.position += Vector3.up * (5f * 0.5f);
+
+        // Disable player movement
+        player.enabled = false;
+
+        // Blink for 1 second
+        float duration = 1f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            ToggleRenderers(false);
+            yield return new WaitForSeconds(0.1f);
+
+            ToggleRenderers(true);
+            yield return new WaitForSeconds(0.1f);
+
+            timer += 0.2f;
+        }
+
+        // Re-enable movement
+        player.enabled = true;
+        enabled = true;
+
+        isResetting = false; // allow triggering again
+    }
+
+    void ToggleRenderers(bool state)
+    {
+        // Toggle aliens
+        foreach (Transform alien in transform)
+        {
+            if (alien == null) continue;
+
+            SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
+            if (sr != null)
+                sr.enabled = state;
+        }
+
+        // Toggle player
+        SpriteRenderer playerSR = player.GetComponent<SpriteRenderer>();
+        if (playerSR != null)
+            playerSR.enabled = state;
     }
 
     public void ResetAliens()
@@ -90,6 +170,7 @@ public class AlienManager : MonoBehaviour
             return;
         }
 
-        transform.Translate(direction * moveStep);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.MovePosition(rb.position + new Vector2(direction.x * moveStep, 0));
     }
 }

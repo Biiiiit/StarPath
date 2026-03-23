@@ -103,7 +103,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2200029407344628602}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e66ff4c40245ef4b9d29506d24baa47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  manager: {fileID: 2134730125247991504, guid: 0c74e1c6359e7bb4189efb64e2cfea46, type: 3}
   animator: {fileID: 8641408758353455684}
   deathSound: {fileID: 8300000, guid: 093207b306917484195a1dfbcd5efa51, type: 3}
 --- !u!61 &1644616585198599508
@@ -171,7 +170,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.054839328}
+  m_Offset: {x: -0.00091174245, y: 0.054839328}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -181,7 +180,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.33182606}
+  m_Size: {x: 0.5091173, y: 0.33182606}
   m_EdgeRadius: 0
 --- !u!95 &8641408758353455684
 Animator:

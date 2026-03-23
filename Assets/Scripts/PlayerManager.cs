@@ -11,6 +11,10 @@ public class PlayerManager : MonoBehaviour
 
     private GameObject currentBullet;
 
+    public LivesUI livesUI;
+    public int lives = 3;
+
+
     void Update()
     {
         float move = 0f;
@@ -58,5 +62,22 @@ public class PlayerManager : MonoBehaviour
             transform.position.y,
             transform.position.z
         );
+    }
+
+    public void TakeDamage()
+    {
+        lives--;
+        livesUI.LoseLife();
+
+        if (lives <= 0)
+        {
+            // game over
+        }
+    }
+
+    public void GainLife()
+    {
+        lives++;
+        livesUI.GainLife();
     }
 }

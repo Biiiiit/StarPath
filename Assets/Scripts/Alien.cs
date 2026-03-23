@@ -19,6 +19,10 @@ public class Alien : MonoBehaviour
         {
             OnHit();
         }
+        if (other.CompareTag("Death"))
+        {
+            manager.OnAliensReachedPlayer();
+        }
     }
 
     public void OnHit()

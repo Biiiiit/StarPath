@@ -37,7 +37,7 @@ public class GridSpawner : MonoBehaviour
         float totalHeight = (rows - 1) * spacing;
 
         float startX = -totalWidth / 2f;
-        float startY = bounds.max.y - 1f; // start at top
+        float startY = bounds.max.y - 0.5f; // start at top
 
         for (int y = 0; y < rows; y++)
         {
