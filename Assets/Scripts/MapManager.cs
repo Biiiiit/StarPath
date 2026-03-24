@@ -96,7 +96,7 @@ public class MapManager : MonoBehaviour
 
     MapConnection FindConnection(MapNode from, MapNode to)
     {
-        MapConnection[] connections = FindObjectsOfType<MapConnection>();
+        MapConnection[] connections = FindObjectsByType<MapConnection>(FindObjectsSortMode.None);
         foreach (MapConnection conn in connections)
         {
             if (conn.fromNode == from && conn.toNode == to)

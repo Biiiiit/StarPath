@@ -119,6 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &35154817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35154819}
+  - component: {fileID: 35154818}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &35154818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35154817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a06d0c14db53e48b29368ca4dbc9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+--- !u!4 &35154819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35154817}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 253.94612, y: 262.0095, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74351125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1360,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f4ac271e9644541a4a837363c3e553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1 &1205774947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205774949}
+  - component: {fileID: 1205774948}
+  m_Layer: 0
+  m_Name: CreditManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1205774948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205774947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783f571c63d7ad24ea66dcebea929a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  credits: 0
+--- !u!4 &1205774949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205774947}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 253.94612, y: 262.0095, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229527297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,12 +2651,20 @@ PrefabInstance:
       objectReference: {fileID: 292563895}
     - target: {fileID: 2534529195887460391, guid: af3d86378aa52184191a80a61ccdad69, type: 3}
       propertyPath: maxSpeed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2534529195887460391, guid: af3d86378aa52184191a80a61ccdad69, type: 3}
       propertyPath: background
       value: 
       objectReference: {fileID: 1556687202}
+    - target: {fileID: 2534529195887460391, guid: af3d86378aa52184191a80a61ccdad69, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 35154818}
+    - target: {fileID: 2534529195887460391, guid: af3d86378aa52184191a80a61ccdad69, type: 3}
+      propertyPath: creditManager
+      value: 
+      objectReference: {fileID: 1205774948}
     - target: {fileID: 8474347665771790771, guid: af3d86378aa52184191a80a61ccdad69, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2656,3 +2753,5 @@ SceneRoots:
   - {fileID: 1419027824}
   - {fileID: 1023628709}
   - {fileID: 1070900172}
+  - {fileID: 1205774949}
+  - {fileID: 35154819}

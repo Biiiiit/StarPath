@@ -28,6 +28,10 @@ public class AlienManager : MonoBehaviour
     private bool isResetting = false;
     private Rigidbody2D rb;
 
+    [Header("Game Systems")]
+    public CreditManager creditManager;
+    public LevelManager levelManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -129,6 +133,24 @@ public class AlienManager : MonoBehaviour
         if (totalAliens <= 0) return;
 
         aliveAliens = Mathf.Max(aliveAliens - 1, 0);
+
+        if (aliveAliens <= 0)
+        {
+            OnAllAliensKilled();
+        }
+    }
+
+    void OnAllAliensKilled()
+    {
+        float multiplier = 0.9f;
+
+        int reward = Mathf.Max(
+            10,
+            Mathf.RoundToInt(Mathf.Pow(totalAliens, 1.2f) * multiplier)
+        );
+
+        creditManager.AddCredits(reward);
+        levelManager.CompleteLevel();
     }
 
     void MoveFormation()
