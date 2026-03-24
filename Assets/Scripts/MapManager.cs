@@ -9,7 +9,15 @@ public class MapManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -54,24 +62,24 @@ public class MapManager : MonoBehaviour
 
     public void SelectNode(MapNode node)
     {
-        // zet alle lijnen van huidige node terug op grijs
+        // zet alle lijnen van huidige node terug
         foreach (MapNode next in currentNode.connectedNodes)
         {
             MapConnection conn = FindConnection(currentNode, next);
             if (conn != null)
-                conn.SetActive(false);
+                conn.SetBlinking(false);
         }
 
-        // zet de gekozen lijn wit en constant
+        // gekozen lijn wordt vast wit
         MapConnection chosenConn = FindConnection(currentNode, node);
         if (chosenConn != null)
             chosenConn.SetActive(true);
 
+        // zet current node alvast (zodat LevelManager weet waar je bent)
         currentNode = node;
-        node.isCompleted = true;
 
-        // unlock volgende nodes
-        UnlockNextNodes(node);
+        // laad level scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelScene");
     }
 
     MapConnection FindConnection(MapNode from, MapNode to)

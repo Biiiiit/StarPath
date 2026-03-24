@@ -11,10 +11,14 @@ public class MapConnection : MonoBehaviour
 
     void Start()
     {
-        lr = GetComponent<LineRenderer>();
         lr.positionCount = 2;
         lr.startWidth = 0.05f;
         lr.endWidth = 0.05f;
+    }
+
+    void Awake()
+    {
+        lr = GetComponent<LineRenderer>();
     }
 
     void Update()
@@ -59,5 +63,7 @@ public class MapConnection : MonoBehaviour
             lr.startColor = Color.gray;
             lr.endColor = Color.gray;
         }
+
+        if (lr == null) return;
     }
 }
