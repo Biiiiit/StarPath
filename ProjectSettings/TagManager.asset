@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Alien
+  - Death
   layers:
   - Default
   - TransparentFX

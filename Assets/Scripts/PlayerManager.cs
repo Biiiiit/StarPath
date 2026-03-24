@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class PlayerManager : MonoBehaviour
     public AudioClip shootSound;
 
     private GameObject currentBullet;
+
+    public LivesUI livesUI;
+    public int lives = 3;
+    public GameObject gameOverUI;
+
 
     void Update()
     {
@@ -58,5 +64,23 @@ public class PlayerManager : MonoBehaviour
             transform.position.y,
             transform.position.z
         );
+    }
+
+    public void TakeDamage()
+    {
+        lives--;
+        livesUI.LoseLife();
+
+        if (lives <= 0)
+        {
+            Time.timeScale = 0f; // pause game
+            gameOverUI.SetActive(true);
+        }
+    }
+
+    public void GainLife()
+    {
+        lives++;
+        livesUI.GainLife();
     }
 }
