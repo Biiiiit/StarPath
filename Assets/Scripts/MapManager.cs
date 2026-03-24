@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class MapManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // 👈 BELANGRIJK
         }
         else
         {
@@ -26,12 +27,17 @@ public class MapManager : MonoBehaviour
         {
             currentNode = startNode;
             startNode.isCompleted = true;
+
             UnlockNextNodes(startNode);
         }
     }
 
     void Update()
     {
+        // alleen input als we in map scene zitten
+        if (!SceneManager.GetActiveScene().name.Contains("Map"))
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -40,6 +46,7 @@ public class MapManager : MonoBehaviour
             if (hit.collider != null)
             {
                 MapNode node = hit.collider.GetComponent<MapNode>();
+
                 if (node != null && node.isUnlocked)
                 {
                     SelectNode(node);
@@ -50,10 +57,10 @@ public class MapManager : MonoBehaviour
 
     void UnlockNextNodes(MapNode node)
     {
-        // zet alle mogelijke lijnen knipperend
         foreach (MapNode next in node.connectedNodes)
         {
             next.isUnlocked = true;
+
             MapConnection conn = FindConnection(node, next);
             if (conn != null)
                 conn.SetBlinking(true);
@@ -62,7 +69,7 @@ public class MapManager : MonoBehaviour
 
     public void SelectNode(MapNode node)
     {
-        // zet alle lijnen van huidige node terug
+        // stop knipperen van huidige opties
         foreach (MapNode next in currentNode.connectedNodes)
         {
             MapConnection conn = FindConnection(currentNode, next);
@@ -75,11 +82,16 @@ public class MapManager : MonoBehaviour
         if (chosenConn != null)
             chosenConn.SetActive(true);
 
-        // zet current node alvast (zodat LevelManager weet waar je bent)
         currentNode = node;
 
-        // laad level scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelScene");
+        // 👇 laad scene van node
+        SceneManager.LoadScene(node.sceneName);
+    }
+
+    public void CompleteCurrentNode()
+    {
+        currentNode.isCompleted = true;
+        UnlockNextNodes(currentNode);
     }
 
     MapConnection FindConnection(MapNode from, MapNode to)
