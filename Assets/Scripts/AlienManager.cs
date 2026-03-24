@@ -51,8 +51,6 @@ public class AlienManager : MonoBehaviour
     {
         if (isResetting) return;
 
-        UpdateSpeed();
-
         MoveFormation();
     }
 
@@ -115,6 +113,20 @@ public class AlienManager : MonoBehaviour
         if (playerSR != null) playerSR.enabled = state;
     }
 
+    public void AlienKilled()
+    {
+        if (totalAliens <= 0) return;
+
+        aliveAliens = Mathf.Max(aliveAliens - 1, 0);
+
+        UpdateSpeed(); // update speed only here
+
+        if (aliveAliens <= 0)
+        {
+            OnAllAliensKilled();
+        }
+    }
+
     public void ResetAliens()
     {
         totalAliens = 0;
@@ -126,23 +138,11 @@ public class AlienManager : MonoBehaviour
 
         aliveAliens = totalAliens;
         speed = baseSpeed;
+        UpdateSpeed(); // also update speed on reset
     }
-
-    public void AlienKilled()
-    {
-        if (totalAliens <= 0) return;
-
-        aliveAliens = Mathf.Max(aliveAliens - 1, 0);
-
-        if (aliveAliens <= 0)
-        {
-            OnAllAliensKilled();
-        }
-    }
-
     void OnAllAliensKilled()
     {
-        float multiplier = 0.9f;
+        float multiplier = 0.5f;
 
         int reward = Mathf.Max(
             10,
@@ -159,6 +159,7 @@ public class AlienManager : MonoBehaviour
         float nextLeft = float.MaxValue;
         float nextRight = float.MinValue;
 
+        // Find predicted horizontal edges
         foreach (Transform alien in transform)
         {
             if (alien == null) continue;
@@ -172,13 +173,18 @@ public class AlienManager : MonoBehaviour
             nextRight = Mathf.Max(nextRight, nextX + halfWidth);
         }
 
+        Vector2 horizontalMove = new Vector2(direction.x * moveStep, 0);
+        Vector3 verticalMove = Vector3.zero;
+
+        // Check edge and move down once if needed
         if (nextRight > rightBound || nextLeft < leftBound)
         {
-            direction *= -1;
-            transform.position += Vector3.down * 0.5f;
-            return;
+            verticalMove = Vector3.down * 0.5f; // move down
+            direction *= -1;                     // flip direction
         }
 
-        rb.MovePosition(rb.position + new Vector2(direction.x * moveStep, 0));
+        // Apply movement every frame
+        rb.MovePosition(rb.position + horizontalMove);
+        transform.position += verticalMove;
     }
 }
