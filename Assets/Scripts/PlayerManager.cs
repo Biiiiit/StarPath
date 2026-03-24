@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerManager : MonoBehaviour
 
     public LivesUI livesUI;
     public int lives = 3;
+    public GameObject gameOverUI;
 
 
     void Update()
@@ -71,7 +73,8 @@ public class PlayerManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            // game over
+            Time.timeScale = 0f; // pause game
+            gameOverUI.SetActive(true);
         }
     }
 

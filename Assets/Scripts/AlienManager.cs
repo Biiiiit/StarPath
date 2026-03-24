@@ -61,6 +61,7 @@ public class AlienManager : MonoBehaviour
         float curved = Mathf.Pow(progress, speedExponent);
 
         speed = Mathf.Lerp(baseSpeed, maxSpeed, curved);
+        Debug.Log("Alien Speed " + speed);
     }
 
     public void OnAliensReachedPlayer()
@@ -121,8 +122,6 @@ public class AlienManager : MonoBehaviour
 
         aliveAliens = totalAliens;
         speed = baseSpeed;
-
-        Debug.Log($"ResetAliens -> Total: {totalAliens}, Alive: {aliveAliens}");
     }
 
     public void AlienKilled()
