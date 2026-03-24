@@ -2,16 +2,12 @@ using UnityEngine;
 
 public class Alien : MonoBehaviour
 {
-    private AlienManager manager;
+    public AlienManager manager;
+
     public Animator animator;
     public AudioClip deathSound;
 
     private bool isDying = false;
-
-    void Start()
-    {
-        manager = GetComponentInParent<AlienManager>();
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,7 +25,10 @@ public class Alien : MonoBehaviour
     {
         if (isDying) return;
         isDying = true;
-        manager.AlienKilled();
+
+        if (manager != null)
+            manager.AlienKilled();
+
         GetComponent<Collider2D>().enabled = false;
         animator.SetTrigger("Die");
     }

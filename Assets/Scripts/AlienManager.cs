@@ -26,9 +26,11 @@ public class AlienManager : MonoBehaviour
     [Header("Player Collision")]
     public PlayerManager player;
     private bool isResetting = false;
+    private Rigidbody2D rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         speed = baseSpeed;
 
         if (background != null)
@@ -38,100 +40,21 @@ public class AlienManager : MonoBehaviour
             rightBound = bounds.max.x;
         }
 
-        ResetAliens(); // initialize counts & speed
+        ResetAliens();
     }
 
     void Update()
     {
         if (isResetting) return;
 
+        UpdateSpeed();
+
         MoveFormation();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (isResetting) return;
-
-        if (other.CompareTag("Death"))
-        {
-            Debug.Log("player hit");
-            OnAliensReachedPlayer();
-        }
-    }
-
-    public void OnAliensReachedPlayer()
-    {
-        if (isResetting) return;
-
-        isResetting = true;
-
-        player.TakeDamage();
-        StartCoroutine(ResetAfterHit());
-    }
-
-    IEnumerator ResetAfterHit()
-    {
-        // Disable movement
-        enabled = false;
-
-        // Move aliens UP 5 steps (adjust with grid spacing)
-        transform.position += Vector3.up * (5f * 0.5f);
-
-        // Disable player movement
-        player.enabled = false;
-
-        // Blink for 1 second
-        float duration = 1f;
-        float timer = 0f;
-
-        while (timer < duration)
-        {
-            ToggleRenderers(false);
-            yield return new WaitForSeconds(0.1f);
-
-            ToggleRenderers(true);
-            yield return new WaitForSeconds(0.1f);
-
-            timer += 0.2f;
-        }
-
-        // Re-enable movement
-        player.enabled = true;
-        enabled = true;
-
-        isResetting = false; // allow triggering again
-    }
-
-    void ToggleRenderers(bool state)
-    {
-        // Toggle aliens
-        foreach (Transform alien in transform)
-        {
-            if (alien == null) continue;
-
-            SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
-            if (sr != null)
-                sr.enabled = state;
-        }
-
-        // Toggle player
-        SpriteRenderer playerSR = player.GetComponent<SpriteRenderer>();
-        if (playerSR != null)
-            playerSR.enabled = state;
-    }
-
-    public void ResetAliens()
-    {
-        totalAliens = transform.childCount;
-        aliveAliens = totalAliens;
-        speed = baseSpeed;
-    }
-
-    public void AlienKilled()
+    void UpdateSpeed()
     {
         if (totalAliens <= 0) return;
-
-        aliveAliens = Mathf.Max(aliveAliens - 1, 0);
 
         // Exponential curve: slow start, fast near the end
         float progress = 1f - ((float)aliveAliens / (float)totalAliens);
@@ -140,19 +63,84 @@ public class AlienManager : MonoBehaviour
         speed = Mathf.Lerp(baseSpeed, maxSpeed, curved);
     }
 
+    public void OnAliensReachedPlayer()
+    {
+        if (isResetting) return;
+        isResetting = true;
+
+        player.TakeDamage();
+        StartCoroutine(ResetAfterHit());
+    }
+
+    IEnumerator ResetAfterHit()
+    {
+        enabled = false;
+        player.enabled = false;
+
+        // Move aliens up 5 rows
+        transform.position += Vector3.up * (5f * 0.5f);
+
+        // Blink for 1 second
+        float duration = 1f;
+        float timer = 0f;
+        while (timer < duration)
+        {
+            ToggleRenderers(false);
+            yield return new WaitForSeconds(0.1f);
+            ToggleRenderers(true);
+            yield return new WaitForSeconds(0.1f);
+            timer += 0.2f;
+        }
+
+        player.enabled = true;
+        enabled = true;
+        isResetting = false;
+    }
+
+    void ToggleRenderers(bool state)
+    {
+        foreach (Transform alien in transform)
+        {
+            if (alien == null) continue;
+            SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
+            if (sr != null) sr.enabled = state;
+        }
+
+        SpriteRenderer playerSR = player.GetComponent<SpriteRenderer>();
+        if (playerSR != null) playerSR.enabled = state;
+    }
+
+    public void ResetAliens()
+    {
+        totalAliens = 0;
+        foreach (Transform t in transform)
+        {
+            if (t.gameObject.activeSelf)
+                totalAliens++;
+        }
+
+        aliveAliens = totalAliens;
+        speed = baseSpeed;
+
+        Debug.Log($"ResetAliens -> Total: {totalAliens}, Alive: {aliveAliens}");
+    }
+
+    public void AlienKilled()
+    {
+        if (totalAliens <= 0) return;
+
+        aliveAliens = Mathf.Max(aliveAliens - 1, 0);
+    }
+
     void MoveFormation()
     {
-        if (aliveAliens <= 0) return;
-
         float moveStep = speed * Time.deltaTime;
-
         float nextLeft = float.MaxValue;
         float nextRight = float.MinValue;
 
         foreach (Transform alien in transform)
         {
             if (alien == null) continue;
-
             SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
             if (sr == null) continue;
 
@@ -170,7 +158,6 @@ public class AlienManager : MonoBehaviour
             return;
         }
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.MovePosition(rb.position + new Vector2(direction.x * moveStep, 0));
     }
 }
