@@ -13,7 +13,7 @@ public class MapManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -27,15 +27,13 @@ public class MapManager : MonoBehaviour
         {
             currentNode = startNode;
             startNode.isCompleted = true;
-
             UnlockNextNodes(startNode);
         }
     }
 
     void Update()
     {
-        
-        if (!SceneManager.GetActiveScene().name.Contains("Map"))
+        if (SceneManager.GetActiveScene().name != "MapScene")
             return;
 
         if (Input.GetMouseButtonDown(0))
@@ -69,7 +67,6 @@ public class MapManager : MonoBehaviour
 
     public void SelectNode(MapNode node)
     {
-        
         foreach (MapNode next in currentNode.connectedNodes)
         {
             MapConnection conn = FindConnection(currentNode, next);
@@ -77,15 +74,21 @@ public class MapManager : MonoBehaviour
                 conn.SetBlinking(false);
         }
 
-        
         MapConnection chosenConn = FindConnection(currentNode, node);
         if (chosenConn != null)
             chosenConn.SetActive(true);
 
         currentNode = node;
 
-       
-        SceneManager.LoadScene(node.sceneName);
+        MapNode[] nodes = FindObjectsOfType<MapNode>();
+        foreach (MapNode n in nodes)
+            n.gameObject.SetActive(false);
+
+        MapConnection[] connections = FindObjectsOfType<MapConnection>();
+        foreach (MapConnection c in connections)
+            c.gameObject.SetActive(false);
+
+        SceneManager.LoadScene(node.sceneName, LoadSceneMode.Additive);
     }
 
     public void CompleteCurrentNode()
@@ -94,9 +97,29 @@ public class MapManager : MonoBehaviour
         UnlockNextNodes(currentNode);
     }
 
+    public void RefreshConnections()
+    {
+        MapConnection[] connections = FindObjectsOfType<MapConnection>(true);
+
+        foreach (MapConnection conn in connections)
+        {
+            conn.SetActive(false);
+            conn.SetBlinking(false);
+
+            if (conn.fromNode == currentNode && conn.toNode.isUnlocked)
+            {
+                conn.SetBlinking(true);
+            }
+            else if (conn.fromNode.isCompleted && conn.toNode.isCompleted)
+            {
+                conn.SetActive(true);
+            }
+        }
+    }
+
     MapConnection FindConnection(MapNode from, MapNode to)
     {
-        MapConnection[] connections = FindObjectsByType<MapConnection>(FindObjectsSortMode.None);
+        MapConnection[] connections = FindObjectsOfType<MapConnection>();
         foreach (MapConnection conn in connections)
         {
             if (conn.fromNode == from && conn.toNode == to)

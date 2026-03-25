@@ -5,7 +5,13 @@ public class UIManager : MonoBehaviour
 {
     public void RestartGame()
     {
-        Time.timeScale = 1f; // unpause
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+
+        if (MapManager.Instance != null)
+        {
+            Destroy(MapManager.Instance.gameObject);
+        }
+
+        SceneManager.LoadScene("MapScene");
     }
 }

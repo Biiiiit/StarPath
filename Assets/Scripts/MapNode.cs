@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MapNode : MonoBehaviour
 {
+    public string nodeID;
+
     public List<MapNode> connectedNodes = new List<MapNode>();
 
     public bool isUnlocked = false;
