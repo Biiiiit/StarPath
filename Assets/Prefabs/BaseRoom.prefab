@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4711857223718322850}
   - component: {fileID: 7343007562016448246}
-  - component: {fileID: 610165972801751178}
   m_Layer: 0
   m_Name: BaseRoom
   m_TagString: Untagged
@@ -92,15 +91,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &610165972801751178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9193472638338834818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick

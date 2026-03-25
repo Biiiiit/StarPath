@@ -175,7 +175,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseRoomB
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 610165972801751178, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -185,9 +186,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 61249776}
-    - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 61249775}
   m_SourcePrefab: {fileID: 100100000, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
 --- !u!1 &61249771 stripped
 GameObject:
@@ -213,18 +211,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 0
   sceneName: GridSystem
---- !u!114 &61249775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61249771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &61249776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -468,9 +454,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 189516917}
-    - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 189516916}
   m_SourcePrefab: {fileID: 100100000, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
 --- !u!1 &189516912 stripped
 GameObject:
@@ -496,18 +479,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 1
   sceneName: 
---- !u!114 &189516916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189516912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &189516917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -907,7 +878,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseRoomE
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 610165972801751178, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -917,9 +889,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 577389007}
-    - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 577389006}
   m_SourcePrefab: {fileID: 100100000, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
 --- !u!1 &577389002 stripped
 GameObject:
@@ -943,18 +912,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 3
   sceneName: 
---- !u!114 &577389006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577389002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &577389007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2019,9 +1976,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1089453250}
-    - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1089453249}
   m_SourcePrefab: {fileID: 100100000, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
 --- !u!1 &1089453245 stripped
 GameObject:
@@ -2046,18 +2000,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 1
   sceneName: 
---- !u!114 &1089453249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089453245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &1089453250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2253,9 +2195,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5071607811905840689, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1167187935}
-    - targetCorrespondingSourceObject: {fileID: 5071607811905840689, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1167187934}
   m_SourcePrefab: {fileID: 100100000, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
 --- !u!1 &1167187930 stripped
 GameObject:
@@ -2281,18 +2220,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 2
   sceneName: 
---- !u!114 &1167187934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167187930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &1167187935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3164,7 +3091,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseRoomC
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 610165972801751178, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3174,9 +3102,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1448808192}
-    - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1448808191}
   m_SourcePrefab: {fileID: 100100000, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
 --- !u!1 &1448808187 stripped
 GameObject:
@@ -3202,18 +3127,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 0
   sceneName: 
---- !u!114 &1448808191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448808187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &1448808192
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3457,9 +3370,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 119067067643192561, guid: d1b883c21346b8c49b29fd42eb847f7e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1488076722}
-    - targetCorrespondingSourceObject: {fileID: 119067067643192561, guid: d1b883c21346b8c49b29fd42eb847f7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1488076721}
   m_SourcePrefab: {fileID: 100100000, guid: d1b883c21346b8c49b29fd42eb847f7e, type: 3}
 --- !u!1 &1488076717 stripped
 GameObject:
@@ -3484,18 +3394,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 4
   sceneName: 
---- !u!114 &1488076721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488076717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &1488076722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3608,9 +3506,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 119067067643192561, guid: d1b883c21346b8c49b29fd42eb847f7e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1609485537}
-    - targetCorrespondingSourceObject: {fileID: 119067067643192561, guid: d1b883c21346b8c49b29fd42eb847f7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1609485536}
   m_SourcePrefab: {fileID: 100100000, guid: d1b883c21346b8c49b29fd42eb847f7e, type: 3}
 --- !u!1 &1609485532 stripped
 GameObject:
@@ -3635,18 +3530,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 4
   sceneName: 
---- !u!114 &1609485536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609485532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &1609485537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3915,7 +3798,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseRoomD
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 610165972801751178, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3925,9 +3809,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1802261885}
-    - targetCorrespondingSourceObject: {fileID: 9193472638338834818, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1802261884}
   m_SourcePrefab: {fileID: 100100000, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
 --- !u!1 &1802261880 stripped
 GameObject:
@@ -3952,18 +3833,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 0
   sceneName: 
---- !u!114 &1802261884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802261880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &1802261885
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4149,7 +4018,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseRoomA
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 610165972801751178, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4838,9 +4708,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4087920919969079892, guid: 50c3e311bbdb09d4e98458c96b051ef7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1378939314478739278}
-    - targetCorrespondingSourceObject: {fileID: 4087920919969079892, guid: 50c3e311bbdb09d4e98458c96b051ef7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1378939314478739277}
   m_SourcePrefab: {fileID: 100100000, guid: 50c3e311bbdb09d4e98458c96b051ef7, type: 3}
 --- !u!1 &1378939314478739273 stripped
 GameObject:
@@ -4865,18 +4732,6 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 5
   sceneName: 
---- !u!114 &1378939314478739277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378939314478739273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b1970f25bbc5548b64d851636d196f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NodeClick
 --- !u!61 &1378939314478739278
 BoxCollider2D:
   m_ObjectHideFlags: 0
