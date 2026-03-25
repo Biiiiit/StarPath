@@ -10,7 +10,7 @@ public class MapNode : MonoBehaviour
 
     public NodeType nodeType;
 
-    public string sceneName; // 👈 NIEUW: welke scene deze node laadt
+    public string sceneName;
 
     private SpriteRenderer sr;
 

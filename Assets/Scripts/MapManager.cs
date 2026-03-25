@@ -13,7 +13,7 @@ public class MapManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // 👈 BELANGRIJK
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
@@ -34,7 +34,7 @@ public class MapManager : MonoBehaviour
 
     void Update()
     {
-        // alleen input als we in map scene zitten
+        
         if (!SceneManager.GetActiveScene().name.Contains("Map"))
             return;
 
@@ -69,7 +69,7 @@ public class MapManager : MonoBehaviour
 
     public void SelectNode(MapNode node)
     {
-        // stop knipperen van huidige opties
+        
         foreach (MapNode next in currentNode.connectedNodes)
         {
             MapConnection conn = FindConnection(currentNode, next);
@@ -77,14 +77,14 @@ public class MapManager : MonoBehaviour
                 conn.SetBlinking(false);
         }
 
-        // gekozen lijn wordt vast wit
+        
         MapConnection chosenConn = FindConnection(currentNode, node);
         if (chosenConn != null)
             chosenConn.SetActive(true);
 
         currentNode = node;
 
-        // 👇 laad scene van node
+       
         SceneManager.LoadScene(node.sceneName);
     }
 

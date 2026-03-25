@@ -6,8 +6,8 @@ public class MapConnection : MonoBehaviour
     public MapNode toNode;
 
     private LineRenderer lr;
-    public bool isActive = false; // lijn is gekozen pad
-    public bool isBlinking = false; // lijn knippert als possible next node
+    public bool isActive = false;
+    public bool isBlinking = false; 
 
     void Start()
     {
