@@ -1,12 +1,14 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class CreditManager : MonoBehaviour
 {
     public static CreditManager Instance;
 
     public int credits = 0;
-    public TMP_Text creditsText;
+
+    private List<TMP_Text> creditsTexts = new List<TMP_Text>();
 
     void Awake()
     {
@@ -20,10 +22,16 @@ public class CreditManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SetText(TMP_Text text)
+    public void RegisterText(TMP_Text text)
     {
-        creditsText = text;
-        UpdateUI(); // update immediately when assigned
+        if (text == null) return;
+
+        if (!creditsTexts.Contains(text))
+        {
+            creditsTexts.Add(text);
+        }
+
+        UpdateUI(); // update immediately
     }
 
     public void AddCredits(int amount)
@@ -34,7 +42,15 @@ public class CreditManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        if (creditsText != null)
-            creditsText.text = credits.ToString();
+        for (int i = creditsTexts.Count - 1; i >= 0; i--)
+        {
+            if (creditsTexts[i] == null)
+            {
+                creditsTexts.RemoveAt(i); // cleanup destroyed UI
+                continue;
+            }
+
+            creditsTexts[i].text = credits.ToString("0");
+        }
     }
 }
