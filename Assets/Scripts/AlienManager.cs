@@ -71,7 +71,9 @@ public class AlienManager : MonoBehaviour
         if (isResetting) return;
         isResetting = true;
 
+        player.DestroyBullet();
         player.TakeDamage();
+
         StartCoroutine(ResetAfterHit());
     }
 
