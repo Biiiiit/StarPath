@@ -8,6 +8,10 @@ public class MapManager : MonoBehaviour
     public MapNode startNode;
     public MapNode currentNode;
 
+    public GameObject mapRoot;
+
+    private Scene currentLevelScene;
+
     private void Awake()
     {
         if (Instance == null)
@@ -39,11 +43,11 @@ public class MapManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+            Collider2D hit = Physics2D.OverlapPoint(mousePos);
 
-            if (hit.collider != null)
+            if (hit != null)
             {
-                MapNode node = hit.collider.GetComponent<MapNode>();
+                MapNode node = hit.GetComponent<MapNode>();
 
                 if (node != null && node.isUnlocked)
                 {
@@ -80,21 +84,29 @@ public class MapManager : MonoBehaviour
 
         currentNode = node;
 
-        MapNode[] nodes = FindObjectsOfType<MapNode>();
-        foreach (MapNode n in nodes)
-            n.gameObject.SetActive(false);
-
-        MapConnection[] connections = FindObjectsOfType<MapConnection>();
-        foreach (MapConnection c in connections)
-            c.gameObject.SetActive(false);
+        mapRoot.SetActive(false);
 
         SceneManager.LoadScene(node.sceneName, LoadSceneMode.Additive);
+
+        currentLevelScene = SceneManager.GetSceneByName(node.sceneName);
     }
 
     public void CompleteCurrentNode()
     {
         currentNode.isCompleted = true;
         UnlockNextNodes(currentNode);
+    }
+
+    public void ReturnToMap()
+    {
+        if (currentLevelScene.isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(currentLevelScene);
+        }
+
+        mapRoot.SetActive(true);
+
+        RefreshConnections();
     }
 
     public void RefreshConnections()
@@ -120,11 +132,13 @@ public class MapManager : MonoBehaviour
     MapConnection FindConnection(MapNode from, MapNode to)
     {
         MapConnection[] connections = FindObjectsOfType<MapConnection>();
+
         foreach (MapConnection conn in connections)
         {
             if (conn.fromNode == from && conn.toNode == to)
                 return conn;
         }
+
         return null;
     }
 }
