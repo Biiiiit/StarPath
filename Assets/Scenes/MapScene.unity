@@ -2232,7 +2232,7 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 2
-  sceneName: 
+  sceneName: Truckstop
 --- !u!61 &1167187935
 BoxCollider2D:
   m_ObjectHideFlags: 0
