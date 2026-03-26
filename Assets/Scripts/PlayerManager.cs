@@ -47,6 +47,15 @@ public class PlayerManager : MonoBehaviour
         currentBullet = null;
     }
 
+    public void DestroyBullet()
+    {
+        if (currentBullet != null)
+        {
+            Destroy(currentBullet);
+            currentBullet = null;
+        }
+    }
+
     void ClampToBackground()
     {
         Bounds bounds = background.bounds;
