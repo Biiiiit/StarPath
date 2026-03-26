@@ -2344,7 +2344,23 @@ PrefabInstance:
       value: ShopRoom
       objectReference: {fileID: 0}
     - target: {fileID: 6069474317894377956, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
+      propertyPath: m_Size.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069474317894377956, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069474317894377956, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5979628931232385003, guid: aebf142cb1332a84991e9ddb5436eb87, type: 3}
+    - target: {fileID: 6069474317894377956, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069474317894377956, guid: 15efc4403358f3e488e53c701b1227f7, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2421,8 +2437,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.63}
-    newSize: {x: 0.75, y: 0.63}
+    oldSize: {x: 0.6166667, y: 0.7}
+    newSize: {x: 0.37, y: 0.42}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
