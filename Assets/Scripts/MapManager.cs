@@ -111,7 +111,7 @@ public class MapManager : MonoBehaviour
 
     public void RefreshConnections()
     {
-        MapConnection[] connections = FindObjectsOfType<MapConnection>(true);
+        MapConnection[] connections = FindObjectsByType<MapConnection>(FindObjectsSortMode.None);
 
         foreach (MapConnection conn in connections)
         {
@@ -131,7 +131,7 @@ public class MapManager : MonoBehaviour
 
     MapConnection FindConnection(MapNode from, MapNode to)
     {
-        MapConnection[] connections = FindObjectsOfType<MapConnection>();
+        MapConnection[] connections = FindObjectsByType<MapConnection>(FindObjectsSortMode.None);
 
         foreach (MapConnection conn in connections)
         {

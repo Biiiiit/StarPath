@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShopManager : MonoBehaviour
+public class TruckstopManager : MonoBehaviour
 {
     [Header("Canvases")]
     public GameObject gameCanvas;
