@@ -1357,7 +1357,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   credits: 0
-  creditsText: {fileID: 1232962784}
 --- !u!4 &1205774949
 Transform:
   m_ObjectHideFlags: 0
@@ -2795,7 +2794,7 @@ PrefabInstance:
       objectReference: {fileID: 292563895}
     - target: {fileID: 2534529195887460391, guid: af3d86378aa52184191a80a61ccdad69, type: 3}
       propertyPath: maxSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2534529195887460391, guid: af3d86378aa52184191a80a61ccdad69, type: 3}
       propertyPath: background
