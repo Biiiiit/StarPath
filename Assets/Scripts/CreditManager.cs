@@ -6,8 +6,6 @@ public class CreditManager : MonoBehaviour
 {
     public static CreditManager Instance;
 
-    public int credits = 0;
-
     private List<TMP_Text> creditsTexts = new List<TMP_Text>();
 
     void Awake()
@@ -30,27 +28,10 @@ public class CreditManager : MonoBehaviour
         {
             creditsTexts.Add(text);
         }
-
-        UpdateUI(); // update immediately
     }
 
     public void AddCredits(int amount)
     {
-        credits += amount;
-        UpdateUI();
-    }
-
-    public void UpdateUI()
-    {
-        for (int i = creditsTexts.Count - 1; i >= 0; i--)
-        {
-            if (creditsTexts[i] == null)
-            {
-                creditsTexts.RemoveAt(i); // cleanup destroyed UI
-                continue;
-            }
-
-            creditsTexts[i].text = credits.ToString("0");
-        }
+        GameManager.Instance.credits += amount;
     }
 }

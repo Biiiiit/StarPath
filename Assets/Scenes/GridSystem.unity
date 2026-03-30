@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783f571c63d7ad24ea66dcebea929a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  credits: 0
+  gm: {fileID: 0}
 --- !u!4 &1205774949
 Transform:
   m_ObjectHideFlags: 0
@@ -1712,8 +1712,6 @@ MonoBehaviour:
   activeLifePrefab: {fileID: 3738300440436278652, guid: 20ff09734c00b4f41b3741db2bc039cc, type: 3}
   inactiveLifePrefab: {fileID: 5593556796730149384, guid: b281484aba3ae654583ef9a7be53b63b, type: 3}
   healthParent: {fileID: 2046693671}
-  maxLives: 7
-  currentLives: 3
 --- !u!114 &1635741841
 MonoBehaviour:
   m_ObjectHideFlags: 0

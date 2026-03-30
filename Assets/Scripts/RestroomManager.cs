@@ -26,7 +26,7 @@ public class HealingRoomUI : MonoBehaviour
         if (chosen) return;
         chosen = true;
 
-        Debug.Log("add life");
+        GameManager.Instance.lives++;
 
         speechManager.ShowBubble(1); // show heal dialogue
         CloseUI();
@@ -38,6 +38,43 @@ public class HealingRoomUI : MonoBehaviour
         chosen = true;
 
         Debug.Log("add stat");
+
+        int randomStat = Random.Range(0, 9); // 9 stats total
+
+        switch (randomStat)
+        {
+            case 0:
+                GameManager.Instance.maxLives += 1;
+                break;
+
+            case 1:
+                GameManager.Instance.credits += 1;
+                break;
+
+            case 2:
+                GameManager.Instance.moveSpeed += 1f;
+                break;
+
+            case 3:
+                GameManager.Instance.shotSpeed += 1f;
+                break;
+
+            case 4:
+                GameManager.Instance.bulletSpeed += 1f;
+                break;
+
+            case 5:
+                GameManager.Instance.reloadSpeed += 1f;
+                break;
+
+            case 6:
+                GameManager.Instance.maxBullets += 1;
+                break;
+
+            case 7:
+                GameManager.Instance.bulletPierce += 1;
+                break;
+        }
 
         speechManager.ShowBubble(2); // show stat dialogue
         CloseUI();
