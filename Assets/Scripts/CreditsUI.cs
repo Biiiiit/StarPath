@@ -3,11 +3,18 @@ using TMPro;
 
 public class CreditsUI : MonoBehaviour
 {
-    void OnEnable()
+    private TMP_Text text;
+
+    void Awake()
     {
-        if (CreditManager.Instance != null)
+        text = GetComponent<TMP_Text>();
+    }
+
+    void Update()
+    {
+        if (GameManager.Instance != null)
         {
-            CreditManager.Instance.RegisterText(GetComponent<TMP_Text>());
+            text.text = GameManager.Instance.credits.ToString();
         }
     }
 }

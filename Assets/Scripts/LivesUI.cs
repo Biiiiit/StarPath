@@ -7,9 +7,6 @@ public class LivesUI : MonoBehaviour
 
     public Transform healthParent;
 
-    public int maxLives = 7;
-    public int currentLives = 3;
-
     private GameObject[] lifeSlots;
 
     void Start()
@@ -19,45 +16,45 @@ public class LivesUI : MonoBehaviour
 
     void GenerateLives()
     {
-        lifeSlots = new GameObject[maxLives];
+        int max = GameManager.Instance.maxLives;
+        int current = GameManager.Instance.lives;
 
-        // spawn ONLY active lives at start
-        for (int i = 0; i < currentLives; i++)
+        lifeSlots = new GameObject[max];
+
+        for (int i = 0; i < max; i++)
         {
-            GameObject life = Instantiate(activeLifePrefab, healthParent);
+            GameObject prefab = i < current ? activeLifePrefab : inactiveLifePrefab;
+            GameObject life = Instantiate(prefab, healthParent);
             lifeSlots[i] = life;
         }
     }
 
     public void LoseLife()
     {
-        if (currentLives <= 0) return;
+        int current = GameManager.Instance.lives;
 
-        currentLives--;
+        if (current <= 0) return;
 
-        // destroy active icon
-        Destroy(lifeSlots[currentLives]);
+        int index = current - 1;
 
-        // replace with inactive icon at same position
-        GameObject inactive = Instantiate(inactiveLifePrefab, healthParent);
-        inactive.transform.SetSiblingIndex(currentLives);
+        Destroy(lifeSlots[index]);
 
-        lifeSlots[currentLives] = inactive;
+        lifeSlots[index] = Instantiate(inactiveLifePrefab, healthParent);
+        lifeSlots[index].transform.SetSiblingIndex(index);
     }
 
     public void GainLife()
     {
-        if (currentLives >= maxLives) return;
+        int current = GameManager.Instance.lives;
+        int max = GameManager.Instance.maxLives;
 
-        // remove inactive if exists
-        if (lifeSlots[currentLives] != null)
-            Destroy(lifeSlots[currentLives]);
+        if (current >= max) return;
 
-        GameObject active = Instantiate(activeLifePrefab, healthParent);
-        active.transform.SetSiblingIndex(currentLives);
+        int index = current;
 
-        lifeSlots[currentLives] = active;
+        Destroy(lifeSlots[index]);
 
-        currentLives++;
+        lifeSlots[index] = Instantiate(activeLifePrefab, healthParent);
+        lifeSlots[index].transform.SetSiblingIndex(index);
     }
 }

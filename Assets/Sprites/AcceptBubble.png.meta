@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 5413f40a20f334a41b784ba62bc04a9e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4623656514603382337
+    second: AcceptBubble_0
+  - first:
+      213: -6554299858278508204
+    second: AcceptBubble_1
+  - first:
+      213: -1017338285039844504
+    second: AcceptBubble_2
+  - first:
+      213: 7865273715612191767
+    second: AcceptBubble_3
+  - first:
+      213: 6958350484327272731
+    second: AcceptBubble_4
+  - first:
+      213: -4222793071372146906
+    second: AcceptBubble_5
+  - first:
+      213: 5765420179616941358
+    second: AcceptBubble_6
+  - first:
+      213: -5461041802975296066
+    second: AcceptBubble_7
+  - first:
+      213: -6891046246017863730
+    second: AcceptBubble_8
+  - first:
+      213: -8195448934568269773
+    second: AcceptBubble_9
+  - first:
+      213: 2491038994097912211
+    second: AcceptBubble_10
+  - first:
+      213: 5776065026191801311
+    second: AcceptBubble_11
+  - first:
+      213: -8479854577882612406
+    second: AcceptBubble_12
+  - first:
+      213: -8593379055168775720
+    second: AcceptBubble_13
+  - first:
+      213: -8737984341563164185
+    second: AcceptBubble_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AcceptBubble_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb905aba5e875dfb0800000000000000
+      internalID: -4623656514603382337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_1
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4599aeb41037a05a0800000000000000
+      internalID: -6554299858278508204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_2
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8638bc74830b1e1f0800000000000000
+      internalID: -1017338285039844504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_3
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71c0848b5c0172d60800000000000000
+      internalID: 7865273715612191767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_4
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b119ef806e6019060800000000000000
+      internalID: 6958350484327272731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_5
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 627e1ec2310a565c0800000000000000
+      internalID: -4222793071372146906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_6
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25cfea5b13e20050800000000000000
+      internalID: 5765420179616941358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_7
+      rect:
+        serializedVersion: 2
+        x: 2969
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5491ef96b7634b0800000000000000
+      internalID: -5461041802975296066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_8
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecfe05713f51e50a0800000000000000
+      internalID: -6891046246017863730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_9
+      rect:
+        serializedVersion: 2
+        x: 3815
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33864388d9ae34e80800000000000000
+      internalID: -8195448934568269773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_10
+      rect:
+        serializedVersion: 2
+        x: 4238
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3993adc54c2f19220800000000000000
+      internalID: 2491038994097912211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_11
+      rect:
+        serializedVersion: 2
+        x: 4661
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb38b5d984b82050800000000000000
+      internalID: 5776065026191801311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_12
+      rect:
+        serializedVersion: 2
+        x: 5084
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d365a8031815a80800000000000000
+      internalID: -8479854577882612406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_13
+      rect:
+        serializedVersion: 2
+        x: 5507
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d9126c674f2eb880800000000000000
+      internalID: -8593379055168775720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AcceptBubble_14
+      rect:
+        serializedVersion: 2
+        x: 5930
+        y: 17
+        width: 407
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9b33489817cb680800000000000000
+      internalID: -8737984341563164185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AcceptBubble_0: -4623656514603382337
+      AcceptBubble_1: -6554299858278508204
+      AcceptBubble_10: 2491038994097912211
+      AcceptBubble_11: 5776065026191801311
+      AcceptBubble_12: -8479854577882612406
+      AcceptBubble_13: -8593379055168775720
+      AcceptBubble_14: -8737984341563164185
+      AcceptBubble_2: -1017338285039844504
+      AcceptBubble_3: 7865273715612191767
+      AcceptBubble_4: 6958350484327272731
+      AcceptBubble_5: -4222793071372146906
+      AcceptBubble_6: 5765420179616941358
+      AcceptBubble_7: -5461041802975296066
+      AcceptBubble_8: -6891046246017863730
+      AcceptBubble_9: -8195448934568269773
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
