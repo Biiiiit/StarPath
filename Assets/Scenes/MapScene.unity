@@ -1022,7 +1022,7 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 3
-  sceneName: 
+  sceneName: GridSystem
 --- !u!61 &577389007
 BoxCollider2D:
   m_ObjectHideFlags: 0
