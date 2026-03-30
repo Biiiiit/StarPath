@@ -17,6 +17,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverUI;
 
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject.transform);
+    }
+
     void Update()
     {
         float move = 0f;

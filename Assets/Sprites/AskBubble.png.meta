@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 39423779e8e41ab4d80d611ae4d00bf4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3947914374212270605
+    second: AskBubble_0
+  - first:
+      213: 3043512090109547704
+    second: AskBubble_1
+  - first:
+      213: 1167319683532764421
+    second: AskBubble_2
+  - first:
+      213: 7539709925884634132
+    second: AskBubble_3
+  - first:
+      213: 4733217372808413336
+    second: AskBubble_4
+  - first:
+      213: 5212841852562209859
+    second: AskBubble_5
+  - first:
+      213: 7609227816345839142
+    second: AskBubble_6
+  - first:
+      213: 6444445828538861206
+    second: AskBubble_7
+  - first:
+      213: 8210037235230744274
+    second: AskBubble_8
+  - first:
+      213: 4723623050750274285
+    second: AskBubble_9
+  - first:
+      213: 1219462921179630627
+    second: AskBubble_10
+  - first:
+      213: -2962196319036505510
+    second: AskBubble_11
+  - first:
+      213: 1432757244495765331
+    second: AskBubble_12
+  - first:
+      213: -8703868077857423491
+    second: AskBubble_13
+  - first:
+      213: 8039842089497907424
+    second: AskBubble_14
+  - first:
+      213: 8695162622749568602
+    second: AskBubble_15
+  - first:
+      213: -5066217930421859991
+    second: AskBubble_16
+  - first:
+      213: 3726999900422192838
+    second: AskBubble_17
+  - first:
+      213: -1246940367873541820
+    second: AskBubble_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AskBubble_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f54b692bc03639c0800000000000000
+      internalID: -3947914374212270605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_1
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b41698ee1abc3a20800000000000000
+      internalID: 3043512090109547704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_2
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505ba444117233010800000000000000
+      internalID: 1167319683532764421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_3
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41427d10b3e62a860800000000000000
+      internalID: 7539709925884634132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_4
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89004f67f14cfa140800000000000000
+      internalID: 4733217372808413336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_5
+      rect:
+        serializedVersion: 2
+        x: 2753
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c724ccb0cb75840800000000000000
+      internalID: 5212841852562209859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_6
+      rect:
+        serializedVersion: 2
+        x: 3302
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626a0503268699960800000000000000
+      internalID: 7609227816345839142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_7
+      rect:
+        serializedVersion: 2
+        x: 3851
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6968e4046554f6950800000000000000
+      internalID: 6444445828538861206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_8
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de98a6ed59efe170800000000000000
+      internalID: 8210037235230744274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_9
+      rect:
+        serializedVersion: 2
+        x: 4949
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea21d8432ead8140800000000000000
+      internalID: 4723623050750274285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_10
+      rect:
+        serializedVersion: 2
+        x: 5498
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c0ca9d0176ce010800000000000000
+      internalID: 1219462921179630627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_11
+      rect:
+        serializedVersion: 2
+        x: 6047
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a520cd8642a24e6d0800000000000000
+      internalID: -2962196319036505510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_12
+      rect:
+        serializedVersion: 2
+        x: 6596
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f998f6f1d22e310800000000000000
+      internalID: 1432757244495765331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_13
+      rect:
+        serializedVersion: 2
+        x: 7145
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f32772916a53780800000000000000
+      internalID: -8703868077857423491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_14
+      rect:
+        serializedVersion: 2
+        x: 7694
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e0d1c298c1439f60800000000000000
+      internalID: 8039842089497907424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_15
+      rect:
+        serializedVersion: 2
+        x: 8243
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5eed31265c6ba870800000000000000
+      internalID: 8695162622749568602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_16
+      rect:
+        serializedVersion: 2
+        x: 8792
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9698d7e52ad21b9b0800000000000000
+      internalID: -5066217930421859991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_17
+      rect:
+        serializedVersion: 2
+        x: 9341
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ceb496b9a6f8b330800000000000000
+      internalID: 3726999900422192838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AskBubble_18
+      rect:
+        serializedVersion: 2
+        x: 9890
+        y: 17
+        width: 533
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4497dcc875af1bee0800000000000000
+      internalID: -1246940367873541820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AskBubble_0: -3947914374212270605
+      AskBubble_1: 3043512090109547704
+      AskBubble_10: 1219462921179630627
+      AskBubble_11: -2962196319036505510
+      AskBubble_12: 1432757244495765331
+      AskBubble_13: -8703868077857423491
+      AskBubble_14: 8039842089497907424
+      AskBubble_15: 8695162622749568602
+      AskBubble_16: -5066217930421859991
+      AskBubble_17: 3726999900422192838
+      AskBubble_18: -1246940367873541820
+      AskBubble_2: 1167319683532764421
+      AskBubble_3: 7539709925884634132
+      AskBubble_4: 4733217372808413336
+      AskBubble_5: 5212841852562209859
+      AskBubble_6: 7609227816345839142
+      AskBubble_7: 6444445828538861206
+      AskBubble_8: 8210037235230744274
+      AskBubble_9: 4723623050750274285
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
