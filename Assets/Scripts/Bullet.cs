@@ -6,10 +6,9 @@ public class Bullet : MonoBehaviour
     public SpriteRenderer background;
 
     private int hitsRemaining;
-
     private PlayerManager player;
 
-    // Track aliens already hit (prevents duplicate hits)
+    // Track aliens already hit
     private HashSet<Alien> hitAliens = new HashSet<Alien>();
 
     void Start()
@@ -25,22 +24,44 @@ public class Bullet : MonoBehaviour
         // Raycast forward BEFORE moving
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, moveStep);
 
-        if (hit.collider != null && hit.collider.CompareTag("Alien"))
+        if (hit.collider != null)
         {
-            Alien alien = hit.collider.GetComponent<Alien>();
-
-            if (alien != null && !hitAliens.Contains(alien))
+            // 🔹 ALIEN HIT
+            if (hit.collider.CompareTag("Alien"))
             {
-                hitAliens.Add(alien);
+                Alien alien = hit.collider.GetComponent<Alien>();
 
-                alien.OnHit();
-
-                hitsRemaining--;
-
-                if (hitsRemaining <= 0)
+                if (alien != null && !hitAliens.Contains(alien))
                 {
-                    ClearAndDestroy();
-                    return;
+                    hitAliens.Add(alien);
+
+                    alien.OnHit();
+                    hitsRemaining--;
+
+                    if (hitsRemaining <= 0)
+                    {
+                        ClearAndDestroy();
+                        return;
+                    }
+                }
+            }
+
+            // 🔹 BOSS HIT
+            else if (hit.collider.CompareTag("Boss"))
+            {
+                Boss boss = hit.collider.GetComponent<Boss>();
+
+                if (boss != null)
+                {
+                    boss.TakeDamage(1); // you can scale this later
+
+                    hitsRemaining--;
+
+                    if (hitsRemaining <= 0)
+                    {
+                        ClearAndDestroy();
+                        return;
+                    }
                 }
             }
         }
@@ -50,7 +71,6 @@ public class Bullet : MonoBehaviour
 
         CheckBounds();
 
-        // Debug (optional)
         Debug.DrawRay(transform.position, Vector2.up * moveStep, Color.red);
     }
 
