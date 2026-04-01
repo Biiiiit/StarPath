@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
     public int maxLives = 3;
     public int credits = 0;
-    public float maxAlienSpeed = 6f;
+    public float maxAlienSpeed = 5f;
 
     public float moveSpeed = 5f;
     public float shotSpeed = 8f;
@@ -37,5 +37,18 @@ public class GameManager : MonoBehaviour
             GameObject go = new GameObject("GameManager");
             go.AddComponent<GameManager>();
         }
+    }
+
+    public void ApplyItem(ItemData item)
+    {
+        lives += item.livesBonus;
+        moveSpeed += item.moveSpeedBonus;
+        shotSpeed += item.shotSpeedBonus;
+        bulletSpeed += item.bulletSpeedBonus;
+        reloadSpeed += item.reloadSpeedBonus;
+        maxBullets += item.maxBulletsBonus;
+        bulletPierce += item.bulletPierceBonus;
+
+        Debug.Log("Picked up: " + item.itemName);
     }
 }
