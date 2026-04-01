@@ -50,7 +50,15 @@ public class Boss : MonoBehaviour
 
         timePerRow = cellSize / bulletPrefab.GetComponent<BossBullet>().speed;
 
-        StartCoroutine(AttackRoutine()); // start once
+        SetPhase(1);
+    }
+
+    void Update()
+    {
+        if (!isAttacking)
+        {
+            StartCoroutine(AttackRoutine());
+        }
     }
 
     void SetPhase(int phase)
@@ -97,34 +105,25 @@ public class Boss : MonoBehaviour
 
     IEnumerator AttackRoutine()
     {
-        while (true)
+        isAttacking = true;
+
+        int patternIndex = GetRandomPatternIndex();
+        lastPatternIndex = patternIndex;
+
+        AttackPattern pattern = currentPatterns[patternIndex];
+
+        currentRow = 0;
+
+        while (currentRow < pattern.height)
         {
-            if (currentPhase == 3)
-            {
-                yield return new WaitForSeconds(attackCooldown);
-                continue;
-            }
-
-            isAttacking = true;
-
-            int patternIndex = GetRandomPatternIndex();
-            lastPatternIndex = patternIndex;
-
-            AttackPattern pattern = currentPatterns[patternIndex];
-
-            currentRow = 0;
-
-            while (currentRow < pattern.height)
-            {
-                yield return StartCoroutine(FireRow(pattern));
-                currentRow++;
-                yield return new WaitForSeconds(timePerRow);
-            }
-
-            yield return new WaitForSeconds(attackCooldown);
-
-            isAttacking = false;
+            yield return StartCoroutine(FireRow(pattern));
+            currentRow++;
+            yield return new WaitForSeconds(timePerRow);
         }
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        isAttacking = false;
     }
 
     IEnumerator FireRow(AttackPattern pattern)
