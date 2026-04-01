@@ -6,7 +6,6 @@ public class AlienManager : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float baseSpeed = 1f;
-    public float maxSpeed = 3f;
     [Tooltip("Exponent for speed curve: >1 = slow start, <1 = fast start")]
     public float speedExponent = 1f;
 
@@ -62,7 +61,7 @@ public class AlienManager : MonoBehaviour
         float progress = 1f - ((float)aliveAliens / (float)totalAliens);
         float curved = Mathf.Pow(progress, speedExponent);
 
-        speed = Mathf.Lerp(baseSpeed, maxSpeed, curved);
+        speed = Mathf.Lerp(baseSpeed, GameManager.Instance.maxAlienSpeed, curved);
         Debug.Log("Alien Speed " + speed);
     }
 

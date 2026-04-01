@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 162135ffa8bc49445bb69bf72b7037df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6731788419433522032
+    second: StatBubble_0
+  - first:
+      213: -3199862720400857579
+    second: StatBubble_1
+  - first:
+      213: -7951025531929348030
+    second: StatBubble_2
+  - first:
+      213: 884000621572035920
+    second: StatBubble_3
+  - first:
+      213: -1205048243921238955
+    second: StatBubble_4
+  - first:
+      213: -5753947469170279571
+    second: StatBubble_5
+  - first:
+      213: -4404699833753517071
+    second: StatBubble_6
+  - first:
+      213: -9123762705901449377
+    second: StatBubble_7
+  - first:
+      213: -2045675480439382673
+    second: StatBubble_8
+  - first:
+      213: -6720746173866193905
+    second: StatBubble_9
+  - first:
+      213: 5216827879169607455
+    second: StatBubble_10
+  - first:
+      213: -1379373120143249078
+    second: StatBubble_11
+  - first:
+      213: -4154527429898914686
+    second: StatBubble_12
+  - first:
+      213: -3528396835478668731
+    second: StatBubble_13
+  - first:
+      213: 2708444723230520426
+    second: StatBubble_14
+  - first:
+      213: 8346794549573760988
+    second: StatBubble_15
+  - first:
+      213: -5199455609694440784
+    second: StatBubble_16
+  - first:
+      213: 467640367244226380
+    second: StatBubble_17
+  - first:
+      213: 7012209495942030298
+    second: StatBubble_18
+  - first:
+      213: -7581642873486337754
+    second: StatBubble_19
+  - first:
+      213: -5546368682440523948
+    second: StatBubble_20
+  - first:
+      213: -234039639077478013
+    second: StatBubble_21
+  - first:
+      213: -4521746876058183140
+    second: StatBubble_22
+  - first:
+      213: 4230818340905828415
+    second: StatBubble_23
+  - first:
+      213: -763637243077563983
+    second: StatBubble_24
+  - first:
+      213: -6844265943468962040
+    second: StatBubble_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StatBubble_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0736c63a6ed1c6d50800000000000000
+      internalID: 6731788419433522032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_1
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516ed743fcdc793d0800000000000000
+      internalID: -3199862720400857579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_2
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2483a41b76848a190800000000000000
+      internalID: -7951025531929348030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_3
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0559606b1e9944c00800000000000000
+      internalID: 884000621572035920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_4
+      rect:
+        serializedVersion: 2
+        x: 2708
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554cddbb10fc64fe0800000000000000
+      internalID: -1205048243921238955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_5
+      rect:
+        serializedVersion: 2
+        x: 3383
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6bf8d3334fd520b0800000000000000
+      internalID: -5753947469170279571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_6
+      rect:
+        serializedVersion: 2
+        x: 4058
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f346ea96dc5fd2c0800000000000000
+      internalID: -4404699833753517071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_7
+      rect:
+        serializedVersion: 2
+        x: 4733
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f89c3a822e16180800000000000000
+      internalID: -9123762705901449377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_8
+      rect:
+        serializedVersion: 2
+        x: 5408
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d1fae2dfc4c93e0800000000000000
+      internalID: -2045675480439382673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_9
+      rect:
+        serializedVersion: 2
+        x: 6083
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0cc32186fc1bb2a0800000000000000
+      internalID: -6720746173866193905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_10
+      rect:
+        serializedVersion: 2
+        x: 6758
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f174240f055e56840800000000000000
+      internalID: 5216827879169607455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_11
+      rect:
+        serializedVersion: 2
+        x: 7433
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41b329947b7bdce0800000000000000
+      internalID: -1379373120143249078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_12
+      rect:
+        serializedVersion: 2
+        x: 8108
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 284324b60572856c0800000000000000
+      internalID: -4154527429898914686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_13
+      rect:
+        serializedVersion: 2
+        x: 8783
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a7eaab5cd980fc0800000000000000
+      internalID: -3528396835478668731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_14
+      rect:
+        serializedVersion: 2
+        x: 9458
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64bfe53024569520800000000000000
+      internalID: 2708444723230520426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_15
+      rect:
+        serializedVersion: 2
+        x: 10133
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7b28c6b65c5d370800000000000000
+      internalID: 8346794549573760988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_16
+      rect:
+        serializedVersion: 2
+        x: 10808
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b230cebba2d7d7b0800000000000000
+      internalID: -5199455609694440784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_17
+      rect:
+        serializedVersion: 2
+        x: 11483
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4fa934bf646d7600800000000000000
+      internalID: 467640367244226380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_18
+      rect:
+        serializedVersion: 2
+        x: 12158
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3ee30626f505160800000000000000
+      internalID: 7012209495942030298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_19
+      rect:
+        serializedVersion: 2
+        x: 12833
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62999ffc9f798c690800000000000000
+      internalID: -7581642873486337754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_20
+      rect:
+        serializedVersion: 2
+        x: 13508
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ff7c9b1175703b0800000000000000
+      internalID: -5546368682440523948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_21
+      rect:
+        serializedVersion: 2
+        x: 14183
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3812d61303680ccf0800000000000000
+      internalID: -234039639077478013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_22
+      rect:
+        serializedVersion: 2
+        x: 14858
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ad1586c278f31c0800000000000000
+      internalID: -4521746876058183140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_23
+      rect:
+        serializedVersion: 2
+        x: 15533
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3046ee7dd2e6ba30800000000000000
+      internalID: 4230818340905828415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_24
+      rect:
+        serializedVersion: 2
+        x: 16208
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b96a1d29f30765f0800000000000000
+      internalID: -763637243077563983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatBubble_25
+      rect:
+        serializedVersion: 2
+        x: 16883
+        y: 17
+        width: 659
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f8a3b03684401a0800000000000000
+      internalID: -6844265943468962040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StatBubble_0: 6731788419433522032
+      StatBubble_1: -3199862720400857579
+      StatBubble_10: 5216827879169607455
+      StatBubble_11: -1379373120143249078
+      StatBubble_12: -4154527429898914686
+      StatBubble_13: -3528396835478668731
+      StatBubble_14: 2708444723230520426
+      StatBubble_15: 8346794549573760988
+      StatBubble_16: -5199455609694440784
+      StatBubble_17: 467640367244226380
+      StatBubble_18: 7012209495942030298
+      StatBubble_19: -7581642873486337754
+      StatBubble_2: -7951025531929348030
+      StatBubble_20: -5546368682440523948
+      StatBubble_21: -234039639077478013
+      StatBubble_22: -4521746876058183140
+      StatBubble_23: 4230818340905828415
+      StatBubble_24: -763637243077563983
+      StatBubble_25: -6844265943468962040
+      StatBubble_3: 884000621572035920
+      StatBubble_4: -1205048243921238955
+      StatBubble_5: -5753947469170279571
+      StatBubble_6: -4404699833753517071
+      StatBubble_7: -9123762705901449377
+      StatBubble_8: -2045675480439382673
+      StatBubble_9: -6720746173866193905
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

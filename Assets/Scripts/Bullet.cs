@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 8f;
     public SpriteRenderer background;
 
-    public int maxHits = 1;
     private int hitsRemaining;
 
     private PlayerManager player;
@@ -17,12 +15,12 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<PlayerManager>();
-        hitsRemaining = maxHits;
+        hitsRemaining = GameManager.Instance.bulletPierce;
     }
 
     void Update()
     {
-        float moveStep = speed * Time.deltaTime;
+        float moveStep = GameManager.Instance.bulletSpeed * Time.deltaTime;
 
         // Raycast forward BEFORE moving
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, moveStep);

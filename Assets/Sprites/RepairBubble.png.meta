@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 7c978bc680a391943867334b8f08227e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7598375342368277346
+    second: RepairBubble_0
+  - first:
+      213: -4473815781542309541
+    second: RepairBubble_1
+  - first:
+      213: 3913812525654861958
+    second: RepairBubble_2
+  - first:
+      213: -8765467354854268930
+    second: RepairBubble_3
+  - first:
+      213: 2374025586400339555
+    second: RepairBubble_4
+  - first:
+      213: -7894312045380979752
+    second: RepairBubble_5
+  - first:
+      213: 2716133651175049502
+    second: RepairBubble_6
+  - first:
+      213: -3016844323995829707
+    second: RepairBubble_7
+  - first:
+      213: 3724514817023134779
+    second: RepairBubble_8
+  - first:
+      213: 611526755579018027
+    second: RepairBubble_9
+  - first:
+      213: -638129218655787492
+    second: RepairBubble_10
+  - first:
+      213: 4312275445513870631
+    second: RepairBubble_11
+  - first:
+      213: -2660117414255058595
+    second: RepairBubble_12
+  - first:
+      213: 408050888989688485
+    second: RepairBubble_13
+  - first:
+      213: -1692196419186559719
+    second: RepairBubble_14
+  - first:
+      213: -4669428089512140911
+    second: RepairBubble_15
+  - first:
+      213: -3396890007216046716
+    second: RepairBubble_16
+  - first:
+      213: 6874884509459177538
+    second: RepairBubble_17
+  - first:
+      213: 8496512479244453836
+    second: RepairBubble_18
+  - first:
+      213: -8097307727943365648
+    second: RepairBubble_19
+  - first:
+      213: 7635285105283258171
+    second: RepairBubble_20
+  - first:
+      213: -8612646081520997953
+    second: RepairBubble_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RepairBubble_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c3d0052e52d8690800000000000000
+      internalID: -7598375342368277346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_1
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5152aeff30d9e1c0800000000000000
+      internalID: -4473815781542309541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_2
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688e12d71c7a05630800000000000000
+      internalID: 3913812525654861958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_3
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: effd0a7d1edca5680800000000000000
+      internalID: -8765467354854268930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_4
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366a41551bb32f020800000000000000
+      internalID: 2374025586400339555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_5
+      rect:
+        serializedVersion: 2
+        x: 3113
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3baf44505c17290800000000000000
+      internalID: -7894312045380979752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_6
+      rect:
+        serializedVersion: 2
+        x: 3734
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1906c04a25a1b520800000000000000
+      internalID: 2716133651175049502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_7
+      rect:
+        serializedVersion: 2
+        x: 4355
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a339d32140226d0800000000000000
+      internalID: -3016844323995829707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_8
+      rect:
+        serializedVersion: 2
+        x: 4976
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3cc7552e7220b330800000000000000
+      internalID: 3724514817023134779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_9
+      rect:
+        serializedVersion: 2
+        x: 5597
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b3fec18549c7800800000000000000
+      internalID: 611526755579018027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_10
+      rect:
+        serializedVersion: 2
+        x: 6218
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1669394bd8e427f0800000000000000
+      internalID: -638129218655787492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_11
+      rect:
+        serializedVersion: 2
+        x: 6839
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d5e779ba748db30800000000000000
+      internalID: 4312275445513870631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_12
+      rect:
+        serializedVersion: 2
+        x: 7460
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d512f7e3e4d551bd0800000000000000
+      internalID: -2660117414255058595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_13
+      rect:
+        serializedVersion: 2
+        x: 8081
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a243802f10b9a500800000000000000
+      internalID: 408050888989688485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_14
+      rect:
+        serializedVersion: 2
+        x: 8702
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9157238825c1488e0800000000000000
+      internalID: -1692196419186559719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_15
+      rect:
+        serializedVersion: 2
+        x: 9323
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19fd56c64ebd23fb0800000000000000
+      internalID: -4669428089512140911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_16
+      rect:
+        serializedVersion: 2
+        x: 9944
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d30d23982dbd0d0800000000000000
+      internalID: -3396890007216046716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_17
+      rect:
+        serializedVersion: 2
+        x: 10565
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2406622690f786f50800000000000000
+      internalID: 6874884509459177538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_18
+      rect:
+        serializedVersion: 2
+        x: 11186
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc70a0b551da9e570800000000000000
+      internalID: 8496512479244453836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_19
+      rect:
+        serializedVersion: 2
+        x: 11807
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fb09e6d58590af80800000000000000
+      internalID: -8097307727943365648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_20
+      rect:
+        serializedVersion: 2
+        x: 12428
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b375d3b895bf5f960800000000000000
+      internalID: 7635285105283258171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairBubble_21
+      rect:
+        serializedVersion: 2
+        x: 13049
+        y: 17
+        width: 605
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9e7c6450cb97880800000000000000
+      internalID: -8612646081520997953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RepairBubble_0: -7598375342368277346
+      RepairBubble_1: -4473815781542309541
+      RepairBubble_10: -638129218655787492
+      RepairBubble_11: 4312275445513870631
+      RepairBubble_12: -2660117414255058595
+      RepairBubble_13: 408050888989688485
+      RepairBubble_14: -1692196419186559719
+      RepairBubble_15: -4669428089512140911
+      RepairBubble_16: -3396890007216046716
+      RepairBubble_17: 6874884509459177538
+      RepairBubble_18: 8496512479244453836
+      RepairBubble_19: -8097307727943365648
+      RepairBubble_2: 3913812525654861958
+      RepairBubble_20: 7635285105283258171
+      RepairBubble_21: -8612646081520997953
+      RepairBubble_3: -8765467354854268930
+      RepairBubble_4: 2374025586400339555
+      RepairBubble_5: -7894312045380979752
+      RepairBubble_6: 2716133651175049502
+      RepairBubble_7: -3016844323995829707
+      RepairBubble_8: 3724514817023134779
+      RepairBubble_9: 611526755579018027
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

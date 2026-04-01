@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
-    public float speed = 5f;
     public SpriteRenderer background;
     public GameObject bulletPrefab;
     public Transform shootPoint;
@@ -13,7 +12,6 @@ public class PlayerManager : MonoBehaviour
     private GameObject currentBullet;
 
     public LivesUI livesUI;
-    public int lives = 3;
     public GameObject gameOverUI;
 
 
@@ -27,7 +25,7 @@ public class PlayerManager : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
             move = 1f;
 
-        transform.Translate(Vector2.right * move * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * move * GameManager.Instance.moveSpeed * Time.deltaTime);
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame && currentBullet == null)
         {
@@ -77,19 +75,19 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        lives--;
         livesUI.LoseLife();
+        GameManager.Instance.lives--;
 
-        if (lives <= 0)
+        if (GameManager.Instance.lives <= 0)
         {
-            Time.timeScale = 0f; // pause game
+            Time.timeScale = 0f;
             gameOverUI.SetActive(true);
         }
     }
 
     public void GainLife()
     {
-        lives++;
         livesUI.GainLife();
+        GameManager.Instance.lives++;
     }
 }
