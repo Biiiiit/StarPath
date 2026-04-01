@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe451373f9051d14aabc2dff91fb3c09, type: 3}
-  m_Name: Wave Attack
+  m_Name: Phase 2 Attack 1
   m_EditorClassIdentifier: Assembly-CSharp::AttackPattern
   width: 15
   height: 30

@@ -3,7 +3,8 @@ using UnityEngine;
 public class BossBullet : MonoBehaviour
 {
     public float speed = 1f;
-    public Vector2 direction = Vector2.down;
+
+    private Vector2 direction = Vector2.down;
 
     public void SetDirection(Vector2 dir)
     {
@@ -12,19 +13,14 @@ public class BossBullet : MonoBehaviour
 
     void Update()
     {
-        transform.position += (Vector3)(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            var player = other.GetComponent<PlayerBossManager>();
-            if (player != null)
-            {
-                player.TakeDamage();
-            }
-
+            other.GetComponent<PlayerBossManager>().TakeDamage();
             Destroy(gameObject);
         }
     }
