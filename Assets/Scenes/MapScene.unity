@@ -3669,7 +3669,7 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 4
-  sceneName: 
+  sceneName: SpaceCasino
 --- !u!61 &1488076722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3811,7 +3811,7 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 4
-  sceneName: 
+  sceneName: SpaceCasino
 --- !u!61 &1609485537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4128,7 +4128,7 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 0
-  sceneName: 
+  sceneName: GridSystem
 --- !u!61 &1802261885
 BoxCollider2D:
   m_ObjectHideFlags: 0
