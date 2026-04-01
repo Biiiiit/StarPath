@@ -7,9 +7,27 @@ public class Boss : MonoBehaviour
     public int maxHealth = 50;
     private int currentHealth;
 
+    private int currentPhase = 1;
+
+    [Header("Phase Patterns")]
+    public AttackPattern[] phase1Patterns;
+    public AttackPattern[] phase2Patterns;
+    public AttackPattern[] phase3Patterns;
+
+    private AttackPattern[] currentPatterns;
+    private int lastPatternIndex = -1;
+
+    [Header("Attack Timing")]
+    public float attackCooldown = 3f;
+    private bool isAttacking = false;
+
     [Header("Shooting")]
     public GameObject bulletPrefab;
-    public float fireRate = 1f;
+    public float bulletSpeed = 5f;
+    public float cellSize = 1f;
+
+    private float timePerRow;
+    private float timer;
 
     [Header("Bounds")]
     public SpriteRenderer background;
@@ -17,8 +35,9 @@ public class Boss : MonoBehaviour
     private float leftBound;
     private float rightBound;
 
-    private float fireTimer;
     private PlayerBossManager player;
+
+    private int currentRow = 0;
 
     void Start()
     {
@@ -28,54 +47,116 @@ public class Boss : MonoBehaviour
         Bounds bounds = background.bounds;
         leftBound = bounds.min.x;
         rightBound = bounds.max.x;
+
+        timePerRow = cellSize / bulletPrefab.GetComponent<BossBullet>().speed;
+
+        SetPhase(1);
     }
 
     void Update()
     {
-        HandleShooting();
-    }
-
-    void HandleShooting()
-    {
-        fireTimer += Time.deltaTime;
-
-        if (fireTimer >= fireRate)
+        if (!isAttacking)
         {
-            fireTimer = 0f;
-            StartCoroutine(FireBurst());
+            StartCoroutine(AttackRoutine());
         }
     }
 
-    IEnumerator FireBurst()
+    void SetPhase(int phase)
     {
-        int burstCount = Random.Range(3, 6);
+        currentPhase = phase;
 
-        for (int i = 0; i < burstCount; i++)
+        switch (phase)
         {
-            float x;
+            case 1:
+                currentPatterns = phase1Patterns;
+                break;
+            case 2:
+                currentPatterns = phase2Patterns;
+                break;
+            case 3:
+                currentPatterns = phase3Patterns;
+                break;
+        }
 
-            if (Random.value > 0.5f && player != null)
-            {
-                x = player.transform.position.x;
-            }
-            else
-            {
-                x = Random.Range(leftBound, rightBound);
-            }
+        lastPatternIndex = -1;
+    }
 
-            Vector3 pos = new Vector3(x, transform.position.y, -1);
+    int GetRandomPatternIndex()
+    {
+        if (currentPatterns.Length <= 1)
+            return 0;
 
-            GameObject bullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
+        int index;
 
+        do
+        {
+            index = Random.Range(0, currentPatterns.Length);
+        }
+        while (index == lastPatternIndex);
+
+        return index;
+    }
+
+    IEnumerator AttackRoutine()
+    {
+        isAttacking = true;
+
+        int patternIndex = GetRandomPatternIndex();
+        lastPatternIndex = patternIndex;
+
+        AttackPattern pattern = currentPatterns[patternIndex];
+
+        currentRow = 0;
+
+        while (currentRow < pattern.height)
+        {
+            yield return StartCoroutine(FireRow(pattern));
+            currentRow++;
+            yield return new WaitForSeconds(timePerRow);
+        }
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        isAttacking = false;
+    }
+
+    IEnumerator FireRow(AttackPattern pattern)
+    {
+        int y = currentRow;
+        int flippedY = pattern.height - 1 - y;
+
+        for (int x = 0; x < pattern.width; x++)
+        {
+            int index = flippedY * pattern.width + x;
+
+            if (!pattern.grid[index]) continue;
+
+            float step = (rightBound - leftBound) / pattern.width;
+            float xPos = leftBound + step * (x + 0.5f);
+
+            Vector3 spawnPos = new Vector3(xPos, transform.position.y, 1);
+
+            GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
             bullet.GetComponent<BossBullet>().SetDirection(Vector2.down);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
         }
     }
 
     public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
+
+        float healthPercent = (float)currentHealth / maxHealth;
+
+        if (healthPercent <= 0.33f && currentPhase < 3)
+        {
+            SetPhase(3);
+        }
+        else if (healthPercent <= 0.66f && currentPhase < 2)
+        {
+            SetPhase(2);
+        }
 
         if (currentHealth <= 0)
         {
