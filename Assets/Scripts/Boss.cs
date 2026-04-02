@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Boss : MonoBehaviour
@@ -8,6 +9,11 @@ public class Boss : MonoBehaviour
     private int currentHealth;
     public AudioClip deathSound;
     private int currentPhase = 1;
+
+    [Header("Hit Effect")]
+    public GameObject hitEffectPrefab;
+    public Image healthBarFill;
+
 
     [Header("Phase Patterns")]
     public AttackPattern[] phase1Patterns;
@@ -49,6 +55,9 @@ public class Boss : MonoBehaviour
         rightBound = bounds.max.x;
 
         timePerRow = cellSize / bulletPrefab.GetComponent<BossBullet>().speed;
+
+        healthBarFill.fillAmount = 1f;
+        UpdateHealthBar();
 
         SetPhase(1);
     }
@@ -171,7 +180,7 @@ public class Boss : MonoBehaviour
                     break;
             }
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -243,9 +252,18 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(int dmg, Vector3 hitPosition)
     {
         currentHealth -= dmg;
+
+        if (hitEffectPrefab != null)
+        {
+            GameObject effect = Instantiate(hitEffectPrefab, hitPosition, Quaternion.identity);
+            Destroy(effect, 0.5f);
+        }
+
+        StartCoroutine(HitFlash());
+        UpdateHealthBar();
 
         float healthPercent = (float)currentHealth / maxHealth;
 
@@ -264,6 +282,15 @@ public class Boss : MonoBehaviour
         }
     }
 
+    IEnumerator HitFlash()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = Color.white;
+    }
+
     void Die()
     {
         Debug.Log("Boss defeated");
@@ -273,5 +300,29 @@ public class Boss : MonoBehaviour
     public void PlayDeathSound()
     {
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
+    }
+
+    void UpdateHealthBar()
+    {
+        float healthPercent = (float)currentHealth / maxHealth;
+
+        // Immediate fill (correct)
+        healthBarFill.fillAmount = healthPercent;
+
+        // Smooth color gradient: green → yellow → red
+        Color color;
+
+        if (healthPercent > 0.5f)
+        {
+            float t = (healthPercent - 0.5f) / 0.5f;
+            color = Color.Lerp(Color.yellow, Color.green, t);
+        }
+        else
+        {
+            float t = healthPercent / 0.5f;
+            color = Color.Lerp(Color.red, Color.yellow, t);
+        }
+
+        healthBarFill.color = color;
     }
 }

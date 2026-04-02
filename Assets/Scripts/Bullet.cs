@@ -45,15 +45,14 @@ public class Bullet : MonoBehaviour
                     }
                 }
             }
-
-            // 🔹 BOSS HIT
             else if (hit.collider.CompareTag("Boss"))
             {
                 Boss boss = hit.collider.GetComponent<Boss>();
 
                 if (boss != null)
                 {
-                    boss.TakeDamage(1); // you can scale this later
+                    Vector2 offset = Random.insideUnitCircle * 0.2f;
+                    boss.TakeDamage(1, (Vector3)(hit.point + offset));
 
                     hitsRemaining--;
 
