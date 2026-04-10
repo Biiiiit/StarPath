@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
     public float moveSpeed = 5f;
     public float shotSpeed = 8f;
     public float bulletSpeed = 8f;
-    public float reloadSpeed = 1f;
-    public int maxBullets = 1;
+    public float shootingSpeed = 0.2f;
+    public float reloadTime = 1.5f;
+    public int maxBullets = 3;
     public int bulletPierce = 1;
 
     public static GameManager Instance { get; private set; }

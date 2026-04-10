@@ -64,14 +64,10 @@ public class HealingRoomUI : MonoBehaviour
                 break;
 
             case 5:
-                GameManager.Instance.reloadSpeed += 1f;
-                break;
-
-            case 6:
                 GameManager.Instance.maxBullets += 1;
                 break;
 
-            case 7:
+            case 6:
                 GameManager.Instance.bulletPierce += 1;
                 break;
         }

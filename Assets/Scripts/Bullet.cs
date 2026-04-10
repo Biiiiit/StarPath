@@ -87,7 +87,7 @@ public class Bullet : MonoBehaviour
     {
         if (player != null)
         {
-            player.ClearBullet();
+            player.ClearBullet(gameObject);
         }
 
         Destroy(gameObject);
