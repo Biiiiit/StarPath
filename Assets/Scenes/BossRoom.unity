@@ -728,14 +728,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e0d828845a1e84fa3de0e921b254af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxHealth: 50
-  deathSound: {fileID: 0}
+  maxHealth: 60
+  deathSound: {fileID: 8300000, guid: 093207b306917484195a1dfbcd5efa51, type: 3}
   hitEffectPrefab: {fileID: 6964830764618292018, guid: 3960678be0b73e24f9e6309d5cebfe60, type: 3}
   healthBarFill: {fileID: 918413082}
+  phase1Patterns: []
   phase2Patterns:
   - {fileID: 11400000, guid: e33d4108b21ee0d468341a9544c46644, type: 2}
   - {fileID: 11400000, guid: 9f3b24fede4143b4e895e26beca7eb07, type: 2}
   - {fileID: 11400000, guid: 1b5292c37bc67774c841aed2400b448a, type: 2}
+  attackCooldown: 3
   bulletPrefab: {fileID: 6839562009043437930, guid: f198f881581dafd4c84f9a3bbb348c06, type: 3}
   cellSize: 1
   background: {fileID: 1455655226}
@@ -828,11 +830,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAttacks
   bulletPrefab: {fileID: 6839562009043437930, guid: f198f881581dafd4c84f9a3bbb348c06, type: 3}
+  playerTransform: {fileID: 0}
+  leftBound: 0
+  rightBound: 0
+  timePerRow: 0
   phase2Patterns:
   - {fileID: 11400000, guid: e33d4108b21ee0d468341a9544c46644, type: 2}
   - {fileID: 11400000, guid: 9f3b24fede4143b4e895e26beca7eb07, type: 2}
   - {fileID: 11400000, guid: 1b5292c37bc67774c841aed2400b448a, type: 2}
+  currentPatterns: []
   attackCooldown: 3
+  isAttacking: 0
+  currentPhase: 1
+  running: 0
 --- !u!1 &573816266
 GameObject:
   m_ObjectHideFlags: 0

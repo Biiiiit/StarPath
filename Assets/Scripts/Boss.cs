@@ -15,7 +15,6 @@ public class Boss : MonoBehaviour
     public Image healthBarFill;
 
     [Header("Phase Patterns")]
-    public AttackPattern[] phase1Patterns;
     public AttackPattern[] phase2Patterns;
 
     private AttackPattern[] currentPatterns;
@@ -124,12 +123,7 @@ public class Boss : MonoBehaviour
         currentPhase = phase;
         lastPatternIndex = -1;
 
-        if (phase == 1)
-        {
-            currentPatterns = phase1Patterns;
-            isAttacking = false; // start immediately
-        }
-        else if (phase == 2)
+        if (phase == 2)
         {
             currentPatterns = phase2Patterns;
             StartCoroutine(PhaseTransitionDelay());
