@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class PlayerBossManager : MonoBehaviour
 {
@@ -10,12 +11,18 @@ public class PlayerBossManager : MonoBehaviour
     public Transform shootPoint;
     public AudioClip shootSound;
 
-    private GameObject currentBullet;
+    private List<GameObject> currentBullets = new List<GameObject>();
 
     public LivesUI livesUI;
     public GameObject gameOverUI;
     private bool isInvulnerable = false;
     public float invulnerableDuration = 1f;
+
+    private int bulletsFired = 0;
+    private bool isReloading = false;
+
+    private float lastShotTime = 0f;
+    private float reloadEndTime = 0f;
 
     void Update()
     {
@@ -29,31 +36,59 @@ public class PlayerBossManager : MonoBehaviour
 
         transform.Translate(Vector2.right * move * GameManager.Instance.moveSpeed * Time.deltaTime);
 
-        if (Keyboard.current.spaceKey.isPressed && currentBullet == null)
+        if (Keyboard.current.spaceKey.isPressed)
         {
-            currentBullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
-
-            if (shootSound != null)
+            if (isReloading)
             {
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                if (Time.time >= reloadEndTime)
+                {
+                    isReloading = false;
+                    bulletsFired = 0;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            bool canShootBySpeed = Time.time >= lastShotTime + GameManager.Instance.shootingSpeed;
+            bool canShootByMagazine = bulletsFired < GameManager.Instance.maxBullets;
+
+            if (canShootBySpeed && canShootByMagazine)
+            {
+                Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+
+                bulletsFired++;
+                lastShotTime = Time.time;
+
+                if (shootSound != null)
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+
+                if (bulletsFired >= GameManager.Instance.maxBullets)
+                {
+                    isReloading = true;
+                    reloadEndTime = Time.time + GameManager.Instance.reloadTime;
+                }
             }
         }
 
         ClampToBackground();
     }
 
-    public void ClearBullet()
+    public void ClearBullet(GameObject bullet)
     {
-        currentBullet = null;
+        currentBullets.Remove(bullet);
     }
 
-    public void DestroyBullet()
+    public void ClearAllBullets()
     {
-        if (currentBullet != null)
+        foreach (GameObject bullet in currentBullets)
         {
-            Destroy(currentBullet);
-            currentBullet = null;
+            if (bullet != null)
+                Destroy(bullet);
         }
+
+        currentBullets.Clear();
     }
 
     void ClampToBackground()
@@ -81,8 +116,6 @@ public class PlayerBossManager : MonoBehaviour
 
         livesUI.LoseLife();
         GameManager.Instance.lives--;
-
-        DestroyBullet(); // optional but recommended
 
         if (GameManager.Instance.lives <= 0)
         {

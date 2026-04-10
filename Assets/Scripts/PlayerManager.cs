@@ -15,10 +15,10 @@ public class PlayerManager : MonoBehaviour
     public LivesUI livesUI;
     public GameObject gameOverUI;
 
-    private int activeBullets = 0;
-    private float lastShotTime = 0f;
-
+    private int bulletsFired = 0;
     private bool isReloading = false;
+
+    private float lastShotTime = 0f;
     private float reloadEndTime = 0f;
 
     void Update()
@@ -40,31 +40,31 @@ public class PlayerManager : MonoBehaviour
                 if (Time.time >= reloadEndTime)
                 {
                     isReloading = false;
-                    activeBullets = 0;
+                    bulletsFired = 0;
+                }
+                else
+                {
+                    return;
                 }
             }
-            else
+
+            bool canShootBySpeed = Time.time >= lastShotTime + GameManager.Instance.shootingSpeed;
+            bool canShootByMagazine = bulletsFired < GameManager.Instance.maxBullets;
+
+            if (canShootBySpeed && canShootByMagazine)
             {
-                bool canShootBySpeed = Time.time >= lastShotTime + GameManager.Instance.shootingSpeed;
-                bool canShootByAmmo = activeBullets < GameManager.Instance.maxBullets;
+                Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
 
-                if (canShootBySpeed && canShootByAmmo)
+                bulletsFired++;
+                lastShotTime = Time.time;
+
+                if (shootSound != null)
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+
+                if (bulletsFired >= GameManager.Instance.maxBullets)
                 {
-                    GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
-                    currentBullets.Add(bullet);
-
-                    activeBullets++;
-                    lastShotTime = Time.time;
-
-                    if (shootSound != null)
-                        AudioSource.PlayClipAtPoint(shootSound, transform.position);
-
-                    // trigger reload when magazine is full
-                    if (activeBullets >= GameManager.Instance.maxBullets)
-                    {
-                        isReloading = true;
-                        reloadEndTime = Time.time + GameManager.Instance.reloadTime;
-                    }
+                    isReloading = true;
+                    reloadEndTime = Time.time + GameManager.Instance.reloadTime;
                 }
             }
         }
@@ -75,21 +75,17 @@ public class PlayerManager : MonoBehaviour
     public void ClearBullet(GameObject bullet)
     {
         currentBullets.Remove(bullet);
-        activeBullets = Mathf.Max(0, activeBullets - 1);
     }
 
     public void ClearAllBullets()
     {
-        foreach (GameObject bullet in new List<GameObject>(currentBullets))
+        foreach (GameObject bullet in currentBullets)
         {
             if (bullet != null)
-            {
                 Destroy(bullet);
-            }
         }
 
         currentBullets.Clear();
-        activeBullets = 0;
     }
 
     void ClampToBackground()
