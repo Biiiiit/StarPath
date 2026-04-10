@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1570934727ae4ff43ad075a81a8dff4e
+guid: 8c026a806b4954a44be413cd8fdd5cea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6472352493207524568
-    second: image 53_0
+      213: 4635638231244424715
+    second: Boss Healthbar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image 53_0
+      name: Boss Healthbar_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 50
-        height: 47
+        y: 0
+        width: 848
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82b604d03b59d26a0800000000000000
-      internalID: -6472352493207524568
+      spriteID: b064b802968155040800000000000000
+      internalID: 4635638231244424715
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      image 53_0: -6472352493207524568
+      Boss Healthbar_0: 4635638231244424715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

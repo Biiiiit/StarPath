@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1570934727ae4ff43ad075a81a8dff4e
+guid: b5fe0c909749db6489bd5ae73e1eea06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6472352493207524568
-    second: image 53_0
+      213: -2298035893293792565
+    second: BossbarFill_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image 53_0
+      name: BossbarFill_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 50
-        height: 47
+        y: 0
+        width: 752
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82b604d03b59d26a0800000000000000
-      internalID: -6472352493207524568
+      spriteID: bc24023d78cbb10e0800000000000000
+      internalID: -2298035893293792565
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      image 53_0: -6472352493207524568
+      BossbarFill_0: -2298035893293792565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
