@@ -5,7 +5,7 @@ using System.Collections;
 public class Boss : MonoBehaviour
 {
     [Header("Stats")]
-    public int maxHealth = 50;
+    public int maxHealth = 75;
     private int currentHealth;
     public AudioClip deathSound;
     private int currentPhase = 1;
@@ -14,11 +14,9 @@ public class Boss : MonoBehaviour
     public GameObject hitEffectPrefab;
     public Image healthBarFill;
 
-
     [Header("Phase Patterns")]
     public AttackPattern[] phase1Patterns;
     public AttackPattern[] phase2Patterns;
-    public AttackPattern[] phase3Patterns;
 
     private AttackPattern[] currentPatterns;
     private int lastPatternIndex = -1;
@@ -29,7 +27,6 @@ public class Boss : MonoBehaviour
 
     [Header("Shooting")]
     public GameObject bulletPrefab;
-    public float bulletSpeed = 5f;
     public float cellSize = 1f;
     private float timePerRow;
     private Transform playerTransform;
@@ -41,7 +38,6 @@ public class Boss : MonoBehaviour
     private float rightBound;
 
     private PlayerBossManager player;
-
     private int currentRow = 0;
 
     void Start()
@@ -64,36 +60,100 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
+        if (currentPhase == 3) return;
+
+        if (currentPhase == 1)
+        {
+            if (!isAttacking)
+                StartCoroutine(Phase1Attack());
+            return;
+        }
+
         if (!isAttacking)
         {
             StartCoroutine(AttackRoutine());
         }
     }
 
+    IEnumerator Phase1Attack()
+    {
+        isAttacking = true;
+
+        bool fireRows = Random.value > 0.7f;
+
+        if (!fireRows)
+        {
+            // 🔹 Single bullet
+            yield return StartCoroutine(FireSingleShot());
+        }
+        else
+        {
+            // 🔹 4 rows of single bullets
+            for (int i = 0; i < 4; i++)
+            {
+                yield return StartCoroutine(FireSingleShot());
+                yield return new WaitForSeconds(timePerRow);
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        isAttacking = false;
+    }
+
+    IEnumerator FireSingleShot()
+    {
+        float xPos;
+
+        xPos = Random.Range(leftBound, rightBound);
+
+
+        Vector3 spawnPos = new Vector3(xPos, transform.position.y, 1);
+
+        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+
+        bullet.GetComponent<BossBullet>().SetDirection(Vector2.down);
+
+        yield return null;
+    }
+
     void SetPhase(int phase)
     {
+        StopAllCoroutines();
+
         currentPhase = phase;
-
-        StopAllCoroutines(); // stop old attacks
-
-        if (phase == 3)
-        {
-            StartCoroutine(Phase3Attack());
-            return;
-        }
-
-        switch (phase)
-        {
-            case 1:
-                currentPatterns = phase1Patterns;
-                break;
-            case 2:
-                currentPatterns = phase2Patterns;
-                break;
-        }
-
         lastPatternIndex = -1;
+
+        if (phase == 1)
+        {
+            currentPatterns = phase1Patterns;
+            isAttacking = false; // start immediately
+        }
+        else if (phase == 2)
+        {
+            currentPatterns = phase2Patterns;
+            StartCoroutine(PhaseTransitionDelay());
+        }
+        else if (phase == 3)
+        {
+            StartCoroutine(StartPhase3());
+        }
+    }
+
+    IEnumerator PhaseTransitionDelay()
+    {
+        isAttacking = true;
+        yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
+    }
+
+    IEnumerator StartPhase3()
+    {
+        isAttacking = true;
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        StartCoroutine(Phase3Attack());
     }
 
     int GetRandomPatternIndex()
@@ -216,7 +276,11 @@ public class Boss : MonoBehaviour
         float angleStep = 20f;
         float currentAngle = Random.Range(0f, 360f);
 
-        Vector3 center = transform.position;
+        Vector3 center = new Vector3(
+        transform.position.x,
+        transform.position.y,
+        1
+        );
 
         for (int i = 0; i < bullets; i++)
         {
@@ -236,7 +300,11 @@ public class Boss : MonoBehaviour
     {
         int bullets = 24;
 
-        Vector3 center = transform.position;
+        Vector3 center = new Vector3(
+        transform.position.x,
+        transform.position.y,
+        1
+        );
 
         for (int i = 0; i < bullets; i++)
         {
@@ -294,6 +362,14 @@ public class Boss : MonoBehaviour
     void Die()
     {
         Debug.Log("Boss defeated");
+
+        BossBullet[] bullets = FindObjectsByType<BossBullet>(FindObjectsSortMode.None);
+
+        foreach (BossBullet bullet in bullets)
+        {
+            Destroy(bullet.gameObject);
+        }
+
         Destroy(gameObject);
     }
 
@@ -306,10 +382,8 @@ public class Boss : MonoBehaviour
     {
         float healthPercent = (float)currentHealth / maxHealth;
 
-        // Immediate fill (correct)
         healthBarFill.fillAmount = healthPercent;
 
-        // Smooth color gradient: green → yellow → red
         Color color;
 
         if (healthPercent > 0.5f)

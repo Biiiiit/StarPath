@@ -29,7 +29,7 @@ public class PlayerBossManager : MonoBehaviour
 
         transform.Translate(Vector2.right * move * GameManager.Instance.moveSpeed * Time.deltaTime);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && currentBullet == null)
+        if (Keyboard.current.spaceKey.isPressed && currentBullet == null)
         {
             currentBullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
 
