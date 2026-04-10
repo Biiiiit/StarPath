@@ -359,12 +359,12 @@ public class Boss : MonoBehaviour
 
         BossBullet[] bullets = FindObjectsByType<BossBullet>(FindObjectsSortMode.None);
 
+        Destroy(gameObject);
+
         foreach (BossBullet bullet in bullets)
         {
             Destroy(bullet.gameObject);
         }
-
-        Destroy(gameObject);
     }
 
     public void PlayDeathSound()
