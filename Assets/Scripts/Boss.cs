@@ -39,6 +39,7 @@ public class Boss : MonoBehaviour
     private PlayerBossManager player;
     private int currentRow = 0;
 
+
     void Start()
     {
         player = FindFirstObjectByType<PlayerBossManager>();
@@ -95,7 +96,7 @@ public class Boss : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
         isAttacking = false;
     }
