@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: 2ea971cc737b39d4faa77752c5ba26bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9053232212333711560
+    second: BubbleSpeechIzac_0
+  - first:
+      213: 6253471713610306405
+    second: BubbleSpeechIzac_1
+  - first:
+      213: 5262438976502013491
+    second: BubbleSpeechIzac_2
+  - first:
+      213: -315923318317214347
+    second: BubbleSpeechIzac_3
+  - first:
+      213: -6451611942438772783
+    second: BubbleSpeechIzac_4
+  - first:
+      213: 4392076849208396034
+    second: BubbleSpeechIzac_5
+  - first:
+      213: 7210431466292322701
+    second: BubbleSpeechIzac_6
+  - first:
+      213: -3891736087210309121
+    second: BubbleSpeechIzac_7
+  - first:
+      213: 608554675942107029
+    second: BubbleSpeechIzac_8
+  - first:
+      213: -5701370855475715523
+    second: BubbleSpeechIzac_9
+  - first:
+      213: 7118629413221436458
+    second: BubbleSpeechIzac_10
+  - first:
+      213: 7016027503949034945
+    second: BubbleSpeechIzac_11
+  - first:
+      213: 8473145088903033247
+    second: BubbleSpeechIzac_12
+  - first:
+      213: -8929385568471698354
+    second: BubbleSpeechIzac_13
+  - first:
+      213: 638691875804516648
+    second: BubbleSpeechIzac_14
+  - first:
+      213: -4192245982927826007
+    second: BubbleSpeechIzac_15
+  - first:
+      213: 8232354786210430895
+    second: BubbleSpeechIzac_16
+  - first:
+      213: -7981904208086145829
+    second: BubbleSpeechIzac_17
+  - first:
+      213: 4015397374123474899
+    second: BubbleSpeechIzac_18
+  - first:
+      213: 6383649571958770280
+    second: BubbleSpeechIzac_19
+  - first:
+      213: 6023376881800322584
+    second: BubbleSpeechIzac_20
+  - first:
+      213: -556124952514319235
+    second: BubbleSpeechIzac_21
+  - first:
+      213: -2667679561644019825
+    second: BubbleSpeechIzac_22
+  - first:
+      213: -2307181595856675624
+    second: BubbleSpeechIzac_23
+  - first:
+      213: -516461783001318191
+    second: BubbleSpeechIzac_24
+  - first:
+      213: 2301611342850940984
+    second: BubbleSpeechIzac_25
+  - first:
+      213: 2363573149215894571
+    second: BubbleSpeechIzac_26
+  - first:
+      213: -4882371353181873434
+    second: BubbleSpeechIzac_27
+  - first:
+      213: -1924372842090858680
+    second: BubbleSpeechIzac_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83fa9bad4457c5280800000000000000
+      internalID: -9053232212333711560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_1
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56312b6246bc8c650800000000000000
+      internalID: 6253471713610306405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_2
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e92961e50f70940800000000000000
+      internalID: 5262438976502013491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_3
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57590737a6d9d9bf0800000000000000
+      internalID: -315923318317214347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_4
+      rect:
+        serializedVersion: 2
+        x: 3212
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dfd446de154776a0800000000000000
+      internalID: -6451611942438772783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_5
+      rect:
+        serializedVersion: 2
+        x: 4013
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2098847cf9ac3fc30800000000000000
+      internalID: 4392076849208396034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_6
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8127a15739901460800000000000000
+      internalID: 7210431466292322701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_7
+      rect:
+        serializedVersion: 2
+        x: 5615
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff9c242e5a6cdf9c0800000000000000
+      internalID: -3891736087210309121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_8
+      rect:
+        serializedVersion: 2
+        x: 6416
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597aee5e045027800800000000000000
+      internalID: 608554675942107029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_9
+      rect:
+        serializedVersion: 2
+        x: 7217
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32ea920a69a0e0b0800000000000000
+      internalID: -5701370855475715523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_10
+      rect:
+        serializedVersion: 2
+        x: 8018
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c06b63cb37ac260800000000000000
+      internalID: 7118629413221436458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_11
+      rect:
+        serializedVersion: 2
+        x: 8819
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5b043a7dfed5160800000000000000
+      internalID: 7016027503949034945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_12
+      rect:
+        serializedVersion: 2
+        x: 9620
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f913962d098a69570800000000000000
+      internalID: 8473145088903033247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_13
+      rect:
+        serializedVersion: 2
+        x: 10421
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44beb8a223741480800000000000000
+      internalID: -8929385568471698354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_14
+      rect:
+        serializedVersion: 2
+        x: 11222
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821914a80e61dd800800000000000000
+      internalID: 638691875804516648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_15
+      rect:
+        serializedVersion: 2
+        x: 12023
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a357807d7622d5c0800000000000000
+      internalID: -4192245982927826007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_16
+      rect:
+        serializedVersion: 2
+        x: 12824
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf3f09af033f3270800000000000000
+      internalID: 8232354786210430895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_17
+      rect:
+        serializedVersion: 2
+        x: 13625
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd464d5a9649a3190800000000000000
+      internalID: -7981904208086145829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_18
+      rect:
+        serializedVersion: 2
+        x: 14426
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df7aa423ae89b730800000000000000
+      internalID: 4015397374123474899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_19
+      rect:
+        serializedVersion: 2
+        x: 15227
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a4d23b677479850800000000000000
+      internalID: 6383649571958770280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_20
+      rect:
+        serializedVersion: 2
+        x: 16028
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e120c5c55579350800000000000000
+      internalID: 6023376881800322584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_21
+      rect:
+        serializedVersion: 2
+        x: 16829
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c27aa5d4f3848f0800000000000000
+      internalID: -556124952514319235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_22
+      rect:
+        serializedVersion: 2
+        x: 17630
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f63a9929f7afad0800000000000000
+      internalID: -2667679561644019825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_23
+      rect:
+        serializedVersion: 2
+        x: 18431
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dcd4a2009e3bffd0800000000000000
+      internalID: -2307181595856675624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_24
+      rect:
+        serializedVersion: 2
+        x: 19232
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc3424aeb825d8f0800000000000000
+      internalID: -516461783001318191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_25
+      rect:
+        serializedVersion: 2
+        x: 20033
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 830e3a56257f0ff10800000000000000
+      internalID: 2301611342850940984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_26
+      rect:
+        serializedVersion: 2
+        x: 20834
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c2aa7a1491dc020800000000000000
+      internalID: 2363573149215894571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_27
+      rect:
+        serializedVersion: 2
+        x: 21635
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea1d084f155e3cb0800000000000000
+      internalID: -4882371353181873434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubbleSpeechIzac_28
+      rect:
+        serializedVersion: 2
+        x: 22436
+        y: 17
+        width: 785
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847f3cb88114b45e0800000000000000
+      internalID: -1924372842090858680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BubbleSpeechIzac_0: -9053232212333711560
+      BubbleSpeechIzac_1: 6253471713610306405
+      BubbleSpeechIzac_10: 7118629413221436458
+      BubbleSpeechIzac_11: 7016027503949034945
+      BubbleSpeechIzac_12: 8473145088903033247
+      BubbleSpeechIzac_13: -8929385568471698354
+      BubbleSpeechIzac_14: 638691875804516648
+      BubbleSpeechIzac_15: -4192245982927826007
+      BubbleSpeechIzac_16: 8232354786210430895
+      BubbleSpeechIzac_17: -7981904208086145829
+      BubbleSpeechIzac_18: 4015397374123474899
+      BubbleSpeechIzac_19: 6383649571958770280
+      BubbleSpeechIzac_2: 5262438976502013491
+      BubbleSpeechIzac_20: 6023376881800322584
+      BubbleSpeechIzac_21: -556124952514319235
+      BubbleSpeechIzac_22: -2667679561644019825
+      BubbleSpeechIzac_23: -2307181595856675624
+      BubbleSpeechIzac_24: -516461783001318191
+      BubbleSpeechIzac_25: 2301611342850940984
+      BubbleSpeechIzac_26: 2363573149215894571
+      BubbleSpeechIzac_27: -4882371353181873434
+      BubbleSpeechIzac_28: -1924372842090858680
+      BubbleSpeechIzac_3: -315923318317214347
+      BubbleSpeechIzac_4: -6451611942438772783
+      BubbleSpeechIzac_5: 4392076849208396034
+      BubbleSpeechIzac_6: 7210431466292322701
+      BubbleSpeechIzac_7: -3891736087210309121
+      BubbleSpeechIzac_8: 608554675942107029
+      BubbleSpeechIzac_9: -5701370855475715523
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
