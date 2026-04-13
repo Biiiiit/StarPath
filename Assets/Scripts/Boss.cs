@@ -39,6 +39,7 @@ public class Boss : MonoBehaviour
     private PlayerBossManager player;
     private int currentRow = 0;
 
+
     void Start()
     {
         player = FindFirstObjectByType<PlayerBossManager>();
@@ -95,7 +96,7 @@ public class Boss : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
         isAttacking = false;
     }
@@ -359,12 +360,12 @@ public class Boss : MonoBehaviour
 
         BossBullet[] bullets = FindObjectsByType<BossBullet>(FindObjectsSortMode.None);
 
+        Destroy(gameObject);
+
         foreach (BossBullet bullet in bullets)
         {
             Destroy(bullet.gameObject);
         }
-
-        Destroy(gameObject);
     }
 
     public void PlayDeathSound()
