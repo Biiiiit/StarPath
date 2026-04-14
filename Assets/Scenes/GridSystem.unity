@@ -880,7 +880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 890829351}
   - component: {fileID: 890829353}
-  - component: {fileID: 890829352}
+  - component: {fileID: 890829354}
   m_Layer: 0
   m_Name: Guns
   m_TagString: Untagged
@@ -903,28 +903,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1328447448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &890829352
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890829350}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc677a2bb09583c42bab124ef671d391, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &890829353
 SpriteRenderer:
   serializedVersion: 2
@@ -984,6 +962,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &890829354
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890829350}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d5e79f5899611f4d99027c2799dfc8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &952631122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,29 +2780,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1809148094854019725, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809148094854019725, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3286150100584900688, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
     - target: {fileID: 3458941190677913328, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3458941190677913328, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3458941190677913328, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3458941190677913328, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.561
+      value: -2.94
       objectReference: {fileID: 0}
     - target: {fileID: 3458941190677913328, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3458941190677913328, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2840,6 +2848,10 @@ PrefabInstance:
       propertyPath: livesUI
       value: 
       objectReference: {fileID: 1635741840}
+    - target: {fileID: 6477745928779293448, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 890829354}
     - target: {fileID: 6477745928779293448, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: background
       value: 
