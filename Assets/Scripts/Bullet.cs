@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         float moveStep = GameManager.Instance.bulletSpeed * Time.deltaTime;
 
         // Raycast forward BEFORE moving
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, moveStep);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, moveStep + 0.1f);
 
         if (hit.collider != null)
         {
@@ -53,6 +53,23 @@ public class Bullet : MonoBehaviour
                 {
                     Vector2 offset = Random.insideUnitCircle * 0.2f;
                     boss.TakeDamage(1, (Vector3)(hit.point + offset));
+
+                    hitsRemaining--;
+
+                    if (hitsRemaining <= 0)
+                    {
+                        ClearAndDestroy();
+                        return;
+                    }
+                }
+            }
+            else if (hit.collider.GetComponent<CoverHealth>() != null)
+            {
+                CoverHealth cover = hit.collider.GetComponent<CoverHealth>();
+
+                if (cover != null)
+                {
+                    cover.TakeDamage(1f);
 
                     hitsRemaining--;
 
