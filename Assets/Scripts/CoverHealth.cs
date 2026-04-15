@@ -27,16 +27,16 @@ public class CoverHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float dmg)
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        Debug.Log("COVER HIT");
 
-        UpdateHealthBar();
+        currentHealth -= dmg;
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Debug.Log("COVER DEAD");
+            Destroy(transform.parent.gameObject);
         }
     }
 

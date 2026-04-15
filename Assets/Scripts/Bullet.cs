@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
     private int hitsRemaining;
     private PlayerManager player;
 
-    // Track aliens already hit
     private HashSet<Alien> hitAliens = new HashSet<Alien>();
 
     void Start()
@@ -21,73 +20,81 @@ public class Bullet : MonoBehaviour
     {
         float moveStep = GameManager.Instance.bulletSpeed * Time.deltaTime;
 
-        // Raycast forward BEFORE moving
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, moveStep + 0.1f);
+        RaycastHit2D hit = Physics2D.CircleCast(
+            transform.position,
+            0.1f,
+            Vector2.up,
+            moveStep + 0.2f
+        );
+
+        Debug.DrawRay(transform.position, Vector2.up * (moveStep + 0.2f), Color.green);
 
         if (hit.collider != null)
         {
-            // 🔹 ALIEN HIT
-            if (hit.collider.CompareTag("Alien"))
-            {
-                Alien alien = hit.collider.GetComponent<Alien>();
+            Debug.Log("HIT: " + hit.collider.name);
 
-                if (alien != null && !hitAliens.Contains(alien))
+            Alien alien = hit.collider.GetComponent<Alien>();
+            if (alien != null)
+            {
+                if (!hitAliens.Contains(alien))
                 {
                     hitAliens.Add(alien);
 
                     alien.OnHit();
-                    hitsRemaining--;
-
-                    if (hitsRemaining <= 0)
-                    {
-                        ClearAndDestroy();
-                        return;
-                    }
+                    HandleHit();
+                    return;
                 }
             }
-            else if (hit.collider.CompareTag("Boss"))
+
+            EliteBoss eliteBoss = hit.collider.GetComponentInParent<EliteBoss>();
+            if (eliteBoss != null)
             {
-                Boss boss = hit.collider.GetComponent<Boss>();
+                Debug.Log("ELITE BOSS DETECTED IN BULLET");
 
-                if (boss != null)
-                {
-                    Vector2 offset = Random.insideUnitCircle * 0.2f;
-                    boss.TakeDamage(1, (Vector3)(hit.point + offset));
+                Vector2 offset = Random.insideUnitCircle * 0.2f;
+                eliteBoss.TakeDamage(1, (Vector3)(hit.point + offset));
 
-                    hitsRemaining--;
-
-                    if (hitsRemaining <= 0)
-                    {
-                        ClearAndDestroy();
-                        return;
-                    }
-                }
+                HandleHit();
+                return;
             }
-            else if (hit.collider.GetComponent<CoverHealth>() != null)
+
+            Boss boss = hit.collider.GetComponentInParent<Boss>();
+            if (boss != null)
             {
-                CoverHealth cover = hit.collider.GetComponent<CoverHealth>();
+                Debug.Log("OLD BOSS DETECTED IN BULLET");
 
-                if (cover != null)
-                {
-                    cover.TakeDamage(1f);
+                Vector2 offset = Random.insideUnitCircle * 0.2f;
+                boss.TakeDamage(1, (Vector3)(hit.point + offset));
 
-                    hitsRemaining--;
+                HandleHit();
+                return;
+            }
 
-                    if (hitsRemaining <= 0)
-                    {
-                        ClearAndDestroy();
-                        return;
-                    }
-                }
+            CoverHealth cover = hit.collider.GetComponent<CoverHealth>();
+            if (cover != null)
+            {
+                cover.TakeDamage(1f);
+
+                HandleHit();
+                return;
             }
         }
 
-        // Move bullet
         transform.Translate(Vector2.up * moveStep);
 
         CheckBounds();
+    }
 
-        Debug.DrawRay(transform.position, Vector2.up * moveStep, Color.red);
+    void HandleHit()
+    {
+        hitsRemaining--;
+
+        Debug.Log("HITS REMAINING: " + hitsRemaining);
+
+        if (hitsRemaining <= 0)
+        {
+            ClearAndDestroy();
+        }
     }
 
     void CheckBounds()

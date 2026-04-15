@@ -1,38 +1,42 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class EliteBoss : MonoBehaviour
 {
-    [Header("Health")]
-    public float maxHealth = 100f;
+    [Header("Stats")]
+    public float maxHealth = 60f;
     private float currentHealth;
+
+    [Header("Effects")]
+    public AudioClip deathSound;
+    public GameObject hitEffectPrefab;
 
     [Header("UI")]
     public Image healthBarFill;
 
-    [Header("Effects")]
-    public GameObject hitEffect;
-    public GameObject deathEffect;
-    public AudioSource audioSource;
-    public AudioClip deathSound;
+    [Header("Attack Timing")]
+    public float attackCooldown = 3f;
+    private float nextAttackTime;
+
+    [Header("Shooting")]
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 5f;
+    public float spreadAngle = 30f;
 
     [Header("Bounds")]
     public SpriteRenderer background;
 
-    [Header("Shooting")]
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-
-    public float bulletSpeed = 5f;
-    public float fireRate = 1f;
-    public float spreadAngle = 30f;
-
-    private float nextShootTime;
+    private SpriteRenderer[] renderers;
 
     void Start()
     {
         currentHealth = maxHealth;
         UpdateHealthBar();
+
+        renderers = GetComponentsInChildren<SpriteRenderer>();
+
+        Debug.Log("ELITE BOSS SPAWNED");
     }
 
     void Update()
@@ -41,71 +45,22 @@ public class EliteBoss : MonoBehaviour
         CheckBounds();
     }
 
-    // ---------------- SHOOTING ----------------
-    void HandleShooting()
+    public void TakeDamage(int dmg, Vector3 hitPosition)
     {
-        if (Time.time < nextShootTime) return;
+        Debug.Log("ELITE BOSS TAKE DAMAGE CALLED");
 
-        Shoot();
-        nextShootTime = Time.time + fireRate;
-    }
-
-    void Shoot()
-    {
-        if (bulletPrefab == null || firePoint == null) return;
-
-        Transform player = FindFirstObjectByType<PlayerManager>()?.transform;
-        if (player == null) return;
-
-        Vector2 baseDir = (player.position - firePoint.position).normalized;
-
-        // 50% straight, 50% spread
-        Vector2 finalDir;
-
-        if (Random.value < 0.5f)
-        {
-            finalDir = baseDir;
-        }
-        else
-        {
-            float angle = Random.Range(-spreadAngle, spreadAngle);
-            finalDir = Rotate(baseDir, angle);
-        }
-
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-
-        BossBullet bb = bullet.GetComponent<BossBullet>();
-        if (bb != null)
-        {
-            bb.speed = bulletSpeed;
-            bb.SetDirection(finalDir);
-        }
-    }
-
-    Vector2 Rotate(Vector2 v, float angle)
-    {
-        float rad = angle * Mathf.Deg2Rad;
-        float cos = Mathf.Cos(rad);
-        float sin = Mathf.Sin(rad);
-
-        return new Vector2(
-            cos * v.x - sin * v.y,
-            sin * v.x + cos * v.y
-        );
-    }
-
-    // ---------------- DAMAGE ----------------
-    public void TakeDamage(float damage, Vector3 hitPos)
-    {
-        currentHealth -= damage;
+        currentHealth -= dmg;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        UpdateHealthBar();
+        Debug.Log("CURRENT HP: " + currentHealth);
 
-        if (hitEffect != null)
+        if (hitEffectPrefab != null)
         {
-            Instantiate(hitEffect, hitPos, Quaternion.identity);
+            Instantiate(hitEffectPrefab, hitPosition, Quaternion.identity);
         }
+
+        StartCoroutine(HitFlash());
+        UpdateHealthBar();
 
         if (currentHealth <= 0)
         {
@@ -113,16 +68,47 @@ public class EliteBoss : MonoBehaviour
         }
     }
 
-    void Die()
+    IEnumerator HitFlash()
     {
-        if (deathEffect != null)
+        Debug.Log("FLASH START");
+
+        if (renderers == null || renderers.Length == 0)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Debug.Log("NO RENDERERS FOUND");
+            yield break;
         }
 
-        if (audioSource != null && deathSound != null)
+        Color[] originalColors = new Color[renderers.Length];
+
+        for (int i = 0; i < renderers.Length; i++)
         {
-            audioSource.PlayOneShot(deathSound);
+            if (renderers[i] == null) continue;
+
+            originalColors[i] = renderers[i].color;
+
+            renderers[i].material = new Material(Shader.Find("Sprites/Default"));
+            renderers[i].color = Color.red;
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            if (renderers[i] == null) continue;
+
+            renderers[i].color = originalColors[i];
+        }
+
+        Debug.Log("FLASH END");
+    }
+
+    void Die()
+    {
+        Debug.Log("ELITE BOSS DIED");
+
+        if (deathSound != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
         }
 
         Destroy(gameObject);
@@ -136,7 +122,31 @@ public class EliteBoss : MonoBehaviour
         }
     }
 
-    // ---------------- BOUNDS ----------------
+    void HandleShooting()
+    {
+        if (Time.time < nextAttackTime) return;
+
+        Shoot();
+        nextAttackTime = Time.time + attackCooldown;
+    }
+
+    void Shoot()
+    {
+        Transform player = FindFirstObjectByType<PlayerManager>()?.transform;
+        if (player == null) return;
+
+        Vector2 dir = (player.position - transform.position).normalized;
+
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+        BossBullet bb = bullet.GetComponent<BossBullet>();
+        if (bb != null)
+        {
+            bb.speed = bulletSpeed;
+            bb.SetDirection(dir);
+        }
+    }
+
     void CheckBounds()
     {
         if (background == null) return;
