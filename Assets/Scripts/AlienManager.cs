@@ -106,12 +106,23 @@ public class AlienManager : MonoBehaviour
         foreach (Transform alien in transform)
         {
             if (alien == null) continue;
-            SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
-            if (sr != null) sr.enabled = state;
+
+            SpriteRenderer[] alienRenderers =
+                alien.GetComponentsInChildren<SpriteRenderer>(true);
+
+            foreach (SpriteRenderer sr in alienRenderers)
+            {
+                sr.enabled = state;
+            }
         }
 
-        SpriteRenderer playerSR = player.GetComponent<SpriteRenderer>();
-        if (playerSR != null) playerSR.enabled = state;
+        SpriteRenderer[] playerRenderers =
+            player.GetComponentsInChildren<SpriteRenderer>(true);
+
+        foreach (SpriteRenderer sr in playerRenderers)
+        {
+            sr.enabled = state;
+        }
     }
 
     public void AlienKilled()

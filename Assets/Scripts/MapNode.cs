@@ -14,21 +14,44 @@ public class MapNode : MonoBehaviour
 
     public string sceneName;
 
+    public GameObject checkmarkSprite;
+
     private SpriteRenderer sr;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        UpdateVisual();
     }
 
     void Update()
     {
+        UpdateVisual();
+    }
+
+    void UpdateVisual()
+    {
         if (isCompleted)
-            sr.color = Color.green;
+        {
+            sr.color = new Color(0.7f, 0.7f, 0.7f, 1f); // slightly darker
+
+            if (checkmarkSprite != null)
+                checkmarkSprite.SetActive(true);
+        }
         else if (isUnlocked)
+        {
             sr.color = Color.white;
+
+            if (checkmarkSprite != null)
+                checkmarkSprite.SetActive(false);
+        }
         else
+        {
             sr.color = Color.gray;
+
+            if (checkmarkSprite != null)
+                checkmarkSprite.SetActive(false);
+        }
     }
 }
 

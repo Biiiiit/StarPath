@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MapManager : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class MapManager : MonoBehaviour
 
     public GameObject mapRoot;
 
+    public Transform playerMarker; // sprite that moves between nodes
+    public float moveSpeed = 3f;
+
     private Scene currentLevelScene;
+    private bool isMoving = false;
 
     private void Awake()
     {
@@ -30,14 +35,20 @@ public class MapManager : MonoBehaviour
         if (startNode != null)
         {
             currentNode = startNode;
-            startNode.isCompleted = true;
+            SetNodeCompleted(startNode);
             UnlockNextNodes(startNode);
+
+            if (playerMarker != null)
+                playerMarker.position = startNode.transform.position;
         }
     }
 
     void Update()
     {
         if (SceneManager.GetActiveScene().name != "MapScene")
+            return;
+
+        if (isMoving)
             return;
 
         if (Input.GetMouseButtonDown(0))
@@ -51,10 +62,65 @@ public class MapManager : MonoBehaviour
 
                 if (node != null && node.isUnlocked)
                 {
-                    SelectNode(node);
+                    StartCoroutine(MoveToNode(node));
                 }
             }
         }
+    }
+
+    IEnumerator MoveToNode(MapNode node)
+    {
+        isMoving = true;
+
+        Vector3 targetPos = node.transform.position;
+
+        float totalDistance = Vector3.Distance(playerMarker.position, targetPos);
+
+        while (Vector3.Distance(playerMarker.position, targetPos) > 0.02f)
+        {
+            Vector3 direction = targetPos - playerMarker.position;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            playerMarker.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
+
+            playerMarker.position = Vector3.MoveTowards(
+                playerMarker.position,
+                targetPos,
+                moveSpeed * Time.deltaTime
+            );
+
+            float remaining = Vector3.Distance(playerMarker.position, targetPos);
+            float progress = 1f - (remaining / totalDistance);
+
+            float scale;
+
+            if (progress < 0.3f)
+            {
+                // grow
+                scale = Mathf.Lerp(0f, 0.3f, progress / 0.3f);
+            }
+            else if (progress < 0.7f)
+            {
+                // hold
+                scale = 0.3f;
+            }
+            else
+            {
+                // shrink
+                scale = Mathf.Lerp(0.3f, 0f, (progress - 0.7f) / 0.3f);
+            }
+
+            playerMarker.localScale = Vector3.one * scale;
+
+            yield return null;
+        }
+
+        playerMarker.position = targetPos;
+        playerMarker.localScale = Vector3.zero;
+
+        SelectNode(node);
+
+        isMoving = false;
     }
 
     void UnlockNextNodes(MapNode node)
@@ -93,16 +159,26 @@ public class MapManager : MonoBehaviour
 
     public void CompleteCurrentNode()
     {
-        currentNode.isCompleted = true;
+        SetNodeCompleted(currentNode);
         UnlockNextNodes(currentNode);
+    }
+
+    void SetNodeCompleted(MapNode node)
+    {
+        node.isCompleted = true;
+
+        SpriteRenderer sr = node.GetComponent<SpriteRenderer>();
+        if (sr != null)
+            sr.color = new Color(0.7f, 0.7f, 0.7f, 1f);
+
+        if (node.checkmarkSprite != null)
+            node.checkmarkSprite.SetActive(true);
     }
 
     public void ReturnToMap()
     {
         if (currentLevelScene.isLoaded)
-        {
             SceneManager.UnloadSceneAsync(currentLevelScene);
-        }
 
         mapRoot.SetActive(true);
 
