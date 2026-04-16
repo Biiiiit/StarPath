@@ -523,7 +523,7 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 1
-  sceneName: 
+  sceneName: EliteBossRoom
 --- !u!61 &189516917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 1
-  sceneName: 
+  sceneName: EliteBossRoom
 --- !u!61 &1089453250
 BoxCollider2D:
   m_ObjectHideFlags: 0

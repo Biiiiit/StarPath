@@ -112,6 +112,8 @@ public class EliteBoss : MonoBehaviour
         }
 
         Destroy(gameObject);
+
+        CheckAllBossesDead();
     }
 
     void UpdateHealthBar()
@@ -159,6 +161,22 @@ public class EliteBoss : MonoBehaviour
             pos.y > background.bounds.max.y + 5f)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void CheckAllBossesDead()
+    {
+        EliteBoss[] bosses = FindObjectsByType<EliteBoss>(FindObjectsSortMode.None);
+
+        if (bosses.Length <= 1) 
+        {
+            Debug.Log("ALL BOSSES DEAD → COMPLETE LEVEL");
+
+            LevelManager lm = FindFirstObjectByType<LevelManager>();
+            if (lm != null)
+            {
+                lm.CompleteLevel();
+            }
         }
     }
 }
