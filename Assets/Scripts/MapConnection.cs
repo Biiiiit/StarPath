@@ -5,12 +5,12 @@ public class MapConnection : MonoBehaviour
     public MapNode fromNode;
     public MapNode toNode;
 
-    private LineRenderer lr;
-
     public bool isActive = false;
     public bool isBlinking = false;
 
     public float blinkSpeed = 2f;
+
+    private LineRenderer lr;
 
     void Awake()
     {
@@ -22,37 +22,42 @@ public class MapConnection : MonoBehaviour
         lr.positionCount = 2;
         lr.startWidth = 0.05f;
         lr.endWidth = 0.05f;
-    }
 
-    void OnEnable()
-    {
-        UpdateColor();
+        RefreshLine();
+        RefreshColor();
     }
 
     void Update()
     {
+        if (isBlinking)
+            RefreshColor();
+    }
+
+    public void RefreshLine()
+    {
         lr.SetPosition(0, fromNode.transform.position);
         lr.SetPosition(1, toNode.transform.position);
-        UpdateColor();
     }
 
     public void SetActive(bool active)
     {
         isActive = active;
         isBlinking = false;
+        RefreshColor();
     }
 
     public void SetBlinking(bool blinking)
     {
         isBlinking = blinking;
+
         if (blinking)
             isActive = false;
+
+        RefreshColor();
     }
 
-    void UpdateColor()
+    public void RefreshColor()
     {
-        if (lr == null) return;
-
         if (isActive)
         {
             lr.startColor = Color.white;
@@ -61,10 +66,10 @@ public class MapConnection : MonoBehaviour
         else if (isBlinking)
         {
             float t = Mathf.PingPong(Time.time * blinkSpeed, 1f);
-            Color blink = Color.Lerp(Color.white, Color.gray, t);
+            Color c = Color.Lerp(Color.white, Color.gray, t);
 
-            lr.startColor = blink;
-            lr.endColor = blink;
+            lr.startColor = c;
+            lr.endColor = c;
         }
         else
         {

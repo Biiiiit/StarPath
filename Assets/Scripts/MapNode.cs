@@ -11,29 +11,22 @@ public class MapNode : MonoBehaviour
     public bool isCompleted = false;
 
     public NodeType nodeType;
-
     public string sceneName;
 
     public GameObject checkmarkSprite;
 
     private SpriteRenderer sr;
 
-    void Start()
+    void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        UpdateVisual();
     }
 
-    void Update()
-    {
-        UpdateVisual();
-    }
-
-    void UpdateVisual()
+    public void RefreshVisual()
     {
         if (isCompleted)
         {
-            sr.color = new Color(0.7f, 0.7f, 0.7f, 1f); // slightly darker
+            sr.color = new Color(0.7f, 0.7f, 0.7f, 1f);
 
             if (checkmarkSprite != null)
                 checkmarkSprite.SetActive(true);
