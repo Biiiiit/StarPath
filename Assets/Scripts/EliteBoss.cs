@@ -132,7 +132,7 @@ public class EliteBoss : MonoBehaviour
 
     void Shoot()
     {
-        Transform player = FindFirstObjectByType<PlayerManager>()?.transform;
+        Transform player = FindFirstObjectByType<PlayerBossManager>()?.transform;
         if (player == null) return;
 
         Vector2 dir = (player.position - transform.position).normalized;
