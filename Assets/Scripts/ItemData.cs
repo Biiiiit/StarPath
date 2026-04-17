@@ -4,13 +4,13 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     public string itemName;
+    [TextArea] public string description;
     public Sprite icon;
 
     public int livesBonus;
     public float moveSpeedBonus;
-    public float shotSpeedBonus;
+    public float fireRate;
     public float bulletSpeedBonus;
-    public float reloadSpeedBonus;
     public int maxBulletsBonus;
     public int bulletPierceBonus;
 }
