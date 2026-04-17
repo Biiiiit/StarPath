@@ -706,7 +706,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.625}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1089453252}
+  m_Father: {fileID: 1089453247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &189516911
 PrefabInstance:
@@ -791,10 +791,10 @@ PrefabInstance:
       addedObject: {fileID: 189516913}
     - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 189516922}
+      addedObject: {fileID: 189516917}
     - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 189516921}
+      addedObject: {fileID: 189516918}
   m_SourcePrefab: {fileID: 100100000, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
 --- !u!1 &189516912 stripped
 GameObject:
@@ -821,6 +821,13 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 1
   sceneName: EliteBossRoom
+  checkmarkSprite: {fileID: 1378870851}
+  backgroundController: {fileID: 9100000, guid: bf029dd57410eaa4b84dbb165f0972ed, type: 2}
+--- !u!4 &189516914 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1021867878680046591, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
+  m_PrefabInstance: {fileID: 189516911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &189516917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -856,7 +863,39 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.0077442825, y: -0.0077439845}
-  m_Radius: 0.5164574
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!95 &189516918
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189516912}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf029dd57410eaa4b84dbb165f0972ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &216733951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,10 +2891,10 @@ PrefabInstance:
       addedObject: {fileID: 1089453246}
     - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1089453255}
+      addedObject: {fileID: 1089453250}
     - targetCorrespondingSourceObject: {fileID: 8874647850263485956, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1089453254}
+      addedObject: {fileID: 1089453251}
   m_SourcePrefab: {fileID: 100100000, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
 --- !u!1 &1089453245 stripped
 GameObject:
@@ -2881,6 +2920,13 @@ MonoBehaviour:
   isCompleted: 0
   nodeType: 1
   sceneName: EliteBossRoom
+  checkmarkSprite: {fileID: 134248286}
+  backgroundController: {fileID: 9100000, guid: 761c80145808d264598a358afc04f530, type: 2}
+--- !u!4 &1089453247 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1021867878680046591, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
+  m_PrefabInstance: {fileID: 1089453244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &1089453250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2916,7 +2962,39 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.020953119, y: 0}
-  m_Radius: 0.5082494
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!95 &1089453251
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089453245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 761c80145808d264598a358afc04f530, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1128254608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3031,7 +3109,7 @@ Transform:
   m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.625}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1089453252}
+  m_Father: {fileID: 1089453247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1159280375
 MonoBehaviour:
@@ -3901,12 +3979,12 @@ Transform:
   - {fileID: 1448808194}
   - {fileID: 1802261887}
   - {fileID: 577389009}
-  - {fileID: 189516919}
-  - {fileID: 1089453252}
   - {fileID: 1488076724}
   - {fileID: 1609485539}
   - {fileID: 1167187937}
   - {fileID: 1378939314478739280}
+  - {fileID: 1089453247}
+  - {fileID: 189516914}
   m_Father: {fileID: 1914117802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378870851
@@ -3998,7 +4076,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.625}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 189516919}
+  m_Father: {fileID: 189516914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1406686675
 PrefabInstance:
@@ -5198,7 +5276,7 @@ Transform:
   m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.625}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 189516919}
+  m_Father: {fileID: 189516914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1575355234
 MonoBehaviour:
