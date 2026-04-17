@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: SpeedModule
   icon: {fileID: 4852641302039018602, guid: c1ad3bd8176dc004e9fbb1d2af5c2c13, type: 3}
-  livesBonus: 2
-  moveSpeedBonus: 3
-  shotSpeedBonus: 3
-  bulletSpeedBonus: 3
-  reloadSpeedBonus: 3
-  maxBulletsBonus: 3
-  bulletPierceBonus: 3
+  livesBonus: 0
+  moveSpeedBonus: 1
+  shotSpeedBonus: 0
+  bulletSpeedBonus: 0
+  reloadSpeedBonus: 0
+  maxBulletsBonus: 0
+  bulletPierceBonus: 0

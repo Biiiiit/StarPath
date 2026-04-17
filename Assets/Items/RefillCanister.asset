@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: RefillCanister
   icon: {fileID: 5979628931232385003, guid: aebf142cb1332a84991e9ddb5436eb87, type: 3}
-  livesBonus: 3
-  moveSpeedBonus: 5
-  shotSpeedBonus: 5
-  bulletSpeedBonus: 5
-  reloadSpeedBonus: 5
-  maxBulletsBonus: 5
-  bulletPierceBonus: 5
+  livesBonus: 0
+  moveSpeedBonus: 1
+  shotSpeedBonus: 0
+  bulletSpeedBonus: 0
+  reloadSpeedBonus: 0
+  maxBulletsBonus: 0
+  bulletPierceBonus: 0
