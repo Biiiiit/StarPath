@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f402baef3e30aa842a6363c020b7553e
+guid: c1ad3bd8176dc004e9fbb1d2af5c2c13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4079171140183072419
-    second: SlotMachine2_0
+      213: 4852641302039018602
+    second: Icon14_24_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlotMachine2_0
+      name: Icon14_24_0
       rect:
         serializedVersion: 2
-        x: 270
-        y: 99
-        width: 549
-        height: 867
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d51ec5bd57fd367c0800000000000000
-      internalID: -4079171140183072419
+      spriteID: a6cbc66cd8b085340800000000000000
+      internalID: 4852641302039018602
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SlotMachine2_0: -4079171140183072419
+      Icon14_24_0: 4852641302039018602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
