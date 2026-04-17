@@ -1,43 +1,41 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class MapManager : MonoBehaviour
 {
     public static MapManager Instance;
 
     public MapNode startNode;
-    public MapNode currentNode;
 
     public GameObject mapRoot;
 
+    public Transform playerMarker;
+    public float moveSpeed = 1f;
+
     private Scene currentLevelScene;
+    private bool isMoving = false;
+
+    private Dictionary<string, MapNode> nodes = new Dictionary<string, MapNode>();
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     void Start()
     {
-        if (startNode != null)
-        {
-            currentNode = startNode;
-            startNode.isCompleted = true;
-            UnlockNextNodes(startNode);
-        }
+        BuildNodeDictionary();
+        ApplyProgressToMap();
     }
 
     void Update()
     {
         if (SceneManager.GetActiveScene().name != "MapScene")
+            return;
+
+        if (isMoving)
             return;
 
         if (Input.GetMouseButtonDown(0))
@@ -50,63 +48,130 @@ public class MapManager : MonoBehaviour
                 MapNode node = hit.GetComponent<MapNode>();
 
                 if (node != null && node.isUnlocked)
-                {
-                    SelectNode(node);
-                }
+                    StartCoroutine(MoveToNode(node));
             }
         }
     }
 
-    void UnlockNextNodes(MapNode node)
+    void BuildNodeDictionary()
     {
-        foreach (MapNode next in node.connectedNodes)
+        nodes.Clear();
+
+        MapNode[] allNodes = FindObjectsByType<MapNode>(FindObjectsSortMode.None);
+
+        foreach (MapNode node in allNodes)
+        {
+            if (node == null || string.IsNullOrEmpty(node.nodeID))
+                continue;
+
+            nodes[node.nodeID] = node;
+        }
+    }
+
+    void ApplyProgressToMap()
+    {
+        foreach (MapNode node in nodes.Values)
+        {
+            node.isCompleted = GameProgress.Instance.IsCompleted(node.nodeID);
+            node.isUnlocked = false;
+        }
+
+        string currentID = GameProgress.Instance.currentNodeID;
+
+        if (string.IsNullOrEmpty(currentID) || !nodes.ContainsKey(currentID))
+        {
+            currentID = startNode.nodeID;
+            GameProgress.Instance.currentNodeID = currentID;
+        }
+
+        MapNode current = nodes[currentID];
+
+        foreach (MapNode next in current.connectedNodes)
         {
             next.isUnlocked = true;
-
-            MapConnection conn = FindConnection(node, next);
-            if (conn != null)
-                conn.SetBlinking(true);
         }
+
+        current.isUnlocked = true;
+
+        foreach (MapNode node in nodes.Values)
+        {
+            node.RefreshVisual();
+        }
+
+        if (playerMarker != null)
+        {
+            playerMarker.position = current.transform.position;
+            playerMarker.localScale = Vector3.zero;
+        }
+
+        RefreshConnections();
+    }
+
+    IEnumerator MoveToNode(MapNode node)
+    {
+        isMoving = true;
+
+        Vector3 targetPos = node.transform.position;
+
+        float totalDistance = Vector3.Distance(playerMarker.position, targetPos);
+
+        while (Vector3.Distance(playerMarker.position, targetPos) > 0.02f)
+        {
+            Vector3 direction = targetPos - playerMarker.position;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            playerMarker.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
+
+            playerMarker.position = Vector3.MoveTowards(
+                playerMarker.position,
+                targetPos,
+                moveSpeed * Time.deltaTime
+            );
+
+            float remaining = Vector3.Distance(playerMarker.position, targetPos);
+            float progress = 1f - (remaining / totalDistance);
+
+            float scale;
+
+            if (progress < 0.3f)
+                scale = Mathf.Lerp(0f, 0.3f, progress / 0.3f);
+            else if (progress < 0.7f)
+                scale = 0.3f;
+            else
+                scale = Mathf.Lerp(0.3f, 0f, (progress - 0.7f) / 0.3f);
+
+            playerMarker.localScale = Vector3.one * scale;
+
+            yield return null;
+        }
+
+        playerMarker.position = targetPos;
+        playerMarker.localScale = Vector3.zero;
+
+        SelectNode(node);
+
+        isMoving = false;
     }
 
     public void SelectNode(MapNode node)
     {
-        foreach (MapNode next in currentNode.connectedNodes)
-        {
-            MapConnection conn = FindConnection(currentNode, next);
-            if (conn != null)
-                conn.SetBlinking(false);
-        }
+        GameProgress.Instance.currentNodeID = node.nodeID;
+        GameProgress.Instance.selectedBackground = node.backgroundController;
 
-        MapConnection chosenConn = FindConnection(currentNode, node);
-        if (chosenConn != null)
-            chosenConn.SetActive(true);
-
-        currentNode = node;
-
-        mapRoot.SetActive(false);
-
-        SceneManager.LoadScene(node.sceneName, LoadSceneMode.Additive);
-
-        currentLevelScene = SceneManager.GetSceneByName(node.sceneName);
+        SceneManager.LoadScene(node.sceneName, LoadSceneMode.Single);
     }
 
     public void CompleteCurrentNode()
     {
-        currentNode.isCompleted = true;
-        UnlockNextNodes(currentNode);
+        GameProgress.Instance.CompleteCurrentNode();
     }
 
     public void ReturnToMap()
     {
         if (currentLevelScene.isLoaded)
-        {
             SceneManager.UnloadSceneAsync(currentLevelScene);
-        }
 
-        mapRoot.SetActive(true);
-
-        RefreshConnections();
+        ApplyProgressToMap();
     }
 
     public void RefreshConnections()
@@ -118,27 +183,17 @@ public class MapManager : MonoBehaviour
             conn.SetActive(false);
             conn.SetBlinking(false);
 
-            if (conn.fromNode == currentNode && conn.toNode.isUnlocked)
-            {
-                conn.SetBlinking(true);
-            }
-            else if (conn.fromNode.isCompleted && conn.toNode.isCompleted)
+            if (GameProgress.Instance.IsCompleted(conn.fromNode.nodeID) &&
+                GameProgress.Instance.IsCompleted(conn.toNode.nodeID))
             {
                 conn.SetActive(true);
             }
+
+            if (conn.fromNode.nodeID == GameProgress.Instance.currentNodeID &&
+                conn.toNode.isUnlocked)
+            {
+                conn.SetBlinking(true);
+            }
         }
-    }
-
-    MapConnection FindConnection(MapNode from, MapNode to)
-    {
-        MapConnection[] connections = FindObjectsByType<MapConnection>(FindObjectsSortMode.None);
-
-        foreach (MapConnection conn in connections)
-        {
-            if (conn.fromNode == from && conn.toNode == to)
-                return conn;
-        }
-
-        return null;
     }
 }

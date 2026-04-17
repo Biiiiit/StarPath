@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
     public int maxLives = 3;
     public int credits = 0;
-    public float maxAlienSpeed = 5f;
+    public float maxAlienSpeed = 5.5f;
 
     public float moveSpeed = 5f;
     public float shotSpeed = 8f;
