@@ -14,6 +14,7 @@ public class MapNode : MonoBehaviour
     public string sceneName;
 
     public GameObject checkmarkSprite;
+    public RuntimeAnimatorController backgroundController;
 
     private SpriteRenderer sr;
 

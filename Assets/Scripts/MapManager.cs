@@ -156,6 +156,7 @@ public class MapManager : MonoBehaviour
     public void SelectNode(MapNode node)
     {
         GameProgress.Instance.currentNodeID = node.nodeID;
+        GameProgress.Instance.selectedBackground = node.backgroundController;
 
         SceneManager.LoadScene(node.sceneName, LoadSceneMode.Single);
     }

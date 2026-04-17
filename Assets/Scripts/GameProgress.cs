@@ -6,6 +6,7 @@ public class GameProgress : MonoBehaviour
     public static GameProgress Instance;
 
     public string currentNodeID;
+    public RuntimeAnimatorController selectedBackground;
     public List<string> completedNodes = new List<string>();
 
     private void Awake()

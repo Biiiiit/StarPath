@@ -263,6 +263,7 @@ MonoBehaviour:
   nodeType: 0
   sceneName: GridSystem
   checkmarkSprite: {fileID: 1524356098}
+  backgroundController: {fileID: 9100000, guid: 5fdf07f1ac8fbda428b9eb531cc1335e, type: 2}
 --- !u!4 &61249778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711857223718322850, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
@@ -599,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currentNodeID: 
+  selectedBackground: {fileID: 0}
   completedNodes: []
 --- !u!4 &96463123
 Transform:
@@ -820,6 +822,7 @@ MonoBehaviour:
   nodeType: 1
   sceneName: 
   checkmarkSprite: {fileID: 1378870851}
+  backgroundController: {fileID: 9100000, guid: bf029dd57410eaa4b84dbb165f0972ed, type: 2}
 --- !u!4 &189516919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1021867878680046591, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
@@ -1444,6 +1447,7 @@ MonoBehaviour:
   nodeType: 3
   sceneName: BossRoom
   checkmarkSprite: {fileID: 1321206612}
+  backgroundController: {fileID: 9100000, guid: dff5d01a62ec038459b129e19495842a, type: 2}
 --- !u!4 &577389009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711857223718322850, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
@@ -2907,6 +2911,7 @@ MonoBehaviour:
   nodeType: 1
   sceneName: 
   checkmarkSprite: {fileID: 134248286}
+  backgroundController: {fileID: 9100000, guid: 761c80145808d264598a358afc04f530, type: 2}
 --- !u!4 &1089453252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1021867878680046591, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
@@ -3279,6 +3284,7 @@ MonoBehaviour:
   nodeType: 2
   sceneName: Truckstop
   checkmarkSprite: {fileID: 1544632704}
+  backgroundController: {fileID: 0}
 --- !u!61 &1167187935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4586,6 +4592,7 @@ MonoBehaviour:
   nodeType: 0
   sceneName: GridSystem
   checkmarkSprite: {fileID: 216733951}
+  backgroundController: {fileID: 9100000, guid: cfee3feb67ee25c468f20038643e7603, type: 2}
 --- !u!4 &1448808194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711857223718322850, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
@@ -4893,6 +4900,7 @@ MonoBehaviour:
   nodeType: 4
   sceneName: SpaceCasino
   checkmarkSprite: {fileID: 643328407}
+  backgroundController: {fileID: 0}
 --- !u!61 &1488076722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5521,6 +5529,7 @@ MonoBehaviour:
   nodeType: 4
   sceneName: SpaceCasino
   checkmarkSprite: {fileID: 1569959280}
+  backgroundController: {fileID: 0}
 --- !u!61 &1609485537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6168,6 +6177,7 @@ MonoBehaviour:
   nodeType: 0
   sceneName: GridSystem
   checkmarkSprite: {fileID: 1701948400}
+  backgroundController: {fileID: 9100000, guid: b7f27947b2b67a84593e567c4de813cf, type: 2}
 --- !u!4 &1802261887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711857223718322850, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
@@ -6470,6 +6480,7 @@ MonoBehaviour:
   nodeType: 0
   sceneName: GridSystem
   checkmarkSprite: {fileID: 2019798642}
+  backgroundController: {fileID: 9100000, guid: dd2b7e7dd747d634db71599c5fa15640, type: 2}
 --- !u!4 &1941103974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711857223718322850, guid: ef088f1e64f13b7498e38b2a083ec16d, type: 3}
@@ -7196,6 +7207,7 @@ MonoBehaviour:
   nodeType: 5
   sceneName: Restroom
   checkmarkSprite: {fileID: 1595600465}
+  backgroundController: {fileID: 0}
 --- !u!61 &1378939314478739278
 BoxCollider2D:
   m_ObjectHideFlags: 0
