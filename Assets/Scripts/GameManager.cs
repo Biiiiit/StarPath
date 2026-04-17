@@ -38,4 +38,17 @@ public class GameManager : MonoBehaviour
             go.AddComponent<GameManager>();
         }
     }
+
+    public void ApplyItem(ItemData item)
+    {
+        lives += item.livesBonus;
+        moveSpeed += item.moveSpeedBonus;
+        shotSpeed += item.shotSpeedBonus;
+        bulletSpeed += item.bulletSpeedBonus;
+        reloadSpeed += item.reloadSpeedBonus;
+        maxBullets += item.maxBulletsBonus;
+        bulletPierce += item.bulletPierceBonus;
+
+        Debug.Log("Picked up: " + item.itemName);
+    }
 }

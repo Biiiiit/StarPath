@@ -8,6 +8,7 @@ TagManager:
   - Alien
   - Death
   - Boss
+  - EliteBoss
   layers:
   - Default
   - TransparentFX

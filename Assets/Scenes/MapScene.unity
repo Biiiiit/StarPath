@@ -820,38 +820,9 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 1
-  sceneName: 
-  checkmarkSprite: {fileID: 1378870851}
-  backgroundController: {fileID: 9100000, guid: bf029dd57410eaa4b84dbb165f0972ed, type: 2}
---- !u!4 &189516919 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1021867878680046591, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
-  m_PrefabInstance: {fileID: 189516911}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &189516921
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189516912}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf029dd57410eaa4b84dbb165f0972ed, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!58 &189516922
-CircleCollider2D:
+  sceneName: EliteBossRoom
+--- !u!61 &189516917
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2909,38 +2880,9 @@ MonoBehaviour:
   isUnlocked: 0
   isCompleted: 0
   nodeType: 1
-  sceneName: 
-  checkmarkSprite: {fileID: 134248286}
-  backgroundController: {fileID: 9100000, guid: 761c80145808d264598a358afc04f530, type: 2}
---- !u!4 &1089453252 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1021867878680046591, guid: 3455e226e2944c446aa0509685146ce9, type: 3}
-  m_PrefabInstance: {fileID: 1089453244}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1089453254
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089453245}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 761c80145808d264598a358afc04f530, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!58 &1089453255
-CircleCollider2D:
+  sceneName: EliteBossRoom
+--- !u!61 &1089453250
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
