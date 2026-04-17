@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBossManager
   background: {fileID: 163615392}
   bulletPrefab: {fileID: 7604338299627734449, guid: 9aa5d9ffea9065c4fa4425fd09a4fc75, type: 3}
-  shootPoint: {fileID: 0}
+  shootPoint: {fileID: 672312906}
   shootSound: {fileID: 8300000, guid: dabd8db76d888fe4dbfc3b5382a6586b, type: 3}
   livesUI: {fileID: 1739210389}
   gameOverUI: {fileID: 1827430175}
