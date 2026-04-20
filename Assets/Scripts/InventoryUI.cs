@@ -5,32 +5,42 @@ public class InventoryUI : MonoBehaviour
 {
     public GameObject slotPrefab;
     public Transform slotParent;
-    private bool inspectMode = false;
+    public static bool IsInspecting = false;
+    public static ItemData CurrentHoverItem;
+    public GameObject pausePanel;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            inspectMode = !inspectMode;
+            IsInspecting = !IsInspecting;
 
-            if (inspectMode)
+            Time.timeScale = IsInspecting ? 0f : 1f;
+
+            pausePanel.SetActive(IsInspecting);
+
+            if (!IsInspecting)
             {
-                Time.timeScale = 0f;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                CurrentHoverItem = null;
+                ItemTooltip.Instance.Hide();
             }
+        }
+
+        if (IsInspecting)
+        {
+            if (CurrentHoverItem != null)
+                ItemTooltip.Instance.Show(CurrentHoverItem);
             else
-            {
-                Time.timeScale = 1f;
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+                ItemTooltip.Instance.Hide();
         }
     }
 
     void Start()
     {
+        AddTestItem();
         Refresh();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Refresh()
@@ -42,6 +52,24 @@ public class InventoryUI : MonoBehaviour
         {
             GameObject slot = Instantiate(slotPrefab, slotParent);
             slot.GetComponent<InventorySlotUI>().Setup(item);
+        }
+    }
+
+    public void AddTestItem()
+    {
+        ItemData item = Resources.Load<ItemData>("Items/Speed Module");
+        ItemData item2 = Resources.Load<ItemData>("Items/RefillCanister");
+
+        if (item != null)
+        {
+            GameManager.Instance.inventory.Add(item);
+            Debug.Log("Added test item: " + item.itemName);
+            GameManager.Instance.inventory.Add(item2);
+            Debug.Log("Added test item: " + item2.itemName);
+        }
+        else
+        {
+            Debug.LogWarning("Speed Module not found in Resources folder.");
         }
     }
 }
