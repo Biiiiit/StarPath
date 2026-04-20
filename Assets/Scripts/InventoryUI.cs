@@ -54,22 +54,4 @@ public class InventoryUI : MonoBehaviour
             slot.GetComponent<InventorySlotUI>().Setup(item);
         }
     }
-
-    public void AddTestItem()
-    {
-        ItemData item = Resources.Load<ItemData>("Items/Speed Module");
-        ItemData item2 = Resources.Load<ItemData>("Items/RefillCanister");
-
-        if (item != null)
-        {
-            GameManager.Instance.inventory.Add(item);
-            Debug.Log("Added test item: " + item.itemName);
-            GameManager.Instance.inventory.Add(item2);
-            Debug.Log("Added test item: " + item2.itemName);
-        }
-        else
-        {
-            Debug.LogWarning("Speed Module not found in Resources folder.");
-        }
-    }
 }
