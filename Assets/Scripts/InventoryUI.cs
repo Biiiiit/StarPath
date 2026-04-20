@@ -37,7 +37,6 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
-        AddTestItem();
         Refresh();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
