@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,7 +7,7 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
     public int maxLives = 3;
     public int credits = 0;
-    public float maxAlienSpeed = 5.5f;
+    public float maxAlienSpeed = 5.2f;
 
     public float moveSpeed = 5f;
     public float shotSpeed = 8f;
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     public float reloadSpeed = 1f;
     public int maxBullets = 1;
     public int bulletPierce = 1;
+    public List<ItemData> inventory = new List<ItemData>();
+
 
     public static GameManager Instance { get; private set; }
 
@@ -43,12 +46,20 @@ public class GameManager : MonoBehaviour
     {
         lives += item.livesBonus;
         moveSpeed += item.moveSpeedBonus;
-        shotSpeed += item.shotSpeedBonus;
         bulletSpeed += item.bulletSpeedBonus;
-        reloadSpeed += item.reloadSpeedBonus;
         maxBullets += item.maxBulletsBonus;
         bulletPierce += item.bulletPierceBonus;
 
         Debug.Log("Picked up: " + item.itemName);
+    }
+
+    public void AddItem(ItemData item)
+    {
+        inventory.Add(item);
+    }
+
+    public void RemoveItem(ItemData item)
+    {
+        inventory.Remove(item);
     }
 }
