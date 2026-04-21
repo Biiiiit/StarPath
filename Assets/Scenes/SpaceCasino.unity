@@ -171,8 +171,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   allItems:
-  - {fileID: 11400000, guid: 8b53ec9d6399a4b44bb78ed9ae35a9f7, type: 2}
-  - {fileID: 11400000, guid: 5cdbbb73315cff846a959084c41c1967, type: 2}
+  - {fileID: 11400000, guid: a14a7cf65e119be4ebe3f21176dbc119, type: 2}
+  - {fileID: 11400000, guid: 7c5f228e2fb3e6e4c82374a3ca00eba9, type: 2}
+  - {fileID: 11400000, guid: 757cb01176c1e9c4681225dd24600b17, type: 2}
+  - {fileID: 11400000, guid: f81ceb91bc15c6245b0d718925b988bf, type: 2}
+  - {fileID: 11400000, guid: 794a1d34fa3f90a41a3259440df461ad, type: 2}
+  - {fileID: 11400000, guid: 8fac010a0cad3834682df750627faff0, type: 2}
+  - {fileID: 11400000, guid: c95733f246084e64998a0e7c0fccea84, type: 2}
+  - {fileID: 11400000, guid: 84a4bb0bc47a00148a0584908fa9f888, type: 2}
+  - {fileID: 11400000, guid: 70007fbcab1e4ae4a86a8c04dd93cba9, type: 2}
   itemButton: {fileID: 2144840575}
 --- !u!114 &120986891
 MonoBehaviour:
