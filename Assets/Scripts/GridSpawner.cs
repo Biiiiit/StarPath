@@ -4,14 +4,15 @@ public class GridSpawner : MonoBehaviour
 {
     public float spacing = 1.5f;
     public SpriteRenderer background;
-    public Transform alienParent; // assign the parent with AlienManager
+    public Transform alienParent;
 
     public void SpawnFormation(WaveFormation formation)
     {
-        if (formation == null || background == null || alienParent == null) return;
+        if (formation == null) return;
+        if (background == null) return;
+        if (alienParent == null) return;
 
-        // Clear previous runtime aliens
-        ClearChildren(alienParent);
+        ClearChildren();
 
         Bounds bounds = background.bounds;
 
@@ -20,7 +21,7 @@ public class GridSpawner : MonoBehaviour
 
         float totalWidth = (cols - 1) * spacing;
         float startX = -totalWidth / 2f;
-        float startY = bounds.max.y - 0.5f; // start at top
+        float startY = bounds.max.y - 1f;
 
         for (int y = 0; y < rows; y++)
         {
@@ -28,38 +29,48 @@ public class GridSpawner : MonoBehaviour
             {
                 int index = x + y * cols;
 
-                GameObject alienPrefab = formation.grid[index];
-                if (alienPrefab == null) continue;
+                if (index >= formation.grid.Length)
+                    continue;
 
-                Vector3 localPos = new Vector3(
+                GameObject prefab = formation.grid[index];
+
+                if (prefab == null)
+                    continue;
+
+                Vector3 pos = new Vector3(
                     startX + x * spacing,
                     startY - y * spacing,
-                    0
+                    0f
                 );
 
-                GameObject alien = Instantiate(alienPrefab, alienParent);
-                alien.transform.localPosition = localPos;
+                GameObject alienObj =
+                    Instantiate(prefab, alienParent);
 
-                // Assign manager to the alien
-                Alien alienScript = alien.GetComponent<Alien>();
-                if (alienScript != null)
-                    alienScript.manager = alienParent.GetComponent<AlienManager>();
+                alienObj.transform.localPosition = pos;
+
+                Alien alien =
+                    alienObj.GetComponent<Alien>();
+
+                if (alien != null)
+                {
+                    alien.manager =
+                        alienParent.GetComponent<AlienManager>();
+                }
             }
         }
 
-        // Update AlienManager counts
-        AlienManager manager = alienParent.GetComponent<AlienManager>();
+        AlienManager manager =
+            alienParent.GetComponent<AlienManager>();
+
         if (manager != null)
             manager.ResetAliens();
     }
 
-    void ClearChildren(Transform parent)
+    void ClearChildren()
     {
-        if (parent == null) return;
-
-        for (int i = parent.childCount - 1; i >= 0; i--)
+        for (int i = alienParent.childCount - 1; i >= 0; i--)
         {
-            Destroy(parent.GetChild(i).gameObject);
+            Destroy(alienParent.GetChild(i).gameObject);
         }
     }
 }

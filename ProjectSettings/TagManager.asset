@@ -9,6 +9,8 @@ TagManager:
   - Death
   - Boss
   - EliteBoss
+  - PlayerHit
+  - AlienBullet
   layers:
   - Default
   - TransparentFX

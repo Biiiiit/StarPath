@@ -7,9 +7,17 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        if (formations.Length == 0 || spawner == null) return;
+        SpawnRandomWave();
+    }
 
-        WaveFormation formation = formations[Random.Range(0, formations.Length)];
-        spawner.SpawnFormation(formation);
+    public void SpawnRandomWave()
+    {
+        if (formations.Length == 0) return;
+        if (spawner == null) return;
+
+        WaveFormation randomWave =
+            formations[Random.Range(0, formations.Length)];
+
+        spawner.SpawnFormation(randomWave);
     }
 }
