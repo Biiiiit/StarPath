@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     public LivesUI livesUI;
     public GameObject gameOverUI;
+    private bool isInvulnerable = false;
+    public float invulnerableDuration = 1f;
 
 
     void Update()
@@ -81,14 +84,48 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (isInvulnerable) return;
+
         livesUI.LoseLife();
         GameManager.Instance.lives--;
+
+        DestroyBullet();
 
         if (GameManager.Instance.lives <= 0)
         {
             Time.timeScale = 0f;
             gameOverUI.SetActive(true);
+            return;
         }
+
+        StartCoroutine(Invulnerability());
+    }
+
+    IEnumerator Invulnerability()
+    {
+        isInvulnerable = true;
+
+        SpriteRenderer[] renderers =
+            GetComponentsInChildren<SpriteRenderer>();
+
+        float timer = 0f;
+
+        while (timer < invulnerableDuration)
+        {
+            foreach (SpriteRenderer sr in renderers)
+                sr.enabled = false;
+
+            yield return new WaitForSeconds(0.1f);
+
+            foreach (SpriteRenderer sr in renderers)
+                sr.enabled = true;
+
+            yield return new WaitForSeconds(0.1f);
+
+            timer += 0.2f;
+        }
+
+        isInvulnerable = false;
     }
 
     public void GainLife()

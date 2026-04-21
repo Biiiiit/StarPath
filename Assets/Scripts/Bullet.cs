@@ -31,7 +31,6 @@ public class Bullet : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Debug.Log("HIT: " + hit.collider.name);
 
             Alien alien = hit.collider.GetComponent<Alien>();
             if (alien != null)
@@ -40,16 +39,23 @@ public class Bullet : MonoBehaviour
                 {
                     hitAliens.Add(alien);
 
-                    alien.OnHit();
+                    alien.Hit();
                     HandleHit();
                     return;
                 }
+            }
+            AlienBullet bullet = hit.collider.GetComponent<AlienBullet>();
+
+            if (bullet != null)
+            {
+                bullet.HitByPlayerBullet();
+                HandleHit();
+                return;
             }
 
             EliteBoss eliteBoss = hit.collider.GetComponentInParent<EliteBoss>();
             if (eliteBoss != null)
             {
-                Debug.Log("ELITE BOSS DETECTED IN BULLET");
 
                 Vector2 offset = Random.insideUnitCircle * 0.2f;
                 eliteBoss.TakeDamage(1, (Vector3)(hit.point + offset));
@@ -61,7 +67,6 @@ public class Bullet : MonoBehaviour
             Boss boss = hit.collider.GetComponentInParent<Boss>();
             if (boss != null)
             {
-                Debug.Log("OLD BOSS DETECTED IN BULLET");
 
                 Vector2 offset = Random.insideUnitCircle * 0.2f;
                 boss.TakeDamage(1, (Vector3)(hit.point + offset));
@@ -89,13 +94,12 @@ public class Bullet : MonoBehaviour
     {
         hitsRemaining--;
 
-        Debug.Log("HITS REMAINING: " + hitsRemaining);
-
         if (hitsRemaining <= 0)
         {
             ClearAndDestroy();
         }
     }
+
 
     void CheckBounds()
     {
