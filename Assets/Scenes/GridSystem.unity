@@ -4044,7 +4044,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   formations:
+  - {fileID: 11400000, guid: 95dbd72ca7768614d9feecba1aefea87, type: 2}
+  - {fileID: 11400000, guid: dfebc1bc8ba096445b057cb050f34ef6, type: 2}
+  - {fileID: 11400000, guid: 992a6f7c103aacc43b1f7131890afcd2, type: 2}
   - {fileID: 11400000, guid: e78ef2b8a3a382548b5a3e28e7aa8c49, type: 2}
+  - {fileID: 11400000, guid: 32afd579f5f93ec409c272bad3e72b60, type: 2}
+  - {fileID: 11400000, guid: 367453091de3be148bd0bd0048760f1f, type: 2}
+  - {fileID: 11400000, guid: 4e64f530931f64a4a8399722cfae9a4d, type: 2}
   spawner: {fileID: 1676286253}
 --- !u!4 &1988403836
 Transform:

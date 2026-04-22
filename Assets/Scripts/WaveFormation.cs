@@ -1,5 +1,12 @@
 using UnityEngine;
 
+public enum WaveDifficulty
+{
+    Easy,
+    Medium,
+    Hard
+}
+
 [CreateAssetMenu(fileName = "WaveFormation", menuName = "Waves/Formation")]
 public class WaveFormation : ScriptableObject
 {
@@ -8,6 +15,10 @@ public class WaveFormation : ScriptableObject
 
     public GameObject[] grid;
 
-    // Editor tool
+    [Header("Painting")]
+    public GameObject[] availablePrefabs;
     public GameObject selectedPrefab;
+
+    [Header("Difficulty")]
+    public WaveDifficulty difficulty;
 }
