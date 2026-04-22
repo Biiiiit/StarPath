@@ -22,9 +22,27 @@ public class GameProgress : MonoBehaviour
         }
     }
 
+    // Add this:
+    public static GameProgress Get()
+    {
+        if (Instance == null)
+        {
+            GameObject go = new GameObject("GameProgress");
+            Instance = go.AddComponent<GameProgress>();
+            DontDestroyOnLoad(go);
+        }
+        return Instance;
+    }
+
     public bool IsCompleted(string nodeID)
     {
         return completedNodes.Contains(nodeID);
+    }
+
+    public void ResetProgress()
+    {
+        completedNodes.Clear();
+        currentNodeID = "";
     }
 
     public void CompleteCurrentNode()

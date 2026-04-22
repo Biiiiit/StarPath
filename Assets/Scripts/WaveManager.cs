@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour
     {
         if (formations.Length == 0 || spawner == null) return;
 
-        int completed = GameProgress.Instance.completedNodes.Count;
+        int completed = GameProgress.Get().completedNodes.Count;
 
         WaveDifficulty targetDifficulty;
 
