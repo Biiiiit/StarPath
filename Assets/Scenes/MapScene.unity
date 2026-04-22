@@ -343,15 +343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5831b147ff0d1b479de2ad6bddc7556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  columns: 3
+  columns: 4
   normalRows: 3
   colSpacing: 2.5
   rowSpacing: 2
+  bottomPadding: 0
   combatChance: 0.45
   eliteChance: 0.15
-  shopChance: 0.15
-  itemChance: 0.1
-  healChance: 0.15
   nodePrefab: {fileID: 7221377751492775591, guid: 36d8a98555c64a641b30ec0d7362d044, type: 3}
   connectionPrefab: {fileID: 2725528356399652742, guid: 11a4c2afd0571bb45bdfe64f0c414a17, type: 3}
   mapManager: {fileID: 6399108071357775516}

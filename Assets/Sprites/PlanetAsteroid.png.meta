@@ -1,0 +1,1743 @@
+fileFormatVersion: 2
+guid: bf815d613e2265d4a8dc8042cdbb1bbf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4128138858523369633
+    second: PlanetAsteroid_0
+  - first:
+      213: -909035669029255269
+    second: PlanetAsteroid_1
+  - first:
+      213: -5070188855702915275
+    second: PlanetAsteroid_2
+  - first:
+      213: -1620747733866129613
+    second: PlanetAsteroid_3
+  - first:
+      213: 6478607656085870391
+    second: PlanetAsteroid_4
+  - first:
+      213: -583427588619600067
+    second: PlanetAsteroid_5
+  - first:
+      213: -1534586145138437901
+    second: PlanetAsteroid_6
+  - first:
+      213: -3726750674132556148
+    second: PlanetAsteroid_7
+  - first:
+      213: -4614490788756650698
+    second: PlanetAsteroid_8
+  - first:
+      213: 1747133269116973470
+    second: PlanetAsteroid_9
+  - first:
+      213: 7191621891420025300
+    second: PlanetAsteroid_10
+  - first:
+      213: 5438421308377039465
+    second: PlanetAsteroid_11
+  - first:
+      213: 8822255554056644505
+    second: PlanetAsteroid_12
+  - first:
+      213: 343553672762221979
+    second: PlanetAsteroid_13
+  - first:
+      213: -8557711792856031687
+    second: PlanetAsteroid_14
+  - first:
+      213: 9144494468982259718
+    second: PlanetAsteroid_15
+  - first:
+      213: -5931757012311059903
+    second: PlanetAsteroid_16
+  - first:
+      213: -3384663464221085174
+    second: PlanetAsteroid_17
+  - first:
+      213: -711913574444520502
+    second: PlanetAsteroid_18
+  - first:
+      213: -6361346527779970524
+    second: PlanetAsteroid_19
+  - first:
+      213: -1401745797643970517
+    second: PlanetAsteroid_20
+  - first:
+      213: 5468624667125155322
+    second: PlanetAsteroid_21
+  - first:
+      213: -8329745919023908296
+    second: PlanetAsteroid_22
+  - first:
+      213: -1337294893655769014
+    second: PlanetAsteroid_23
+  - first:
+      213: 1679379325108644472
+    second: PlanetAsteroid_24
+  - first:
+      213: 2396694506336127275
+    second: PlanetAsteroid_25
+  - first:
+      213: 5976817601661192201
+    second: PlanetAsteroid_26
+  - first:
+      213: 1898903596023461258
+    second: PlanetAsteroid_27
+  - first:
+      213: -8755807641606889059
+    second: PlanetAsteroid_28
+  - first:
+      213: 4128935314395894442
+    second: PlanetAsteroid_29
+  - first:
+      213: -5527932324987644755
+    second: PlanetAsteroid_30
+  - first:
+      213: 6663709925748532285
+    second: PlanetAsteroid_31
+  - first:
+      213: 8755707051726936134
+    second: PlanetAsteroid_32
+  - first:
+      213: -5878562143859904565
+    second: PlanetAsteroid_33
+  - first:
+      213: 9120680851201455323
+    second: PlanetAsteroid_34
+  - first:
+      213: -7909748907412495875
+    second: PlanetAsteroid_35
+  - first:
+      213: -152969810507237360
+    second: PlanetAsteroid_36
+  - first:
+      213: -2407820738338970624
+    second: PlanetAsteroid_37
+  - first:
+      213: -7515552221712586224
+    second: PlanetAsteroid_38
+  - first:
+      213: -4520675057771447774
+    second: PlanetAsteroid_39
+  - first:
+      213: 4402466189818326389
+    second: PlanetAsteroid_40
+  - first:
+      213: 5830326321525015488
+    second: PlanetAsteroid_41
+  - first:
+      213: -7818551874821407988
+    second: PlanetAsteroid_42
+  - first:
+      213: -1135458006718197563
+    second: PlanetAsteroid_43
+  - first:
+      213: 5397359293640386694
+    second: PlanetAsteroid_44
+  - first:
+      213: 3668675143840540690
+    second: PlanetAsteroid_45
+  - first:
+      213: 5043823305350694992
+    second: PlanetAsteroid_46
+  - first:
+      213: 8906861412764588131
+    second: PlanetAsteroid_47
+  - first:
+      213: -3468654477689793113
+    second: PlanetAsteroid_48
+  - first:
+      213: -8017066179767564836
+    second: PlanetAsteroid_49
+  - first:
+      213: 3511628443200832618
+    second: PlanetAsteroid_50
+  - first:
+      213: -3980347499189385027
+    second: PlanetAsteroid_51
+  - first:
+      213: -5568151085948267683
+    second: PlanetAsteroid_52
+  - first:
+      213: 3438563588001165758
+    second: PlanetAsteroid_53
+  - first:
+      213: 5372643755483227170
+    second: PlanetAsteroid_54
+  - first:
+      213: -1060757892919638094
+    second: PlanetAsteroid_55
+  - first:
+      213: -5523935538565461525
+    second: PlanetAsteroid_56
+  - first:
+      213: 4483935979839571316
+    second: PlanetAsteroid_57
+  - first:
+      213: -2813484390639839650
+    second: PlanetAsteroid_58
+  - first:
+      213: 1882638119316709362
+    second: PlanetAsteroid_59
+  - first:
+      213: -333762280342031438
+    second: PlanetAsteroid_60
+  - first:
+      213: 7703084206134157914
+    second: PlanetAsteroid_61
+  - first:
+      213: 763920824320379125
+    second: PlanetAsteroid_62
+  - first:
+      213: -7111837564229583575
+    second: PlanetAsteroid_63
+  - first:
+      213: 4619124261723120698
+    second: PlanetAsteroid_64
+  - first:
+      213: 1179568285701943721
+    second: PlanetAsteroid_65
+  - first:
+      213: -7114985930245411465
+    second: PlanetAsteroid_66
+  - first:
+      213: 6318955862503144669
+    second: PlanetAsteroid_67
+  - first:
+      213: 5996622723836875424
+    second: PlanetAsteroid_68
+  - first:
+      213: 8791600597302302567
+    second: PlanetAsteroid_69
+  - first:
+      213: -7224436695045258947
+    second: PlanetAsteroid_70
+  - first:
+      213: 5319328747679188270
+    second: PlanetAsteroid_71
+  - first:
+      213: 3835763479698354246
+    second: PlanetAsteroid_72
+  - first:
+      213: 5334528323748571393
+    second: PlanetAsteroid_73
+  - first:
+      213: 3264573979259464451
+    second: PlanetAsteroid_74
+  - first:
+      213: 4071537703278643350
+    second: PlanetAsteroid_75
+  - first:
+      213: 3253126734348076950
+    second: PlanetAsteroid_76
+  - first:
+      213: -2117523097611593755
+    second: PlanetAsteroid_77
+  - first:
+      213: -6395122456371780468
+    second: PlanetAsteroid_78
+  - first:
+      213: 1060598052383897171
+    second: PlanetAsteroid_79
+  - first:
+      213: -7289199736498695997
+    second: PlanetAsteroid_80
+  - first:
+      213: -1142666513318805391
+    second: PlanetAsteroid_81
+  - first:
+      213: 2188738154711745844
+    second: PlanetAsteroid_82
+  - first:
+      213: 3285057173185306068
+    second: PlanetAsteroid_83
+  - first:
+      213: 289400986534493049
+    second: PlanetAsteroid_84
+  - first:
+      213: -2372482897593662836
+    second: PlanetAsteroid_85
+  - first:
+      213: -1389360324615626108
+    second: PlanetAsteroid_86
+  - first:
+      213: -1460556683755920745
+    second: PlanetAsteroid_87
+  - first:
+      213: 7518597085907159174
+    second: PlanetAsteroid_88
+  - first:
+      213: 1298327166331780959
+    second: PlanetAsteroid_89
+  - first:
+      213: 4501801482336129253
+    second: PlanetAsteroid_90
+  - first:
+      213: -8837893385895062489
+    second: PlanetAsteroid_91
+  - first:
+      213: 1195894730591062234
+    second: PlanetAsteroid_92
+  - first:
+      213: 7682867805473760660
+    second: PlanetAsteroid_93
+  - first:
+      213: -6833852168713592865
+    second: PlanetAsteroid_94
+  - first:
+      213: -3391120400189348205
+    second: PlanetAsteroid_95
+  - first:
+      213: -8218911803462586740
+    second: PlanetAsteroid_96
+  - first:
+      213: -5976731152290344724
+    second: PlanetAsteroid_97
+  - first:
+      213: -1814340934859817576
+    second: PlanetAsteroid_98
+  - first:
+      213: 5517990893804181682
+    second: PlanetAsteroid_99
+  - first:
+      213: 768412780891702487
+    second: PlanetAsteroid_100
+  - first:
+      213: 3894700236870675984
+    second: PlanetAsteroid_101
+  - first:
+      213: -4432715415352963971
+    second: PlanetAsteroid_102
+  - first:
+      213: -582995403841746265
+    second: PlanetAsteroid_103
+  - first:
+      213: 2255838161079419532
+    second: PlanetAsteroid_104
+  - first:
+      213: 4135317469375945261
+    second: PlanetAsteroid_105
+  - first:
+      213: -5519555850086884630
+    second: PlanetAsteroid_106
+  - first:
+      213: -1831461272133787110
+    second: PlanetAsteroid_107
+  - first:
+      213: 5957244068936703835
+    second: PlanetAsteroid_108
+  - first:
+      213: 7324298178599952396
+    second: PlanetAsteroid_109
+  - first:
+      213: -3063351086778679033
+    second: PlanetAsteroid_110
+  - first:
+      213: -8482086527356391802
+    second: PlanetAsteroid_111
+  - first:
+      213: 8715356053069280938
+    second: PlanetAsteroid_112
+  - first:
+      213: -742915112368638409
+    second: PlanetAsteroid_113
+  - first:
+      213: -6818190910608423930
+    second: PlanetAsteroid_114
+  - first:
+      213: -7429398451293976373
+    second: PlanetAsteroid_115
+  - first:
+      213: -5051550868033845045
+    second: PlanetAsteroid_116
+  - first:
+      213: -5812573286426544400
+    second: PlanetAsteroid_117
+  - first:
+      213: -7598428085721115721
+    second: PlanetAsteroid_118
+  - first:
+      213: 7311776512599428862
+    second: PlanetAsteroid_119
+  - first:
+      213: -4487857529038822598
+    second: PlanetAsteroid_120
+  - first:
+      213: 4116001450473838059
+    second: PlanetAsteroid_121
+  - first:
+      213: 1046677366651291845
+    second: PlanetAsteroid_122
+  - first:
+      213: -3886397886791116894
+    second: PlanetAsteroid_123
+  - first:
+      213: -2166045622876960074
+    second: PlanetAsteroid_124
+  - first:
+      213: -5617436601666372986
+    second: PlanetAsteroid_125
+  - first:
+      213: -8326344715057222916
+    second: PlanetAsteroid_126
+  - first:
+      213: -3565278638062177265
+    second: PlanetAsteroid_127
+  - first:
+      213: 6619628705803178978
+    second: PlanetAsteroid_128
+  - first:
+      213: 2941550475274491809
+    second: PlanetAsteroid_129
+  - first:
+      213: 1322427094488686777
+    second: PlanetAsteroid_130
+  - first:
+      213: -8425105264711084532
+    second: PlanetAsteroid_131
+  - first:
+      213: -1263749450851977092
+    second: PlanetAsteroid_132
+  - first:
+      213: 6017221717306246046
+    second: PlanetAsteroid_133
+  - first:
+      213: 673562130267191655
+    second: PlanetAsteroid_134
+  - first:
+      213: 540729106689794947
+    second: PlanetAsteroid_135
+  - first:
+      213: 3222368873139934832
+    second: PlanetAsteroid_136
+  - first:
+      213: -3864833108925460328
+    second: PlanetAsteroid_137
+  - first:
+      213: -5909853475769023276
+    second: PlanetAsteroid_138
+  - first:
+      213: 5607535189942278018
+    second: PlanetAsteroid_139
+  - first:
+      213: 1920691578701021785
+    second: PlanetAsteroid_140
+  - first:
+      213: -3442391026544100943
+    second: PlanetAsteroid_141
+  - first:
+      213: 7192841695759518634
+    second: PlanetAsteroid_142
+  - first:
+      213: -5676239839387466633
+    second: PlanetAsteroid_143
+  - first:
+      213: 2004741874991831471
+    second: PlanetAsteroid_144
+  - first:
+      213: -9187980845589363405
+    second: PlanetAsteroid_145
+  - first:
+      213: -3045029850826188387
+    second: PlanetAsteroid_146
+  - first:
+      213: 4842333017254345091
+    second: PlanetAsteroid_147
+  - first:
+      213: -6753446835954205534
+    second: PlanetAsteroid_148
+  - first:
+      213: 6234980381631850890
+    second: PlanetAsteroid_149
+  - first:
+      213: -7126055396818148514
+    second: PlanetAsteroid_150
+  - first:
+      213: 4636108806330844128
+    second: PlanetAsteroid_151
+  - first:
+      213: -1253670691862562442
+    second: PlanetAsteroid_152
+  - first:
+      213: -47011513393931054
+    second: PlanetAsteroid_153
+  - first:
+      213: -7544027755776848143
+    second: PlanetAsteroid_154
+  - first:
+      213: -8420288025067983975
+    second: PlanetAsteroid_155
+  - first:
+      213: 883083112775836192
+    second: PlanetAsteroid_156
+  - first:
+      213: 5083618781132264855
+    second: PlanetAsteroid_157
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlanetAsteroid_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a0a5c58b681a4930800000000000000
+      internalID: 4128138858523369633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b970a5310e47263f0800000000000000
+      internalID: -909035669029255269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 537fea7491213a9b0800000000000000
+      internalID: -5070188855702915275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 337d36ce582f189e0800000000000000
+      internalID: -1620747733866129613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737df1c8653a8e950800000000000000
+      internalID: 6478607656085870391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f7a2403bf37e7f0800000000000000
+      internalID: -583427588619600067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f099c5180e04bae0800000000000000
+      internalID: -1534586145138437901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86a1edc10ce74cc0800000000000000
+      internalID: -3726750674132556148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63509d4831906ffb0800000000000000
+      internalID: -4614490788756650698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_9
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91fbf893701f3810800000000000000
+      internalID: 1747133269116973470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_10
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d17305e106cdc360800000000000000
+      internalID: 7191621891420025300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_11
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9628ab0bd57297b40800000000000000
+      internalID: 5438421308377039465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99763412fa2fe6a70800000000000000
+      internalID: 8822255554056644505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_13
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95e542ce3c84c400800000000000000
+      internalID: 343553672762221979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e15a01776ec3980800000000000000
+      internalID: -8557711792856031687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600463a1545c7ee70800000000000000
+      internalID: 9144494468982259718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_16
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1425443dc6a2eada0800000000000000
+      internalID: -5931757012311059903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_17
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02fbd213824701d0800000000000000
+      internalID: -3384663464221085174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_18
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acba47c3066ce16f0800000000000000
+      internalID: -711913574444520502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_19
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422a28e6905f7b7a0800000000000000
+      internalID: -6361346527779970524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_20
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28d802bf9ffb8ce0800000000000000
+      internalID: -1401745797643970517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_21
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af50fe5292574eb40800000000000000
+      internalID: 5468624667125155322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_22
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83af153383cc66c80800000000000000
+      internalID: -8329745919023908296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_23
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4044b72169f07de0800000000000000
+      internalID: -1337294893655769014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_24
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a6c34399a5e4710800000000000000
+      internalID: 1679379325108644472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_25
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b298b4d84f4c24120800000000000000
+      internalID: 2396694506336127275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_26
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908415231fbe1f250800000000000000
+      internalID: 5976817601661192201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_27
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a85b0bf72c24a5a10800000000000000
+      internalID: 1898903596023461258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_28
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91ee58175f1d7680800000000000000
+      internalID: -8755807641606889059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_29
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2122bdaccec4930800000000000000
+      internalID: 4128935314395894442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_30
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da456b2b6d6d843b0800000000000000
+      internalID: -5527932324987644755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_31
+      rect:
+        serializedVersion: 2
+        x: 3100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d346c722fd04a7c50800000000000000
+      internalID: 6663709925748532285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_32
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 648119f7c25828970800000000000000
+      internalID: 8755707051726936134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_33
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfeb2940e62b6ea0800000000000000
+      internalID: -5878562143859904565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_34
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4f19529ea239e70800000000000000
+      internalID: 9120680851201455323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_35
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1e42fb64dea3290800000000000000
+      internalID: -7909748907412495875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_36
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0187b5f84ca80edf0800000000000000
+      internalID: -152969810507237360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_37
+      rect:
+        serializedVersion: 2
+        x: 3700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004ac70bbc3b59ed0800000000000000
+      internalID: -2407820738338970624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_38
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a6cedc21563b790800000000000000
+      internalID: -7515552221712586224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_39
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a709c8cf55341c0800000000000000
+      internalID: -4520675057771447774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_40
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57de9c3aca3b81d30800000000000000
+      internalID: 4402466189818326389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_41
+      rect:
+        serializedVersion: 2
+        x: 4100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c3cb1726ea79e050800000000000000
+      internalID: 5830326321525015488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_42
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b3e4b8e7cee7390800000000000000
+      internalID: -7818551874821407988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_43
+      rect:
+        serializedVersion: 2
+        x: 4300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0503475fa0e30f0800000000000000
+      internalID: -1135458006718197563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_44
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688a69e5ea547ea40800000000000000
+      internalID: 5397359293640386694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_45
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218abe81b90c9e230800000000000000
+      internalID: 3668675143840540690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_46
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 058c349a2924ff540800000000000000
+      internalID: 5043823305350694992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_47
+      rect:
+        serializedVersion: 2
+        x: 4700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368977ba3478b9b70800000000000000
+      internalID: 8906861412764588131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_48
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a55bb8512ddcdfc0800000000000000
+      internalID: -3468654477689793113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlanetAsteroid_49
+      rect:
+        serializedVersion: 2
+        x: 4900
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5082629c8adb090800000000000000
+      internalID: -8017066179767564836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2838d9a5115bb404d8d293fb7b5023e8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":100.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      PlanetAsteroid_0: 4128138858523369633
+      PlanetAsteroid_1: -909035669029255269
+      PlanetAsteroid_10: 7191621891420025300
+      PlanetAsteroid_11: 5438421308377039465
+      PlanetAsteroid_12: 8822255554056644505
+      PlanetAsteroid_13: 343553672762221979
+      PlanetAsteroid_14: -8557711792856031687
+      PlanetAsteroid_15: 9144494468982259718
+      PlanetAsteroid_16: -5931757012311059903
+      PlanetAsteroid_17: -3384663464221085174
+      PlanetAsteroid_18: -711913574444520502
+      PlanetAsteroid_19: -6361346527779970524
+      PlanetAsteroid_2: -5070188855702915275
+      PlanetAsteroid_20: -1401745797643970517
+      PlanetAsteroid_21: 5468624667125155322
+      PlanetAsteroid_22: -8329745919023908296
+      PlanetAsteroid_23: -1337294893655769014
+      PlanetAsteroid_24: 1679379325108644472
+      PlanetAsteroid_25: 2396694506336127275
+      PlanetAsteroid_26: 5976817601661192201
+      PlanetAsteroid_27: 1898903596023461258
+      PlanetAsteroid_28: -8755807641606889059
+      PlanetAsteroid_29: 4128935314395894442
+      PlanetAsteroid_3: -1620747733866129613
+      PlanetAsteroid_30: -5527932324987644755
+      PlanetAsteroid_31: 6663709925748532285
+      PlanetAsteroid_32: 8755707051726936134
+      PlanetAsteroid_33: -5878562143859904565
+      PlanetAsteroid_34: 9120680851201455323
+      PlanetAsteroid_35: -7909748907412495875
+      PlanetAsteroid_36: -152969810507237360
+      PlanetAsteroid_37: -2407820738338970624
+      PlanetAsteroid_38: -7515552221712586224
+      PlanetAsteroid_39: -4520675057771447774
+      PlanetAsteroid_4: 6478607656085870391
+      PlanetAsteroid_40: 4402466189818326389
+      PlanetAsteroid_41: 5830326321525015488
+      PlanetAsteroid_42: -7818551874821407988
+      PlanetAsteroid_43: -1135458006718197563
+      PlanetAsteroid_44: 5397359293640386694
+      PlanetAsteroid_45: 3668675143840540690
+      PlanetAsteroid_46: 5043823305350694992
+      PlanetAsteroid_47: 8906861412764588131
+      PlanetAsteroid_48: -3468654477689793113
+      PlanetAsteroid_49: -8017066179767564836
+      PlanetAsteroid_5: -583427588619600067
+      PlanetAsteroid_6: -1534586145138437901
+      PlanetAsteroid_7: -3726750674132556148
+      PlanetAsteroid_8: -4614490788756650698
+      PlanetAsteroid_9: 1747133269116973470
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

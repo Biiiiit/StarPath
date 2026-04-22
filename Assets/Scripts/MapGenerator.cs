@@ -8,14 +8,11 @@ public class MapGenerator : MonoBehaviour
     public int normalRows = 6;
     public float colSpacing = 2.5f;
     public float rowSpacing = 2.0f;
+    public float bottomPadding = 1.5f;
 
     [Header("Node chances (0–1, must sum ≤ 1)")]
     public float combatChance = 0.45f;
     public float eliteChance = 0.15f;
-    public float shopChance = 0.15f;
-    public float itemChance = 0.10f;
-    public float healChance = 0.15f;
-
     [Header("Prefabs")]
     public GameObject nodePrefab;
     public GameObject connectionPrefab;
@@ -28,7 +25,7 @@ public class MapGenerator : MonoBehaviour
 
     void Awake()
     {
-        columns = 4; // max possible, grid needs to be this wide
+        columns = 5; // max possible, grid needs to be this wide
         totalRows = normalRows + 2;
         grid = new MapNode[totalRows, columns];
         Generate();
@@ -36,6 +33,7 @@ public class MapGenerator : MonoBehaviour
 
     void Generate()
     {
+        MapNode.ResetUsedAnimators();
         SpawnNodes();
         ConnectNodes();
         AssignMapManagerReferences();
@@ -45,29 +43,74 @@ public class MapGenerator : MonoBehaviour
     void SpawnNodes()
     {
         float totalHeight = (totalRows - 1) * rowSpacing;
-        Vector2 origin = new Vector2(0f, -totalHeight / 2f);
+
+        int third = normalRows / 3;
+        int healRow = Random.Range(1, 1 + third);
+        int itemRow = Random.Range(1 + third, 1 + third * 2);
+        int shopRow = Random.Range(1 + third * 2, normalRows + 1);
+
+        NodeType[] specialTypes = { NodeType.Heal, NodeType.Item, NodeType.Shop };
+        for (int i = specialTypes.Length - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            (specialTypes[i], specialTypes[j]) = (specialTypes[j], specialTypes[i]);
+        }
+
+        Dictionary<int, NodeType> guaranteedRows = new Dictionary<int, NodeType>
+    {
+        { healRow, specialTypes[0] },
+        { itemRow, specialTypes[1] },
+        { shopRow, specialTypes[2] },
+    };
+
+        Dictionary<int, int> guaranteedCols = new Dictionary<int, int>();
+
+        // pre-calculate row column counts so we can compute total height correctly
+        int[] rowColumnCounts = new int[totalRows];
+        for (int row = 0; row < totalRows; row++)
+        {
+            bool isEdgeRow = (row == 0 || row == totalRows - 1);
+            rowColumnCounts[row] = isEdgeRow ? 1 : Random.Range(2, 5);
+        }
+
+        // build cumulative y positions starting from bottom
+        float[] rowYPositions = new float[totalRows];
+        float currentY = -totalHeight / 2f + bottomPadding;
+        for (int row = 0; row < totalRows; row++)
+        {
+            rowYPositions[row] = currentY;
+            float dynamicRowSpacing = rowColumnCounts[row] == 4 ? rowSpacing * 0.6f : rowSpacing;
+            currentY += dynamicRowSpacing;
+        }
 
         for (int row = 0; row < totalRows; row++)
         {
             bool isEdgeRow = (row == 0 || row == totalRows - 1);
+            int rowColumns = rowColumnCounts[row];
 
-            int rowColumns = isEdgeRow ? 1 : Random.Range(2, 4); // 2 or 3 per normal row
+            if (guaranteedRows.ContainsKey(row))
+                guaranteedCols[row] = Random.Range(0, rowColumns);
 
-            // center the columns for this row
-            float rowWidth = (rowColumns - 1) * colSpacing;
+            float dynamicSpacing = rowColumns == 4 ? colSpacing * 0.8f : colSpacing;
+            float rowWidth = (rowColumns - 1) * dynamicSpacing;
 
             for (int col = 0; col < rowColumns; col++)
             {
                 Vector2 jitter = Vector2.zero;
                 if (!isEdgeRow)
-                    jitter = new Vector2(Random.Range(-0.25f, 0.25f),
+                    jitter = new Vector2(Random.Range(-0.15f, 0.15f),
                                          Random.Range(-0.15f, 0.15f));
 
-                Vector2 pos = origin
-                    + new Vector2(-rowWidth / 2f + col * colSpacing, row * rowSpacing)
-                    + jitter;
+                Vector2 pos = new Vector2(
+                    -rowWidth / 2f + col * dynamicSpacing + jitter.x,
+                    rowYPositions[row] + jitter.y
+                );
 
-                NodeType type = PickType(row);
+                NodeType type;
+                if (guaranteedRows.ContainsKey(row) && guaranteedCols[row] == col)
+                    type = guaranteedRows[row];
+                else
+                    type = PickType(row);
 
                 GameObject go = Instantiate(nodePrefab, pos, Quaternion.identity,
                                             mapManager.mapRoot.transform);
@@ -196,10 +239,9 @@ public class MapGenerator : MonoBehaviour
 
     NodeType PickType(int row)
     {
-        if (row == 0) return NodeType.Combat;   // start
+        if (row == 0) return NodeType.Combat;
         if (row == totalRows - 1) return NodeType.Boss;
 
-        // elite rooms only appear in later half
         float effectiveElite = (row >= normalRows / 2) ? eliteChance : 0f;
 
         float r = Random.value;
@@ -207,11 +249,8 @@ public class MapGenerator : MonoBehaviour
 
         acc += combatChance; if (r < acc) return NodeType.Combat;
         acc += effectiveElite; if (r < acc) return NodeType.Elite;
-        acc += shopChance; if (r < acc) return NodeType.Shop;
-        acc += itemChance; if (r < acc) return NodeType.Item;
-        acc += healChance; if (r < acc) return NodeType.Heal;
 
-        return NodeType.Combat; // fallback
+        return NodeType.Combat; // remaining nodes are always combat
     }
 
     string SceneNameFor(NodeType type) => type switch

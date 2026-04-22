@@ -207,7 +207,26 @@ MonoBehaviour:
   nodeType: 0
   sceneName: GridSystem
   checkmarkSprite: {fileID: 3846040595854065607}
+  combatAnimators:
+  - {fileID: 9100000, guid: c300624f8f546fb44a29e9aaa2f35ab4, type: 2}
+  - {fileID: 9100000, guid: b7f27947b2b67a84593e567c4de813cf, type: 2}
+  - {fileID: 9100000, guid: cfee3feb67ee25c468f20038643e7603, type: 2}
+  - {fileID: 9100000, guid: 5fdf07f1ac8fbda428b9eb531cc1335e, type: 2}
+  - {fileID: 9100000, guid: bf029dd57410eaa4b84dbb165f0972ed, type: 2}
+  - {fileID: 9100000, guid: 761c80145808d264598a358afc04f530, type: 2}
+  - {fileID: 9100000, guid: f5ee7e46a4c5ac941ada54ca212c154f, type: 2}
+  - {fileID: 9100000, guid: 64ad22a98727e534097971ad1440369e, type: 2}
+  - {fileID: 9100000, guid: 6b7b6984e7571b543b22f8e5bc41bee0, type: 2}
+  - {fileID: 9100000, guid: 4ea3f2b64b5dfe24ca411ae32fb61bcc, type: 2}
+  - {fileID: 9100000, guid: 6654de714fcac7a438ce0588d2e8990c, type: 2}
+  - {fileID: 9100000, guid: 077bc416eadc0944d93b8036b16c23ca, type: 2}
+  - {fileID: 9100000, guid: b35ee28477a112e4387abf8c45a6ea66, type: 2}
+  bossAnimator: {fileID: 9100000, guid: dff5d01a62ec038459b129e19495842a, type: 2}
+  startAnimator: {fileID: 9100000, guid: dd2b7e7dd747d634db71599c5fa15640, type: 2}
   backgroundController: {fileID: 9100000, guid: dd2b7e7dd747d634db71599c5fa15640, type: 2}
+  shopSprite: {fileID: 21300000, guid: 7f7600975df3d2547ad0af606114bdd8, type: 3}
+  itemSprite: {fileID: 45963078820343027, guid: 985f3e177dad5d44ab86e1839f7589e2, type: 3}
+  healSprite: {fileID: 21300000, guid: 4d9aa3f6748405943b59cda356c1a63b, type: 3}
 --- !u!58 &2029787328635882874
 CircleCollider2D:
   m_ObjectHideFlags: 0
