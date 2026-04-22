@@ -8,6 +8,7 @@ public class GameProgress : MonoBehaviour
     public string currentNodeID;
     public RuntimeAnimatorController selectedBackground;
     public List<string> completedNodes = new List<string>();
+    public int mapSeed = -1; // -1 means no map generated yet
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class GameProgress : MonoBehaviour
     {
         completedNodes.Clear();
         currentNodeID = "";
+        mapSeed = -1; // force new map next time
     }
 
     public void CompleteCurrentNode()

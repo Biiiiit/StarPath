@@ -14,6 +14,8 @@ public class MapNode : MonoBehaviour
     public string sceneName;
 
     public GameObject checkmarkSprite;
+    public GameObject eliteMark;
+    public GameObject bossMark;
     public RuntimeAnimatorController[] combatAnimators;
     public RuntimeAnimatorController bossAnimator;
     public RuntimeAnimatorController startAnimator;
@@ -38,9 +40,9 @@ public class MapNode : MonoBehaviour
         usedAnimators.Clear();
     }
 
-    public void RefreshVisual()
+    // call once at spawn time to assign animator/sprite
+    public void InitVisual()
     {
-        // static sprite types — disable animator
         if (nodeType == NodeType.Shop || nodeType == NodeType.Item || nodeType == NodeType.Heal)
         {
             if (anim != null) anim.enabled = false;
@@ -54,7 +56,6 @@ public class MapNode : MonoBehaviour
         }
         else
         {
-            // animated types
             if (anim != null)
             {
                 anim.enabled = true;
@@ -63,19 +64,17 @@ public class MapNode : MonoBehaviour
                 {
                     anim.runtimeAnimatorController = bossAnimator;
                 }
-                else if (nodeID == "node_0_0") // start node always uses startAnimator
+                else if (nodeID == "node_0_0")
                 {
                     anim.runtimeAnimatorController = startAnimator;
                 }
                 else
                 {
-                    // pick a random unused animator
                     List<RuntimeAnimatorController> available = new List<RuntimeAnimatorController>();
                     foreach (var a in combatAnimators)
                         if (a != null && !usedAnimators.Contains(a))
                             available.Add(a);
 
-                    // if all are used, reset the pool (fallback)
                     if (available.Count == 0)
                     {
                         usedAnimators.Clear();
@@ -90,8 +89,14 @@ public class MapNode : MonoBehaviour
                 backgroundController = anim.runtimeAnimatorController;
             }
         }
+    }
 
-        // tint by state
+    // call every time state changes (unlock, complete, return to map)
+    public void RefreshVisual()
+    {
+        if (eliteMark != null) eliteMark.SetActive(nodeType == NodeType.Elite && !isCompleted);
+        if (bossMark != null) bossMark.SetActive(nodeType == NodeType.Boss && !isCompleted);
+
         if (isCompleted)
         {
             sr.color = new Color(0.7f, 0.7f, 0.7f, 1f);

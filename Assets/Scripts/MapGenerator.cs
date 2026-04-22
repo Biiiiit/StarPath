@@ -8,7 +8,6 @@ public class MapGenerator : MonoBehaviour
     public int normalRows = 6;
     public float colSpacing = 2.5f;
     public float rowSpacing = 2.0f;
-    public float bottomPadding = 1.5f;
 
     [Header("Node chances (0–1, must sum ≤ 1)")]
     public float combatChance = 0.45f;
@@ -19,15 +18,25 @@ public class MapGenerator : MonoBehaviour
 
     [Header("References")]
     public MapManager mapManager;
+    public SpriteRenderer backgroundBounds; // assign the background SpriteRenderer in Inspector-
 
     private MapNode[,] grid;
     private int totalRows;
 
     void Awake()
     {
-        columns = 5; // max possible, grid needs to be this wide
+        columns = 5;
         totalRows = normalRows + 2;
         grid = new MapNode[totalRows, columns];
+
+        if (GameProgress.Get().mapSeed == -1)
+        {
+            // new run — pick and save a seed
+            GameProgress.Get().mapSeed = Random.Range(0, int.MaxValue);
+        }
+
+        // always apply the saved seed so the map is identical on reload
+        Random.InitState(GameProgress.Get().mapSeed);
         Generate();
     }
 
@@ -49,6 +58,13 @@ public class MapGenerator : MonoBehaviour
         int itemRow = Random.Range(1 + third, 1 + third * 2);
         int shopRow = Random.Range(1 + third * 2, normalRows + 1);
 
+        // guaranteed elite in the second half
+        int eliteRow = Random.Range(normalRows / 2, normalRows + 1);
+
+        // make sure eliteRow doesn't collide with other guaranteed rows
+        while (eliteRow == healRow || eliteRow == itemRow || eliteRow == shopRow)
+            eliteRow = Random.Range(normalRows / 2, normalRows + 1);
+
         NodeType[] specialTypes = { NodeType.Heal, NodeType.Item, NodeType.Shop };
         for (int i = specialTypes.Length - 1; i > 0; i--)
         {
@@ -57,11 +73,12 @@ public class MapGenerator : MonoBehaviour
         }
 
         Dictionary<int, NodeType> guaranteedRows = new Dictionary<int, NodeType>
-    {
-        { healRow, specialTypes[0] },
-        { itemRow, specialTypes[1] },
-        { shopRow, specialTypes[2] },
-    };
+        {
+            { healRow,  specialTypes[0] },
+            { itemRow,  specialTypes[1] },
+            { shopRow,  specialTypes[2] },
+            { eliteRow, NodeType.Elite  },
+        };
 
         Dictionary<int, int> guaranteedCols = new Dictionary<int, int>();
 
@@ -75,7 +92,7 @@ public class MapGenerator : MonoBehaviour
 
         // build cumulative y positions starting from bottom
         float[] rowYPositions = new float[totalRows];
-        float currentY = -totalHeight / 2f + bottomPadding;
+        float currentY = -totalHeight / 2f;
         for (int row = 0; row < totalRows; row++)
         {
             rowYPositions[row] = currentY;
@@ -91,7 +108,7 @@ public class MapGenerator : MonoBehaviour
             if (guaranteedRows.ContainsKey(row))
                 guaranteedCols[row] = Random.Range(0, rowColumns);
 
-            float dynamicSpacing = rowColumns == 4 ? colSpacing * 0.8f : colSpacing;
+            float dynamicSpacing = rowColumns == 4 ? colSpacing : colSpacing;
             float rowWidth = (rowColumns - 1) * dynamicSpacing;
 
             for (int col = 0; col < rowColumns; col++)
@@ -106,6 +123,8 @@ public class MapGenerator : MonoBehaviour
                     rowYPositions[row] + jitter.y
                 );
 
+                pos = ClampToBounds(pos);
+
                 NodeType type;
                 if (guaranteedRows.ContainsKey(row) && guaranteedCols[row] == col)
                     type = guaranteedRows[row];
@@ -119,10 +138,23 @@ public class MapGenerator : MonoBehaviour
                 node.nodeID = $"node_{row}_{col}";
                 node.nodeType = type;
                 node.sceneName = SceneNameFor(type);
+                node.InitVisual();
 
                 grid[row, col] = node;
             }
         }
+    }
+
+    Vector2 ClampToBounds(Vector2 pos, float nodeRadius = 1.0f)
+    {
+        if (backgroundBounds == null) return pos;
+
+        Bounds b = backgroundBounds.bounds;
+
+        return new Vector2(
+            Mathf.Clamp(pos.x, b.min.x + nodeRadius, b.max.x - nodeRadius),
+            Mathf.Clamp(pos.y, b.min.y + nodeRadius, b.max.y - nodeRadius)
+        );
     }
 
     // ── 2. Connect ────────────────────────────────────────────────────────────
@@ -163,8 +195,8 @@ public class MapGenerator : MonoBehaviour
                 claimed.Add(primary);
                 Link(fromNodes[i], toNodes[primary], row, row + 1);
 
-                // optional second connection (65 % chance)
-                if (Random.value < 0.65f)
+                // optional second connection (70 % chance)
+                if (Random.value < 0.70f)
                 {
                     List<int> candidates = new List<int>();
 
@@ -242,6 +274,7 @@ public class MapGenerator : MonoBehaviour
         if (row == 0) return NodeType.Combat;
         if (row == totalRows - 1) return NodeType.Boss;
 
+        // elites only appear randomly in the second half
         float effectiveElite = (row >= normalRows / 2) ? eliteChance : 0f;
 
         float r = Random.value;
@@ -250,14 +283,14 @@ public class MapGenerator : MonoBehaviour
         acc += combatChance; if (r < acc) return NodeType.Combat;
         acc += effectiveElite; if (r < acc) return NodeType.Elite;
 
-        return NodeType.Combat; // remaining nodes are always combat
+        return NodeType.Combat;
     }
 
     string SceneNameFor(NodeType type) => type switch
     {
         NodeType.Elite => "EliteBossRoom",
-        NodeType.Shop => "SpaceCasino",
-        NodeType.Item => "Truckstop",
+        NodeType.Shop => "Truckstop",
+        NodeType.Item => "SpaceCasino",
         NodeType.Heal => "Restroom",
         NodeType.Boss => "BossRoom",
         _ => "GridSystem",
