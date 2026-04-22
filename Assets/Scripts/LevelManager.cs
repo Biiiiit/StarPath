@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator ReturnToMap()
     {
-        GameProgress.Instance.CompleteCurrentNode();
+        GameProgress.Get().CompleteCurrentNode();
 
         yield return null;
 
