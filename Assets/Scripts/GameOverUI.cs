@@ -11,8 +11,8 @@ public class UIManager : MonoBehaviour
         {
             Destroy(MapManager.Instance.gameObject);
         }
-       
-        SceneManager.LoadScene("MapScene");
+
+        FadeUI.Instance.LoadScene("MapScene");
         GameManager.Instance.lives = GameManager.Instance.maxLives;
 
     }

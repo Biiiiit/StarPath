@@ -5,7 +5,7 @@ public class StartGame : MonoBehaviour
 {
     public void GoToMapScene()
     {
-        SceneManager.LoadScene("MapScene");
+        FadeUI.Instance.LoadScene("MapScene");
     }
 
     public void QuitGame()

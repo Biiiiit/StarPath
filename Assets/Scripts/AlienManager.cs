@@ -136,7 +136,20 @@ public class AlienManager : MonoBehaviour
         );
 
         creditManager.AddCredits(reward);
-        levelManager.CompleteLevel();
+
+        // 20% chance to drop a random item
+        ItemData droppedItem = null;
+        if (Random.value < 0.20f)
+        {
+            ItemData[] allItems = Resources.LoadAll<ItemData>("Items");
+            if (allItems.Length > 0)
+            {
+                droppedItem = allItems[Random.Range(0, allItems.Length)];
+                GameManager.Instance.AddItem(droppedItem);
+            }
+        }
+
+        levelManager.CompleteLevel(reward, droppedItem);
     }
 
     public void ResetAliens()
