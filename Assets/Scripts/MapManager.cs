@@ -163,7 +163,7 @@ public class MapManager : MonoBehaviour
         GameProgress.Get().currentNodeID = node.nodeID;
         GameProgress.Get().selectedBackground = node.backgroundController;
 
-        SceneManager.LoadScene(node.sceneName, LoadSceneMode.Single);
+        FadeUI.Instance.LoadScene(node.sceneName); ;
     }
 
     public void CompleteCurrentNode()
