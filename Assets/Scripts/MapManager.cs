@@ -24,9 +24,14 @@ public class MapManager : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
+    void Start() { }
+
+    public void OnMapGenerated()
     {
         BuildNodeDictionary();
+        // only reset to start if there's no saved progress
+        if (string.IsNullOrEmpty(GameProgress.Get().currentNodeID))
+            GameProgress.Get().currentNodeID = startNode.nodeID;
         ApplyProgressToMap();
     }
 
@@ -57,7 +62,7 @@ public class MapManager : MonoBehaviour
     {
         nodes.Clear();
 
-        MapNode[] allNodes = FindObjectsByType<MapNode>(FindObjectsSortMode.None);
+        MapNode[] allNodes = FindObjectsByType<MapNode>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         foreach (MapNode node in allNodes)
         {
@@ -72,31 +77,31 @@ public class MapManager : MonoBehaviour
     {
         foreach (MapNode node in nodes.Values)
         {
-            node.isCompleted = GameProgress.Instance.IsCompleted(node.nodeID);
+            node.isCompleted = GameProgress.Get().IsCompleted(node.nodeID);
             node.isUnlocked = false;
         }
 
-        string currentID = GameProgress.Instance.currentNodeID;
-
+        // on first load use startNode, on return use saved currentID
+        string currentID = GameProgress.Get().currentNodeID;
         if (string.IsNullOrEmpty(currentID) || !nodes.ContainsKey(currentID))
-        {
             currentID = startNode.nodeID;
-            GameProgress.Instance.currentNodeID = currentID;
-        }
+
+        GameProgress.Get().currentNodeID = currentID;
 
         MapNode current = nodes[currentID];
-
-        foreach (MapNode next in current.connectedNodes)
-        {
-            next.isUnlocked = true;
-        }
-
         current.isUnlocked = true;
 
-        foreach (MapNode node in nodes.Values)
+        if (current.isCompleted)
         {
-            node.RefreshVisual();
+            foreach (MapNode next in current.connectedNodes)
+            {
+                if (next == null) continue;
+                next.isUnlocked = true;
+            }
         }
+
+        foreach (MapNode node in nodes.Values)
+            node.RefreshVisual();
 
         if (playerMarker != null)
         {
@@ -155,15 +160,15 @@ public class MapManager : MonoBehaviour
 
     public void SelectNode(MapNode node)
     {
-        GameProgress.Instance.currentNodeID = node.nodeID;
-        GameProgress.Instance.selectedBackground = node.backgroundController;
+        GameProgress.Get().currentNodeID = node.nodeID;
+        GameProgress.Get().selectedBackground = node.backgroundController;
 
-        SceneManager.LoadScene(node.sceneName, LoadSceneMode.Single);
+        FadeUI.Instance.LoadScene(node.sceneName); ;
     }
 
     public void CompleteCurrentNode()
     {
-        GameProgress.Instance.CompleteCurrentNode();
+        GameProgress.Get().CompleteCurrentNode();
     }
 
     public void ReturnToMap()
@@ -180,16 +185,17 @@ public class MapManager : MonoBehaviour
 
         foreach (MapConnection conn in connections)
         {
+            if (conn.fromNode == null || conn.toNode == null) continue;
             conn.SetActive(false);
             conn.SetBlinking(false);
 
-            if (GameProgress.Instance.IsCompleted(conn.fromNode.nodeID) &&
-                GameProgress.Instance.IsCompleted(conn.toNode.nodeID))
+            if (GameProgress.Get().IsCompleted(conn.fromNode.nodeID) &&
+                GameProgress.Get().IsCompleted(conn.toNode.nodeID))
             {
                 conn.SetActive(true);
             }
 
-            if (conn.fromNode.nodeID == GameProgress.Instance.currentNodeID &&
+            if (conn.fromNode.nodeID == GameProgress.Get().currentNodeID &&
                 conn.toNode.isUnlocked)
             {
                 conn.SetBlinking(true);

@@ -366,6 +366,10 @@ public class Boss : MonoBehaviour
         {
             Destroy(bullet.gameObject);
         }
+
+        LevelManager lm = FindFirstObjectByType<LevelManager>();
+        if (lm != null)
+            lm.CompleteLevel();
     }
 
     public void PlayDeathSound()

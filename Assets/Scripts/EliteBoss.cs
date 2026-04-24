@@ -36,7 +36,6 @@ public class EliteBoss : MonoBehaviour
 
         renderers = GetComponentsInChildren<SpriteRenderer>();
 
-        Debug.Log("ELITE BOSS SPAWNED");
     }
 
     void Update()
@@ -47,12 +46,9 @@ public class EliteBoss : MonoBehaviour
 
     public void TakeDamage(int dmg, Vector3 hitPosition)
     {
-        Debug.Log("ELITE BOSS TAKE DAMAGE CALLED");
 
         currentHealth -= dmg;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        Debug.Log("CURRENT HP: " + currentHealth);
 
         if (hitEffectPrefab != null)
         {
@@ -70,11 +66,8 @@ public class EliteBoss : MonoBehaviour
 
     IEnumerator HitFlash()
     {
-        Debug.Log("FLASH START");
-
         if (renderers == null || renderers.Length == 0)
         {
-            Debug.Log("NO RENDERERS FOUND");
             yield break;
         }
 
@@ -98,22 +91,6 @@ public class EliteBoss : MonoBehaviour
 
             renderers[i].color = originalColors[i];
         }
-
-        Debug.Log("FLASH END");
-    }
-
-    void Die()
-    {
-        Debug.Log("ELITE BOSS DIED");
-
-        if (deathSound != null)
-        {
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
-        }
-
-        Destroy(gameObject);
-
-        CheckAllBossesDead();
     }
 
     void UpdateHealthBar()
@@ -164,19 +141,38 @@ public class EliteBoss : MonoBehaviour
         }
     }
 
+    void Die()
+    {
+        if (deathSound != null)
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+
+        Destroy(gameObject);
+        CheckAllBossesDead();
+    }
+
     void CheckAllBossesDead()
     {
         EliteBoss[] bosses = FindObjectsByType<EliteBoss>(FindObjectsSortMode.None);
 
-        if (bosses.Length <= 1) 
-        {
-            Debug.Log("ALL BOSSES DEAD → COMPLETE LEVEL");
+        if (bosses.Length > 1) return;
 
-            LevelManager lm = FindFirstObjectByType<LevelManager>();
-            if (lm != null)
+        int totalBosses = FindObjectsByType<EliteBoss>(FindObjectsSortMode.None).Length + 1;
+        int credits = 15 * totalBosses;
+
+        // Roll one item at 50% chance for clearing all bosses
+        ItemData droppedItem = null;
+        if (Random.value < 0.5f)
+        {
+            ItemData[] allItems = Resources.LoadAll<ItemData>("Items");
+            if (allItems.Length > 0)
             {
-                lm.CompleteLevel();
+                droppedItem = allItems[Random.Range(0, allItems.Length)];
+                GameManager.Instance.AddItem(droppedItem);
             }
         }
+
+        LevelManager lm = FindFirstObjectByType<LevelManager>();
+        if (lm != null)
+            lm.CompleteLevel(credits, droppedItem);
     }
 }

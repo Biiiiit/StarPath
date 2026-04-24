@@ -4,17 +4,23 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
-    public void CompleteLevel()
+    [Header("UI")]
+    public RewardScreenUI rewardScreenUI;
+
+    public void CompleteLevel(int credits, ItemData item)
     {
-        StartCoroutine(ReturnToMap());
+        rewardScreenUI.Show(credits, item);
     }
 
-    IEnumerator ReturnToMap()
+    public void CompleteLevel()
     {
-        GameProgress.Instance.CompleteCurrentNode();
+        StartCoroutine(GoToMap());
+    }
 
+    IEnumerator GoToMap()
+    {
+        GameProgress.Get().CompleteCurrentNode();
         yield return null;
-
-        SceneManager.LoadScene("MapScene", LoadSceneMode.Single);
+        FadeUI.Instance.LoadScene("MapScene");
     }
 }

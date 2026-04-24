@@ -22,13 +22,13 @@ public class MapConnection : MonoBehaviour
         lr.positionCount = 2;
         lr.startWidth = 0.05f;
         lr.endWidth = 0.05f;
-
-        RefreshLine();
-        RefreshColor();
     }
 
-    void Update()
+    void LateUpdate()
     {
+        if (fromNode != null && toNode != null)
+            RefreshLine();
+
         if (isBlinking)
             RefreshColor();
     }
