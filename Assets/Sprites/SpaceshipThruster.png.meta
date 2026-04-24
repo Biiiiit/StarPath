@@ -1,0 +1,385 @@
+fileFormatVersion: 2
+guid: f2b9988c38bb3e149b53405ed38c0e4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7698034277036730509
+    second: SpaceshipThruster_0
+  - first:
+      213: 7849491916096443700
+    second: SpaceshipThruster_1
+  - first:
+      213: 361096545963958412
+    second: SpaceshipThruster_2
+  - first:
+      213: -6046756058406658229
+    second: SpaceshipThruster_3
+  - first:
+      213: 2063408426918531996
+    second: SpaceshipThruster_4
+  - first:
+      213: 2756980645793891145
+    second: SpaceshipThruster_5
+  - first:
+      213: -7671478717410368170
+    second: SpaceshipThruster_6
+  - first:
+      213: 2190130030346883328
+    second: SpaceshipThruster_7
+  - first:
+      213: -4498322093873143778
+    second: SpaceshipThruster_8
+  - first:
+      213: -1697284335699953985
+    second: SpaceshipThruster_9
+  - first:
+      213: 7096119941797150414
+    second: SpaceshipThruster_10
+  - first:
+      213: -8971842016195041331
+    second: SpaceshipThruster_11
+  - first:
+      213: 1737435008392868655
+    second: SpaceshipThruster_12
+  - first:
+      213: 804289145459975905
+    second: SpaceshipThruster_13
+  - first:
+      213: -5062585073715048185
+    second: SpaceshipThruster_14
+  - first:
+      213: -379907665730472120
+    second: SpaceshipThruster_15
+  - first:
+      213: -100411736817604079
+    second: SpaceshipThruster_16
+  - first:
+      213: -758982600343544230
+    second: SpaceshipThruster_17
+  - first:
+      213: -4192339004384318224
+    second: SpaceshipThruster_18
+  - first:
+      213: 2619277765299942792
+    second: SpaceshipThruster_19
+  - first:
+      213: 7435148236256129548
+    second: SpaceshipThruster_20
+  - first:
+      213: 8351130955301475740
+    second: SpaceshipThruster_21
+  - first:
+      213: -8547226942132778480
+    second: SpaceshipThruster_22
+  - first:
+      213: 3124625495968162136
+    second: SpaceshipThruster_23
+  - first:
+      213: 5293454909393571001
+    second: SpaceshipThruster_24
+  - first:
+      213: -159641217183805192
+    second: SpaceshipThruster_25
+  - first:
+      213: -3267132662487237976
+    second: SpaceshipThruster_26
+  - first:
+      213: -2352306945042705758
+    second: SpaceshipThruster_27
+  - first:
+      213: 739585079657965704
+    second: SpaceshipThruster_28
+  - first:
+      213: -7747339885474954545
+    second: SpaceshipThruster_29
+  - first:
+      213: -8541188394033795421
+    second: SpaceshipThruster_30
+  - first:
+      213: -2405890708190167901
+    second: SpaceshipThruster_31
+  - first:
+      213: 6181785228475174461
+    second: SpaceshipThruster_32
+  - first:
+      213: -7771963627263806213
+    second: SpaceshipThruster_33
+  - first:
+      213: 8232157279563915634
+    second: SpaceshipThruster_34
+  - first:
+      213: 3262392802242301904
+    second: SpaceshipThruster_35
+  - first:
+      213: -5234829602224743524
+    second: SpaceshipThruster_36
+  - first:
+      213: -6559072728366037994
+    second: SpaceshipThruster_37
+  - first:
+      213: -8097679725282542835
+    second: SpaceshipThruster_38
+  - first:
+      213: 7013557092297741887
+    second: SpaceshipThruster_39
+  - first:
+      213: 3327653890658718429
+    second: SpaceshipThruster_40
+  - first:
+      213: -3254195459531054165
+    second: SpaceshipThruster_41
+  - first:
+      213: 6054206559863042684
+    second: SpaceshipThruster_42
+  - first:
+      213: 8925862265607672595
+    second: SpaceshipThruster_43
+  - first:
+      213: 4116450718806125672
+    second: SpaceshipThruster_44
+  - first:
+      213: -5080150237035199453
+    second: SpaceshipThruster_45
+  - first:
+      213: 7616516350218848223
+    second: SpaceshipThruster_46
+  - first:
+      213: 8708708471022568836
+    second: SpaceshipThruster_47
+  - first:
+      213: 2255843373411957785
+    second: SpaceshipThruster_48
+  - first:
+      213: 5004293840597079194
+    second: SpaceshipThruster_49
+  - first:
+      213: -2626753325586413283
+    second: SpaceshipThruster_50
+  - first:
+      213: -8910326041492531029
+    second: SpaceshipThruster_51
+  - first:
+      213: 7116384438023808402
+    second: SpaceshipThruster_52
+  - first:
+      213: 5243534685221517017
+    second: SpaceshipThruster_53
+  - first:
+      213: 4684091616903311996
+    second: SpaceshipThruster_54
+  - first:
+      213: 6572882173413624370
+    second: SpaceshipThruster_55
+  - first:
+      213: 5623324475462797752
+    second: SpaceshipThruster_56
+  - first:
+      213: -8380722682977737639
+    second: SpaceshipThruster_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpaceshipThruster_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d882e879369e4da60800000000000000
+      internalID: 7698034277036730509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceshipThruster_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4359a3e2f4ffeec60800000000000000
+      internalID: 7849491916096443700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceshipThruster_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c806dc7356fd20500800000000000000
+      internalID: 361096545963958412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceshipThruster_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fda37e66b951ca0800000000000000
+      internalID: -6046756058406658229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6ec0ebdde9814ef4ba7eaf211c4c536f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      SpaceshipThruster_0: 7698034277036730509
+      SpaceshipThruster_1: 7849491916096443700
+      SpaceshipThruster_2: 361096545963958412
+      SpaceshipThruster_3: -6046756058406658229
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

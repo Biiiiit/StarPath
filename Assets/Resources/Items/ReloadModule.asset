@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3469c32339b6148be58df619b84e20, type: 3}
+  m_Name: ReloadModule
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemName: Reload Module
+  description: "\u201CRemember, switching to your pistol is always faster then reloading\u2026
+    too bad you don\u2019t have that pistol\u201D "
+  icon: {fileID: -1014005271760799969, guid: 25803935696da054da2c38bcfef8b490, type: 3}
+  livesBonus: 0
+  moveSpeedBonus: 0
+  fireRate: 0
+  bulletSpeedBonus: 0
+  maxBulletsBonus: 1
+  bulletPierceBonus: 0

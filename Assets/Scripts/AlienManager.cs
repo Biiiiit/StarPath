@@ -1,106 +1,189 @@
+using System.Collections;
 using UnityEngine;
 
 public class AlienManager : MonoBehaviour
 {
-    public GameObject alienPrefab;
-    public int rows = 3;
-    public int cols = 6;
-    public float spacing = 1.5f;
-
+    [Header("Movement")]
     public float baseSpeed = 1f;
-    public float maxSpeed = 3f;
-    private float speed; // CURRENT speed
+    public float maxSpeed = 5f;
+    public float stepDown = 0.5f;
+    public float speedExponent = 1f;
+
+    private float speed;
     private Vector3 direction = Vector3.right;
 
-    public SpriteRenderer background;
+    public Vector3 Direction => direction;
+    private bool hasFlippedThisEdge = false;
 
+    [Header("Bounds")]
+    public SpriteRenderer background;
     private float leftBound;
     private float rightBound;
 
-    private int totalAliens;
-    private int aliveAliens;
+    [Header("Systems")]
+    public PlayerManager player;
+    public CreditManager creditManager;
+    public LevelManager levelManager;
+
+    [Header("Counts")]
+    public int totalAliens;
+    public int aliveAliens;
+
+    private Rigidbody2D rb;
+    private bool isResetting = false;
 
     void Start()
     {
-        totalAliens = rows * cols;
-        aliveAliens = totalAliens;
+        rb = GetComponent<Rigidbody2D>();
         speed = baseSpeed;
 
-        Bounds bounds = background.bounds;
-        leftBound = bounds.min.x;
-        rightBound = bounds.max.x;
+        if (background != null)
+        {
+            Bounds b = background.bounds;
+            leftBound = b.min.x;
+            rightBound = b.max.x;
+        }
 
-        SpawnFormation(bounds);
+        ResetAliens();
     }
 
     void Update()
     {
+        if (isResetting) return;
+
         MoveFormation();
     }
 
-    public void AlienKilled()
-    {
-        aliveAliens--;
-
-        // Smooth speed increase
-        float progress = 1f - (float)aliveAliens / totalAliens;
-        float curved = progress * progress; // slow start, faster at the end
-        speed = Mathf.Lerp(baseSpeed, maxSpeed, curved);
-    }
-
-    void SpawnFormation(Bounds bounds)
-    {
-        float totalWidth = (cols - 1) * spacing;
-        float totalHeight = (rows - 1) * spacing;
-
-        float startX = -totalWidth / 2f;
-        float topY = bounds.max.y - 1f; // small margin from top
-        float startY = topY - totalHeight;
-
-        for (int y = 0; y < rows; y++)
-        {
-            for (int x = 0; x < cols; x++)
-            {
-                Vector3 localPos = new Vector3(
-                    startX + x * spacing,
-                    startY + y * spacing,
-                    0
-                );
-
-                GameObject alien = Instantiate(alienPrefab, transform);
-                alien.transform.localPosition = localPos;
-            }
-        }
-    }
-
+    // ==========================
+    // MOVEMENT
+    // ==========================
     void MoveFormation()
     {
         float moveStep = speed * Time.deltaTime;
 
-        // Predict next edge positions in world space
         float nextLeft = float.MaxValue;
         float nextRight = float.MinValue;
 
         foreach (Transform alien in transform)
         {
-            float halfWidth = alien.GetComponent<SpriteRenderer>().bounds.extents.x;
+            if (alien == null) continue;
 
-            Vector3 worldPos = alien.position;
-            float nextX = worldPos.x + direction.x * moveStep;
+            SpriteRenderer sr = alien.GetComponent<SpriteRenderer>();
+            if (sr == null) continue;
+
+            float halfWidth = sr.bounds.extents.x;
+            float nextX = alien.position.x + direction.x * moveStep;
 
             nextLeft = Mathf.Min(nextLeft, nextX - halfWidth);
             nextRight = Mathf.Max(nextRight, nextX + halfWidth);
         }
 
-        // Reverse direction if we hit the background bounds
+        Vector2 horizontalMove = new Vector2(direction.x * moveStep, 0f);
+        Vector3 verticalMove = Vector3.zero;
+
         if (nextRight > rightBound || nextLeft < leftBound)
         {
-            direction *= -1;
-            transform.position += Vector3.down * 0.5f; // move down
-            return; // skip movement this frame to prevent overshoot
+            if (!hasFlippedThisEdge)
+            {
+                direction *= -1f;
+                transform.position += Vector3.down * stepDown;
+                hasFlippedThisEdge = true;
+            }
+        }
+        else
+        {
+            hasFlippedThisEdge = false;
         }
 
-        // Move formation
-        transform.Translate(direction * moveStep);
+        rb.MovePosition(rb.position + horizontalMove);
+        transform.position += verticalMove;
+    }
+
+    void UpdateSpeed()
+    {
+        if (totalAliens <= 0) return;
+
+        float progress = 1f - ((float)aliveAliens / totalAliens);
+        float curved = Mathf.Pow(progress, speedExponent);
+
+        speed = Mathf.Lerp(
+            baseSpeed,
+            GameManager.Instance.maxAlienSpeed,
+            curved
+        );
+    }
+
+    // ==========================
+    // GAME FLOW
+    // ==========================
+    public void AlienKilled()
+    {
+        aliveAliens = Mathf.Max(0, aliveAliens - 1);
+
+        UpdateSpeed();
+
+        if (aliveAliens <= 0)
+        {
+            AllAliensKilled();
+        }
+    }
+
+    void AllAliensKilled()
+    {
+        int reward = Mathf.Max(
+            10,
+            Mathf.RoundToInt(Mathf.Pow(totalAliens, 1.2f) * 0.5f)
+        );
+
+        creditManager.AddCredits(reward);
+
+        // 20% chance to drop a random item
+        ItemData droppedItem = null;
+        if (Random.value < 0.20f)
+        {
+            ItemData[] allItems = Resources.LoadAll<ItemData>("Items");
+            if (allItems.Length > 0)
+            {
+                droppedItem = allItems[Random.Range(0, allItems.Length)];
+                GameManager.Instance.AddItem(droppedItem);
+            }
+        }
+
+        levelManager.CompleteLevel(reward, droppedItem);
+    }
+
+    public void ResetAliens()
+    {
+        totalAliens = transform.childCount;
+        aliveAliens = totalAliens;
+
+        speed = baseSpeed;
+        UpdateSpeed();
+    }
+
+    public void OnAliensReachedPlayer()
+    {
+        if (isResetting) return;
+
+        StartCoroutine(ResetAfterHit());
+    }
+
+    IEnumerator ResetAfterHit()
+    {
+        isResetting = true;
+
+        enabled = false;
+        player.enabled = false;
+
+        player.DestroyBullet();
+        player.TakeDamage();
+
+        transform.position += Vector3.up * (5f * stepDown);
+
+        yield return new WaitForSeconds(1f);
+
+        player.enabled = true;
+        enabled = true;
+        isResetting = false;
     }
 }

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe392db8002078a48bfb352ce41aac19, type: 3}
+  m_Name: EasyWave2
+  m_EditorClassIdentifier: Assembly-CSharp::WaveFormation
+  rows: 5
+  cols: 11
+  grid:
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: 4c33078ad99091246b8525c34d543e67, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: 4c33078ad99091246b8525c34d543e67, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: 4c33078ad99091246b8525c34d543e67, type: 3}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: 4c33078ad99091246b8525c34d543e67, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2200029407344628602, guid: 4c33078ad99091246b8525c34d543e67, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  availablePrefabs:
+  - {fileID: 2200029407344628602, guid: b7dbb67e3b0c7714fb21c0cfffcbc40b, type: 3}
+  - {fileID: 2200029407344628602, guid: e58f17c6b520e5740b09c8cfb33f3415, type: 3}
+  - {fileID: 2200029407344628602, guid: 4c33078ad99091246b8525c34d543e67, type: 3}
+  - {fileID: 2200029407344628602, guid: 0b398be41b80f3d4896c6359bcf64039, type: 3}
+  selectedPrefab: {fileID: 2200029407344628602, guid: 4c33078ad99091246b8525c34d543e67, type: 3}
+  difficulty: 0

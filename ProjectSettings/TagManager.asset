@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Bullet
   - Alien
+  - Death
+  - Boss
+  - EliteBoss
+  - PlayerHit
+  - AlienBullet
   layers:
   - Default
   - TransparentFX
@@ -42,6 +47,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bullet
+    uniqueID: 453010811
+    locked: 0
+  - name: Boss
+    uniqueID: 1368760403
     locked: 0
   m_RenderingLayers:
   - Default

@@ -1,14 +1,23 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerManager : MonoBehaviour
 {
-    public float speed = 5f;
     public SpriteRenderer background;
     public GameObject bulletPrefab;
     public Transform shootPoint;
+    public AudioClip shootSound;
+    public Animator animator;
 
     private GameObject currentBullet;
+
+    public LivesUI livesUI;
+    public GameObject gameOverUI;
+    private bool isInvulnerable = false;
+    public float invulnerableDuration = 1f;
+
 
     void Update()
     {
@@ -20,11 +29,21 @@ public class PlayerManager : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
             move = 1f;
 
-        transform.Translate(Vector2.right * move * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * move * GameManager.Instance.moveSpeed * Time.deltaTime);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && currentBullet == null)
+        if (Keyboard.current.spaceKey.isPressed && currentBullet == null)
         {
             currentBullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+
+            if (animator != null)
+            {
+                animator.SetTrigger("Shoot");
+            }
+
+            if (shootSound != null)
+            {
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+            }
         }
 
         ClampToBackground();
@@ -33,6 +52,15 @@ public class PlayerManager : MonoBehaviour
     public void ClearBullet()
     {
         currentBullet = null;
+    }
+
+    public void DestroyBullet()
+    {
+        if (currentBullet != null)
+        {
+            Destroy(currentBullet);
+            currentBullet = null;
+        }
     }
 
     void ClampToBackground()
@@ -52,5 +80,57 @@ public class PlayerManager : MonoBehaviour
             transform.position.y,
             transform.position.z
         );
+    }
+
+    public void TakeDamage()
+    {
+        if (isInvulnerable) return;
+
+        livesUI.LoseLife();
+        GameManager.Instance.lives--;
+
+        DestroyBullet();
+
+        if (GameManager.Instance.lives <= 0)
+        {
+            Time.timeScale = 0f;
+            gameOverUI.SetActive(true);
+            return;
+        }
+
+        StartCoroutine(Invulnerability());
+    }
+
+    IEnumerator Invulnerability()
+    {
+        isInvulnerable = true;
+
+        SpriteRenderer[] renderers =
+            GetComponentsInChildren<SpriteRenderer>();
+
+        float timer = 0f;
+
+        while (timer < invulnerableDuration)
+        {
+            foreach (SpriteRenderer sr in renderers)
+                sr.enabled = false;
+
+            yield return new WaitForSeconds(0.1f);
+
+            foreach (SpriteRenderer sr in renderers)
+                sr.enabled = true;
+
+            yield return new WaitForSeconds(0.1f);
+
+            timer += 0.2f;
+        }
+
+        isInvulnerable = false;
+    }
+
+    public void GainLife()
+    {
+        livesUI.GainLife();
+        GameManager.Instance.lives++;
     }
 }
