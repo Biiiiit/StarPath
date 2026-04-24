@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void ApplyItem(ItemData item)
     {
-        lives += item.livesBonus;
+        maxLives += item.livesBonus;
         moveSpeed += item.moveSpeedBonus;
         bulletSpeed += item.bulletSpeedBonus;
         maxBullets += item.maxBulletsBonus;
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
         AddItem(item);
 
-        
+
         if (!removedItems.Contains(item))
         {
             removedItems.Add(item);
