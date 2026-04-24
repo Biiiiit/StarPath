@@ -13,4 +13,6 @@ public class ItemData : ScriptableObject
     public float bulletSpeedBonus;
     public int maxBulletsBonus;
     public int bulletPierceBonus;
+
+    public ItemEffect customEffect;
 }

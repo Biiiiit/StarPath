@@ -444,7 +444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 57.550003, y: -57.961044}
+  m_AnchoredPosition: {x: 57.55, y: -57.961044}
   m_SizeDelta: {x: 75.1, y: 75.92209}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217459682
@@ -462,6 +462,7 @@ MonoBehaviour:
   priceText: {fileID: 569039155}
   priceContainer: {fileID: 1851832864}
   price: 10
+  iconImage: {fileID: 217459685}
 --- !u!114 &217459683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5979628931232385003, guid: aebf142cb1332a84991e9ddb5436eb87, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1095,6 +1096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 817814884}
   - component: {fileID: 817814883}
+  - component: {fileID: 817814885}
   m_Layer: 0
   m_Name: ShopManager
   m_TagString: Untagged
@@ -1132,6 +1134,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &817814885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817814882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9594d02c6f7a8945afb02dd6b64669d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  availableItems:
+  - {fileID: 11400000, guid: 7c5f228e2fb3e6e4c82374a3ca00eba9, type: 2}
+  - {fileID: 11400000, guid: f81ceb91bc15c6245b0d718925b988bf, type: 2}
+  - {fileID: 11400000, guid: 8fac010a0cad3834682df750627faff0, type: 2}
+  - {fileID: 11400000, guid: 84a4bb0bc47a00148a0584908fa9f888, type: 2}
+  - {fileID: 11400000, guid: f3bc672447c0a4e43a9e802800941cae, type: 2}
+  - {fileID: 11400000, guid: bf4300cc228fb7043bb3149dffd87360, type: 2}
+  - {fileID: 11400000, guid: 8ad2343a8fe8a024180489c28321b4a4, type: 2}
+  - {fileID: 11400000, guid: 5bc7791a9fe597a499699c23bede9619, type: 2}
+  - {fileID: 11400000, guid: e8661d0d6700931439a6e895702df23c, type: 2}
+  - {fileID: 11400000, guid: 9c3b61d01a48c8b43a5f1ed1f9acd6cf, type: 2}
+  shopItems:
+  - {fileID: 217459682}
+  - {fileID: 922377910}
+  - {fileID: 1638698821}
 --- !u!1 &885648459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1321,7 @@ MonoBehaviour:
   priceText: {fileID: 569039155}
   priceContainer: {fileID: 1851832864}
   price: 10
+  iconImage: {fileID: 922377913}
 --- !u!114 &922377911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,7 +1406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5979628931232385003, guid: aebf142cb1332a84991e9ddb5436eb87, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2350,6 +2380,7 @@ MonoBehaviour:
   priceText: {fileID: 569039155}
   priceContainer: {fileID: 1851832864}
   price: 10
+  iconImage: {fileID: 1638698824}
 --- !u!114 &1638698822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2434,7 +2465,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5979628931232385003, guid: aebf142cb1332a84991e9ddb5436eb87, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

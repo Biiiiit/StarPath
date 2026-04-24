@@ -21,3 +21,4 @@ MonoBehaviour:
   bulletSpeedBonus: 0
   maxBulletsBonus: 0
   bulletPierceBonus: 0
+  customEffect: {fileID: 11400000, guid: 3498559986215f143b1d62e61bab1c4e, type: 2}

@@ -1,45 +1,57 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SlotMachine : MonoBehaviour
 {
-    [Header("Item Pool")]
-    public List<ItemData> allItems; // List instead of array
+    public List<ItemData> allItems;
     public ItemButton itemButton;
 
     private ItemData currentItem;
+    private bool itemTaken = false;
 
     void Start()
     {
-        Roll(); // kiest meteen een item voor de button
+        Roll();
     }
 
     public void Roll()
     {
-        if (allItems == null || allItems.Count == 0)
+        if (itemTaken)
+        {
+            Debug.Log("Item already taken, cannot reroll");
+            return;
+        }
+
+        List<ItemData> pool = new List<ItemData>();
+
+        foreach (ItemData item in allItems)
+        {
+            if (!GameManager.Instance.removedItems.Contains(item))
+            {
+                pool.Add(item);
+            }
+        }
+
+        if (pool.Count == 0)
         {
             Debug.Log("No more items to roll!");
             return;
         }
 
-        // kies random item
-        int index = Random.Range(0, allItems.Count);
-        currentItem = allItems[index];
+        int index = Random.Range(0, pool.Count);
+        currentItem = pool[index];
 
-        // toon item op button
         itemButton.SetItem(currentItem, this);
-
-        Debug.Log("Rolled: " + currentItem.itemName);
     }
 
-    // Haal het huidige item uit de lijst zodra het gepakt wordt
     public void RemoveCurrentItem()
     {
-        if (currentItem != null)
-        {
-            allItems.Remove(currentItem);
-            Debug.Log("Removed item from pool: " + currentItem.itemName);
-            currentItem = null;
-        }
+        if (currentItem == null) return;
+
+        GameManager.Instance.removedItems.Add(currentItem);
+
+        itemTaken = true; 
+
+        currentItem = null;
     }
 }

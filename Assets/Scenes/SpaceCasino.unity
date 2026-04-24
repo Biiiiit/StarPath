@@ -172,28 +172,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   allItems:
   - {fileID: 11400000, guid: a14a7cf65e119be4ebe3f21176dbc119, type: 2}
-  - {fileID: 11400000, guid: 7c5f228e2fb3e6e4c82374a3ca00eba9, type: 2}
   - {fileID: 11400000, guid: 757cb01176c1e9c4681225dd24600b17, type: 2}
-  - {fileID: 11400000, guid: f81ceb91bc15c6245b0d718925b988bf, type: 2}
   - {fileID: 11400000, guid: 794a1d34fa3f90a41a3259440df461ad, type: 2}
-  - {fileID: 11400000, guid: 8fac010a0cad3834682df750627faff0, type: 2}
   - {fileID: 11400000, guid: c95733f246084e64998a0e7c0fccea84, type: 2}
-  - {fileID: 11400000, guid: 84a4bb0bc47a00148a0584908fa9f888, type: 2}
   - {fileID: 11400000, guid: 70007fbcab1e4ae4a86a8c04dd93cba9, type: 2}
-  - {fileID: 11400000, guid: f3bc672447c0a4e43a9e802800941cae, type: 2}
   - {fileID: 11400000, guid: beb8faae42d9447428aadc5bc5c01061, type: 2}
-  - {fileID: 11400000, guid: bf4300cc228fb7043bb3149dffd87360, type: 2}
   - {fileID: 11400000, guid: 8cf7608dd1f4df3458c8e2cf8bb78fd1, type: 2}
   - {fileID: 11400000, guid: d27adf798b41d2147b3b6386f9f9dfbc, type: 2}
-  - {fileID: 11400000, guid: 8ad2343a8fe8a024180489c28321b4a4, type: 2}
   - {fileID: 11400000, guid: 70007fbcab1e4ae4a86a8c04dd93cba9, type: 2}
-  - {fileID: 11400000, guid: 5bc7791a9fe597a499699c23bede9619, type: 2}
   - {fileID: 11400000, guid: 5dd410be13f9f6e479fd991d8dbfcca5, type: 2}
-  - {fileID: 11400000, guid: e8661d0d6700931439a6e895702df23c, type: 2}
   - {fileID: 11400000, guid: 61c9a5b47e5309546a3f549499c9553a, type: 2}
   - {fileID: 11400000, guid: 5b23b37c06e4c2f4b92ab79261a7352c, type: 2}
   - {fileID: 11400000, guid: 0e26258176fdf524194c45d47e2d2113, type: 2}
-  - {fileID: 11400000, guid: 9c3b61d01a48c8b43a5f1ed1f9acd6cf, type: 2}
   - {fileID: 11400000, guid: f103296a02ec60c4d80ca216cc830fa4, type: 2}
   - {fileID: 11400000, guid: e6a35c803f8649845bb4bfe53c81e10b, type: 2}
   itemButton: {fileID: 2144840575}
@@ -1051,7 +1041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1823052423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,7 +1519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1964185619
 MonoBehaviour:
   m_ObjectHideFlags: 0

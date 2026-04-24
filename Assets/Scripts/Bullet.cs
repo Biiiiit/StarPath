@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
@@ -14,6 +14,17 @@ public class Bullet : MonoBehaviour
     {
         player = FindFirstObjectByType<PlayerManager>();
         hitsRemaining = GameManager.Instance.bulletPierce;
+
+        // 👇 NIEUW: Mutagen effect
+        if (GameManager.Instance.hasMutagen)
+        {
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
+            if (sr != null)
+            {
+                sr.color = Color.green;
+            }
+        }
     }
 
     void Update()
@@ -31,7 +42,6 @@ public class Bullet : MonoBehaviour
 
         if (hit.collider != null)
         {
-
             Alien alien = hit.collider.GetComponent<Alien>();
             if (alien != null)
             {
@@ -44,8 +54,8 @@ public class Bullet : MonoBehaviour
                     return;
                 }
             }
-            AlienBullet bullet = hit.collider.GetComponent<AlienBullet>();
 
+            AlienBullet bullet = hit.collider.GetComponent<AlienBullet>();
             if (bullet != null)
             {
                 bullet.HitByPlayerBullet();
@@ -56,7 +66,6 @@ public class Bullet : MonoBehaviour
             EliteBoss eliteBoss = hit.collider.GetComponentInParent<EliteBoss>();
             if (eliteBoss != null)
             {
-
                 Vector2 offset = Random.insideUnitCircle * 0.2f;
                 eliteBoss.TakeDamage(1, (Vector3)(hit.point + offset));
 
@@ -67,7 +76,6 @@ public class Bullet : MonoBehaviour
             Boss boss = hit.collider.GetComponentInParent<Boss>();
             if (boss != null)
             {
-
                 Vector2 offset = Random.insideUnitCircle * 0.2f;
                 boss.TakeDamage(1, (Vector3)(hit.point + offset));
 
@@ -79,14 +87,12 @@ public class Bullet : MonoBehaviour
             if (cover != null)
             {
                 cover.TakeDamage(1f);
-
                 HandleHit();
                 return;
             }
         }
 
         transform.Translate(Vector2.up * moveStep);
-
         CheckBounds();
     }
 
@@ -99,7 +105,6 @@ public class Bullet : MonoBehaviour
             ClearAndDestroy();
         }
     }
-
 
     void CheckBounds()
     {

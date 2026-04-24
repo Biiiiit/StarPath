@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,7 +15,12 @@ public class GameManager : MonoBehaviour
     public float reloadSpeed = 1f;
     public int maxBullets = 1;
     public int bulletPierce = 1;
+
+    public bool hasMutagen = false;
+    public bool hasLaserPointer = false;
+
     public List<ItemData> inventory = new List<ItemData>();
+    public List<ItemData> removedItems = new List<ItemData>();
 
 
     public static GameManager Instance { get; private set; }
@@ -50,7 +55,20 @@ public class GameManager : MonoBehaviour
         maxBullets += item.maxBulletsBonus;
         bulletPierce += item.bulletPierceBonus;
 
-        Debug.Log("Picked up: " + item.itemName);
+        AddItem(item);
+
+        
+        if (!removedItems.Contains(item))
+        {
+            removedItems.Add(item);
+        }
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null && item.customEffect != null)
+        {
+            item.customEffect.Apply(player);
+        }
     }
 
     public void AddItem(ItemData item)
@@ -62,4 +80,15 @@ public class GameManager : MonoBehaviour
     {
         inventory.Remove(item);
     }
+
+    public bool CanAfford(int amount)
+    {
+        return credits >= amount;
+    }
+
+    public void SpendCredits(int amount)
+    {
+        credits -= amount;
+    }
 }
+
