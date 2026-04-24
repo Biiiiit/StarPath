@@ -4521,6 +4521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VictoryCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4736739042508894395, guid: 364c5b82f8ec67d44abdc01a6599f16c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6599574441104585885, guid: 364c5b82f8ec67d44abdc01a6599f16c, type: 3}
       propertyPath: m_Camera
       value: 
