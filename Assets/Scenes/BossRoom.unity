@@ -3452,7 +3452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3617311727983874919, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6477745928779293448, guid: 86748bc0be2e8074da82caf4a21a01cb, type: 3}
       propertyPath: livesUI
@@ -4158,7 +4158,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &1928930047
 MonoBehaviour:
