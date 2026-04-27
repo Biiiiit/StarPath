@@ -16,7 +16,7 @@ public class AlienManager : MonoBehaviour
     private bool hasFlippedThisEdge = false;
 
     [Header("Bounds")]
-    public SpriteRenderer background;
+    public RectTransform background;
     private float leftBound;
     private float rightBound;
 
@@ -37,18 +37,13 @@ public class AlienManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         speed = baseSpeed;
 
-        if (background != null)
-        {
-            Bounds b = background.bounds;
-            leftBound = b.min.x;
-            rightBound = b.max.x;
-        }
-
         ResetAliens();
     }
 
     void Update()
     {
+        CalculateBounds();
+
         if (isResetting) return;
 
         MoveFormation();
@@ -97,6 +92,15 @@ public class AlienManager : MonoBehaviour
 
         rb.MovePosition(rb.position + horizontalMove);
         transform.position += verticalMove;
+    }
+
+    private void CalculateBounds()
+    {
+        Vector3[] corners = new Vector3[4];
+        background.GetWorldCorners(corners);
+
+        leftBound = corners[1].x;
+        rightBound = corners[2].x;
     }
 
     void UpdateSpeed()

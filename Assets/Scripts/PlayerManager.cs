@@ -5,7 +5,7 @@ using System.Collections;
 
 public class PlayerManager : MonoBehaviour
 {
-    public SpriteRenderer background;
+    public RectTransform background;
     public GameObject bulletPrefab;
     public Transform shootPoint;
     public AudioClip shootSound;
@@ -65,14 +65,14 @@ public class PlayerManager : MonoBehaviour
 
     void ClampToBackground()
     {
-        Bounds bounds = background.bounds;
+        Vector3[] corners = new Vector3[4];
+        background.GetWorldCorners(corners);
 
         float halfWidth = GetComponent<SpriteRenderer>().bounds.extents.x;
 
         float clampedX = Mathf.Clamp(
             transform.position.x,
-            bounds.min.x + halfWidth,
-            bounds.max.x - halfWidth
+            corners[1].x + halfWidth, corners[2].x - halfWidth
         );
 
         transform.position = new Vector3(

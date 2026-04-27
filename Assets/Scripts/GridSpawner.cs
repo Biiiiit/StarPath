@@ -3,7 +3,7 @@ using UnityEngine;
 public class GridSpawner : MonoBehaviour
 {
     public float spacing = 1.5f;
-    public SpriteRenderer background;
+    public RectTransform background;
     public Transform alienParent;
 
     public void SpawnFormation(WaveFormation formation)
@@ -14,14 +14,15 @@ public class GridSpawner : MonoBehaviour
 
         ClearChildren();
 
-        Bounds bounds = background.bounds;
+        Vector3[] corners = new Vector3[4];
+        background.GetWorldCorners(corners);
 
         int rows = formation.rows;
         int cols = formation.cols;
 
         float totalWidth = (cols - 1) * spacing;
         float startX = -totalWidth / 2f;
-        float startY = bounds.max.y - 1f;
+        float startY = corners[1].y - 1f;
 
         for (int y = 0; y < rows; y++)
         {
